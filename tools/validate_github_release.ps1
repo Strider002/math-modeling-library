@@ -1,15 +1,45 @@
 param(
     [string]$LibraryRoot = (Split-Path -Parent $PSScriptRoot),
-    [int64]$MaxTrackedFileBytes = 5MB
+    [int64]$MaxTrackedFileBytes = 5MB,
+    [switch]$PublicRelease
 )
 
 $ErrorActionPreference = 'Stop'
 $root = (Resolve-Path -LiteralPath $LibraryRoot).Path
 $errors = [System.Collections.Generic.List[string]]::new()
 $warnings = [System.Collections.Generic.List[string]]::new()
+$publicReleaseReady = $true
 
 if (-not (Test-Path -LiteralPath (Join-Path $root '.git'))) {
     throw "NOT_A_GIT_REPOSITORY root=$root"
+}
+
+$requiredDistributionFiles = @(
+    'README.md',
+    'README.en.md',
+    'CONTRIBUTING.md',
+    'CONTRIBUTING.zh-CN.md',
+    'SECURITY.md',
+    'CITATION.cff',
+    '.github/workflows/validate.yml'
+)
+foreach ($requiredPath in $requiredDistributionFiles) {
+    if (-not (Test-Path -LiteralPath (Join-Path $root $requiredPath) -PathType Leaf)) {
+        $errors.Add("MISSING_DISTRIBUTION_FILE path=$requiredPath")
+    }
+}
+
+$licenseCandidates = @('LICENSE', 'LICENSE.txt', 'LICENSE.md')
+$hasLicense = @($licenseCandidates | Where-Object {
+    Test-Path -LiteralPath (Join-Path $root $_) -PathType Leaf
+}).Count -gt 0
+if (-not $hasLicense) {
+    $publicReleaseReady = $false
+    if ($PublicRelease) {
+        $errors.Add('MISSING_LICENSE public_release_blocked=true')
+    } else {
+        $warnings.Add('MISSING_LICENSE public_release_blocked=true')
+    }
 }
 
 $blockedPrefixes = @(
@@ -85,7 +115,12 @@ foreach ($relativePath in $tracked) {
 }
 
 if ($emailOccurrences -gt 0) {
-    $warnings.Add("EMAIL_LIKE_OCCURRENCES count=$emailOccurrences review_before_public_release=true")
+    $publicReleaseReady = $false
+    if ($PublicRelease) {
+        $errors.Add("EMAIL_LIKE_OCCURRENCES count=$emailOccurrences public_release_blocked=true")
+    } else {
+        $warnings.Add("EMAIL_LIKE_OCCURRENCES count=$emailOccurrences review_before_public_release=true")
+    }
 }
 
 $skillPath = Join-Path $root 'SKILL.md'
@@ -100,6 +135,8 @@ $skillHash = if (Test-Path -LiteralPath $skillPath -PathType Leaf) {
 "TRACKED_FILES=$($tracked.Count)"
 "TRACKED_BYTES=$totalBytes"
 "SKILL_SHA256=$skillHash"
+"PUBLIC_RELEASE_MODE=$([bool]$PublicRelease)"
+"PUBLIC_RELEASE_READY=$($publicReleaseReady -and $errors.Count -eq 0)"
 "WARNINGS=$($warnings.Count)"
 foreach ($warning in $warnings) {
     "WARNING $warning"

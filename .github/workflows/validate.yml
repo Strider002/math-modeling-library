@@ -1,0 +1,26 @@
+name: Validate library
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate portable knowledge library
+        shell: pwsh
+        run: ./tools/validate_library.ps1 -Portable
+
+      - name: Validate GitHub distribution
+        shell: pwsh
+        run: ./tools/validate_github_release.ps1

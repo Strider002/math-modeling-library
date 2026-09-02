@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this knowledge base or its tooling, please cite it using this metadata."
+title: "Evidence-Gated Mathematical Modeling Library"
+type: software
+authors:
+  - family-names: "Strider002"
+repository-code: "https://github.com/Strider002/math-modeling-library"
+url: "https://github.com/Strider002/math-modeling-library"
+version: "0.1.0-dev"
+abstract: >-
+  A task-routed mathematical-modeling knowledge base and Codex Skill with
+  explicit evidence, validation, reproducibility, and delivery gates.

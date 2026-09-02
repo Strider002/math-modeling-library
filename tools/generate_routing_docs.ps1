@@ -221,9 +221,12 @@ $lines.Add('任何路由变化只修改 ' + (Format-Code 'routing-manifest.yaml'
     '，随后重新生成本文件并运行黄金测试。')
 $lines.Add('')
 
-$content = ($lines -join [Environment]::NewLine)
-if (-not $content.EndsWith([Environment]::NewLine)) {
-    $content += [Environment]::NewLine
+# Keep generated output byte-stable across Windows and CI checkouts.
+# .gitattributes requires LF for Markdown, so do not use the host newline.
+$newLine = "`n"
+$content = ($lines -join $newLine)
+if (-not $content.EndsWith($newLine)) {
+    $content += $newLine
 }
 
 $current = if (Test-Path -LiteralPath $OutputPath -PathType Leaf) {

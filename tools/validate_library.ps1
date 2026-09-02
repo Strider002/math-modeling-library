@@ -1,7 +1,8 @@
 [CmdletBinding()]
 param(
     [string]$LibraryRoot = (Split-Path -Parent $PSScriptRoot),
-    [switch]$SkipRoutingTests
+    [switch]$SkipRoutingTests,
+    [switch]$Portable
 )
 
 Set-StrictMode -Version Latest
@@ -74,6 +75,12 @@ $backtickFileRefs = 0
 $externalFileRefs = 0
 $externalRepoRefs = 0
 $tombstoneRefs = 0
+$portableLocalEvidencePrefixes = @(
+    'sources/原文/',
+    'sources/国赛/',
+    'sources/美赛/',
+    'sources/GitHub方法/'
+)
 
 foreach ($file in $markdownFiles) {
     $text = Get-Content -LiteralPath $file.FullName -Raw -Encoding UTF8
@@ -132,9 +139,14 @@ foreach ($file in $markdownFiles) {
             if ($target -like 'external-file:*') {
                 $externalFileRefs++
                 $externalPath = $target.Substring('external-file:'.Length)
-                if (-not [IO.Path]::IsPathRooted($externalPath) -or
-                    -not (Test-Path -LiteralPath $externalPath -PathType Leaf)) {
+                if (-not [IO.Path]::IsPathRooted($externalPath)) {
                     $errors.Add("EXTERNAL_FILE_REF $relative line=$($lineIndex + 1) -> $externalPath")
+                } elseif (-not (Test-Path -LiteralPath $externalPath -PathType Leaf)) {
+                    if ($Portable) {
+                        $infos.Add("PORTABLE_EXTERNAL_FILE_UNCHECKED file=$relative line=$($lineIndex + 1)")
+                    } else {
+                        $errors.Add("EXTERNAL_FILE_REF $relative line=$($lineIndex + 1) -> $externalPath")
+                    }
                 }
                 continue
             }
@@ -161,7 +173,17 @@ foreach ($file in $markdownFiles) {
             $currentExists = Test-Path -LiteralPath $fromCurrent
             $rootExists = Test-Path -LiteralPath $fromRoot
             if (-not $currentExists -and -not $rootExists) {
-                $errors.Add("BACKTICK_FILE_REF $relative line=$($lineIndex + 1) -> $target")
+                $normalizedTarget = $target -replace '\\', '/'
+                $isPortableLocalEvidence = $Portable -and @(
+                    $portableLocalEvidencePrefixes | Where-Object {
+                        $normalizedTarget.StartsWith($_, [System.StringComparison]::OrdinalIgnoreCase)
+                    }
+                ).Count -gt 0
+                if ($isPortableLocalEvidence) {
+                    $infos.Add("PORTABLE_LOCAL_EVIDENCE_UNCHECKED file=$relative line=$($lineIndex + 1) target=$normalizedTarget")
+                } else {
+                    $errors.Add("BACKTICK_FILE_REF $relative line=$($lineIndex + 1) -> $target")
+                }
             } elseif ($currentExists -and $rootExists) {
                 $currentResolved = (Resolve-Path -LiteralPath $fromCurrent).Path
                 $rootResolved = (Resolve-Path -LiteralPath $fromRoot).Path
