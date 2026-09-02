@@ -63,6 +63,10 @@
 | 34 | [国赛 C 题数据驱动建模方法卡](../34_国赛C题数据驱动建模方法卡.md) |
 | 35 | [回归模型选择与方法总览](../35_回归模型选择与方法总览.md) |
 | 35A | [回归模型完整方法索引](../35A_回归模型完整方法索引.md) |
+| 36 | [A/B 题机理建模与仿真方法卡](../36_AB题机理建模与仿真方法卡.md) |
+| 37 | [文本数据建模方法卡](../37_文本数据建模方法卡.md) |
+| 38 | [信号处理与频谱建模方法卡](../38_信号处理与频谱建模方法卡.md) |
+| 39 | [图像数据建模方法卡](../39_图像数据建模方法卡.md) |
 
 ## 模板、复盘与审计
 
@@ -80,6 +84,12 @@
 - [`test_routing.ps1`](../tools/test_routing.ps1)：执行黄金路由回归测试。
 - [`validate_library.ps1`](../tools/validate_library.ps1)：检查结构、路径、清单、来源 ID 与机械一致性。
 - [`validate_github_release.ps1`](../tools/validate_github_release.ps1)：检查 GitHub 分发边界、敏感内容与公开准备状态。
+- [`new_modeling_project.ps1`](../tools/new_modeling_project.ps1)：初始化七阶段竞赛项目状态与目录。
+- [`modeling_stage.ps1`](../tools/modeling_stage.ps1)：检查产物并推进项目阶段。
+- [`freeze_results.ps1`](../tools/freeze_results.ps1)：冻结或验证表格、图片、模型输出的 SHA-256。
+- [`validate_submission.ps1`](../tools/validate_submission.ps1)：检查 PDF、大小、页数能力和匿名词表。
+- [`build_submission.ps1`](../tools/build_submission.ps1)：在结果未被篡改且 PDF 通过后生成本地审阅包。
+- [`validate_benchmarks.ps1`](../tools/validate_benchmarks.ps1)：校验历年赛题基准规范与盲评分表。
 - [`github_repo_audit.py`](../tools/github_repo_audit.py)：只读核验外部 GitHub 仓库元数据。
 
 ## 来源区
@@ -90,6 +100,7 @@
 
 - [架构](architecture.zh-CN.md)
 - [安装](installation.zh-CN.md)
+- [竞赛工程工作流](engineering-workflow.zh-CN.md)
 - [维护与分支流程](maintenance.zh-CN.md)
 - [来源与公开政策](source-policy.zh-CN.md)
 - [双许可证范围](../LICENSES.md)

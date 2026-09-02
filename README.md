@@ -16,6 +16,8 @@
 - **阶段门禁**：数据、选模、验证设计、实现、审计和交付各有明确停止条件。
 - **证据分级**：官方资料、原始论文、教材、获奖论文与社区资料承担不同证据角色。
 - **验证优先**：复杂模型必须有结构匹配的简单基线和训练外验证。
+- **工程闭环**：项目状态、产物哈希、PDF 匿名审计和本地审阅包都有可执行工具。
+- **证据绑定试点**：七条高风险规则/公式主张已绑定正文位置和来源注册表，并由校验器检查。
 - **可作为 Skill 安装**：`SKILL.md` 负责触发和路由，专题正文仍是唯一知识源。
 
 ## 快速开始
@@ -38,6 +40,15 @@ Use $math-modeling-library to analyze this modeling task.
 ```
 
 符合描述的数学建模任务也可自动触发；简单算术或孤立定义不会加载完整建模流程。
+
+### 初始化一项完整竞赛工程
+
+```powershell
+./tools/new_modeling_project.ps1 -Path D:\work\case01 -Contest CUMCM -Problem C
+./tools/modeling_stage.ps1 -ProjectRoot D:\work\case01 -Action Status
+```
+
+结果冻结、PDF 检查、匿名扫描和审阅包命令见[竞赛工程工作流](docs/engineering-workflow.zh-CN.md)。
 
 ## 工作方式
 
@@ -71,6 +82,7 @@ route_knowledge.ps1 解析任务类型与阶段
 - [完整知识库索引](docs/INDEX.zh-CN.md)
 - [调用架构与单一事实源](docs/architecture.zh-CN.md)
 - [安装为 Codex Skill](docs/installation.zh-CN.md)
+- [竞赛工程工作流](docs/engineering-workflow.zh-CN.md)
 - [知识维护与分支流程](docs/maintenance.zh-CN.md)
 - [来源、版权与公开边界](docs/source-policy.zh-CN.md)
 - [中文贡献指南](CONTRIBUTING.zh-CN.md) / [English contribution guide](CONTRIBUTING.md)
@@ -83,6 +95,8 @@ Git 只分发原创或允许公开的知识正文、路由、测试、工具和�
 ## 当前发布状态
 
 仓库已采用“代码 MIT、原创文档 CC BY 4.0”的双许可证，第三方材料不在授权范围内。仓库目前仍保持私有；改变可见性前必须再次运行严格公开检查并确认第三方权限边界。
+
+五个历年赛题目前只完成固定输入契约、产物要求和盲评量表，尚未完成 Skill/对照双组端到端实验，因此本项目不声称提高获奖概率。
 
 ## 引用与贡献
 

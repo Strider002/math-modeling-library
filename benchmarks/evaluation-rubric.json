@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "scale": {"0":"缺失或存在致命错误","1":"部分满足但证据不足","2":"完整、可复核且结论强度适当"},
+  "criteria": [
+    {"id":"problem_coverage","weight":1.0,"description":"逐问覆盖且输出与题意一致"},
+    {"id":"assumptions_units","weight":1.0,"description":"假设、变量、单位和边界一致"},
+    {"id":"baseline","weight":1.0,"description":"存在结构匹配的简单基线"},
+    {"id":"model_justification","weight":1.0,"description":"模型选择与数据/机制匹配"},
+    {"id":"out_of_training_validation","weight":1.5,"description":"验证严格位于训练或校准之外"},
+    {"id":"uncertainty_sensitivity","weight":1.0,"description":"敏感性、不确定性和压力测试充分"},
+    {"id":"formula_code_consistency","weight":1.5,"description":"公式、参数、代码和输出一致"},
+    {"id":"reproducibility","weight":1.0,"description":"环境、入口、种子和产物可复现"},
+    {"id":"paper_traceability","weight":1.0,"description":"正文数字可追到冻结产物与来源"},
+    {"id":"limitations_claims","weight":1.0,"description":"局限、失效场景和结论边界明确"}
+  ],
+  "blind_review_required": true,
+  "minimum_reviewers": 2
+}

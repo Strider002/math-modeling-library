@@ -526,27 +526,96 @@ if ((Test-Path -LiteralPath $sourceRegistryPath) -or (Test-Path -LiteralPath $cl
         try {
             $sourceRegistry = Get-Content -LiteralPath $sourceRegistryPath -Raw -Encoding UTF8 | ConvertFrom-Json
             $claimsRegistry = Get-Content -LiteralPath $claimsRegistryPath -Raw -Encoding UTF8 | ConvertFrom-Json
-            $registrySourceIds = @($sourceRegistry.entries | ForEach-Object { [string]$_.source_id })
+            if ([string]::IsNullOrWhiteSpace([string]$sourceRegistry.schema_version) -or
+                [string]::IsNullOrWhiteSpace([string]$claimsRegistry.schema_version)) {
+                $errors.Add('EVIDENCE_REGISTRY_SCHEMA_VERSION missing')
+            }
+            $sourceEntries = @($sourceRegistry.entries)
+            $claimEntries = @($claimsRegistry.entries)
+            if ($sourceEntries.Count -eq 0 -or $claimEntries.Count -eq 0) {
+                $errors.Add('EVIDENCE_REGISTRY_ENTRIES must_be_nonempty')
+            }
+            $registrySourceIds = @($sourceEntries | ForEach-Object { [string]$_.source_id })
             foreach ($duplicate in @($registrySourceIds | Group-Object | Where-Object { $_.Count -gt 1 })) {
                 $errors.Add("DUPLICATE_REGISTRY_SOURCE_ID id=$($duplicate.Name)")
             }
             $allowedStatuses = @('已核验', '条件通过', '案例线索', '待核验', '已隔离')
-            foreach ($claim in @($claimsRegistry.entries)) {
-                if ([string]$claim.status -notin $allowedStatuses) {
-                    $errors.Add("INVALID_CLAIM_STATUS id=$($claim.claim_id) status=$($claim.status)")
+            $allowedGrades = @('A', 'A/B', 'B', 'C', 'D')
+            foreach ($sourceEntry in $sourceEntries) {
+                $registryId = [string]$sourceEntry.source_id
+                if ([string]::IsNullOrWhiteSpace($registryId)) {
+                    $errors.Add('EMPTY_REGISTRY_SOURCE_ID')
+                    continue
                 }
-                foreach ($evidence in @($claim.evidence)) {
+                if (-not $sourceIdSet.ContainsKey($registryId)) {
+                    $errors.Add("REGISTRY_SOURCE_NOT_IN_LEDGER id=$registryId")
+                }
+                foreach ($field in @('title', 'url', 'accessed_at')) {
+                    $property = $sourceEntry.PSObject.Properties[$field]
+                    if ($null -eq $property -or [string]::IsNullOrWhiteSpace([string]$property.Value)) {
+                        $errors.Add("REGISTRY_SOURCE_FIELD_MISSING id=$registryId field=$field")
+                    }
+                }
+                if ([string]$sourceEntry.evidence_grade -notin $allowedGrades) {
+                    $errors.Add("INVALID_REGISTRY_SOURCE_GRADE id=$registryId grade=$($sourceEntry.evidence_grade)")
+                }
+                if ([string]$sourceEntry.status -notin $allowedStatuses) {
+                    $errors.Add("INVALID_REGISTRY_SOURCE_STATUS id=$registryId status=$($sourceEntry.status)")
+                }
+            }
+            $claimIds = @($claimEntries | ForEach-Object { [string]$_.claim_id })
+            foreach ($duplicate in @($claimIds | Group-Object | Where-Object { $_.Count -gt 1 })) {
+                $errors.Add("DUPLICATE_CLAIM_ID id=$($duplicate.Name)")
+            }
+            foreach ($claim in $claimEntries) {
+                $claimId = [string]$claim.claim_id
+                if ([string]::IsNullOrWhiteSpace($claimId) -or
+                    [string]::IsNullOrWhiteSpace([string]$claim.statement)) {
+                    $errors.Add("CLAIM_REQUIRED_FIELD_MISSING id=$claimId")
+                }
+                if ([string]$claim.status -notin $allowedStatuses) {
+                    $errors.Add("INVALID_CLAIM_STATUS id=$claimId status=$($claim.status)")
+                }
+                $claimEvidence = @($claim.evidence)
+                $claimLocations = @($claim.locations | ForEach-Object { [string]$_ })
+                if ($claimEvidence.Count -eq 0 -or $claimLocations.Count -eq 0) {
+                    $errors.Add("CLAIM_BINDING_MISSING id=$claimId")
+                }
+                foreach ($evidence in $claimEvidence) {
                     if ([string]$evidence.source_id -notin $registrySourceIds) {
-                        $errors.Add("UNKNOWN_CLAIM_SOURCE claim=$($claim.claim_id) source=$($evidence.source_id)")
+                        $errors.Add("UNKNOWN_CLAIM_SOURCE claim=$claimId source=$($evidence.source_id)")
+                    }
+                    if ([string]::IsNullOrWhiteSpace([string]$evidence.locator) -or
+                        [string]::IsNullOrWhiteSpace([string]$evidence.support)) {
+                        $errors.Add("CLAIM_EVIDENCE_FIELD_MISSING claim=$claimId source=$($evidence.source_id)")
+                    }
+                }
+                $claimSourceIds = @($claimEvidence | ForEach-Object { [string]$_.source_id })
+                foreach ($location in $claimLocations) {
+                    $locationPath = $location.Split('#')[0]
+                    if ([IO.Path]::IsPathRooted($locationPath)) {
+                        $errors.Add("CLAIM_LOCATION_ABSOLUTE claim=$claimId location=$location")
+                        continue
+                    }
+                    $localLocation = Join-Path $root ($locationPath -replace '/', [IO.Path]::DirectorySeparatorChar)
+                    if (-not (Test-Path -LiteralPath $localLocation -PathType Leaf)) {
+                        $errors.Add("CLAIM_LOCATION_MISSING claim=$claimId location=$location")
+                        continue
+                    }
+                    $matchingRefs = @($explicitSourceRefs | Where-Object {
+                        [string]$_.File -eq $locationPath -and [string]$_.Id -in $claimSourceIds
+                    })
+                    if ($matchingRefs.Count -eq 0) {
+                        $errors.Add("CLAIM_LOCATION_UNBOUND claim=$claimId location=$location")
                     }
                 }
                 if ($null -ne $claim.PSObject.Properties['review_due'] -and
                     -not [string]::IsNullOrWhiteSpace([string]$claim.review_due)) {
                     $reviewDue = [datetime]::MinValue
                     if (-not [datetime]::TryParse([string]$claim.review_due, [ref]$reviewDue)) {
-                        $errors.Add("INVALID_REVIEW_DUE claim=$($claim.claim_id) value=$($claim.review_due)")
+                        $errors.Add("INVALID_REVIEW_DUE claim=$claimId value=$($claim.review_due)")
                     } elseif ($reviewDue.Date -lt (Get-Date).Date) {
-                        $warnings.Add("CLAIM_REVIEW_DUE claim=$($claim.claim_id) due=$($reviewDue.ToString('yyyy-MM-dd'))")
+                        $warnings.Add("CLAIM_REVIEW_DUE claim=$claimId due=$($reviewDue.ToString('yyyy-MM-dd'))")
                     }
                 }
             }

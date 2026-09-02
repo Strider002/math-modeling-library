@@ -24,7 +24,20 @@ $requiredDistributionFiles = @(
     'LICENSE',
     'LICENSE-DOCS',
     'LICENSES.md',
-    '.github/workflows/validate.yml'
+    '.github/workflows/validate.yml',
+    'SKILL.md',
+    'agents/openai.yaml',
+    'routing-manifest.yaml',
+    'evidence/source_registry.json',
+    'evidence/claims_registry.json',
+    'benchmarks/manifest.json',
+    'benchmarks/evaluation-rubric.json',
+    'tools/new_modeling_project.ps1',
+    'tools/modeling_stage.ps1',
+    'tools/freeze_results.ps1',
+    'tools/validate_submission.ps1',
+    'tools/build_submission.ps1',
+    'tools/validate_benchmarks.ps1'
 )
 foreach ($requiredPath in $requiredDistributionFiles) {
     if (-not (Test-Path -LiteralPath (Join-Path $root $requiredPath) -PathType Leaf)) {

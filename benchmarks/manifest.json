@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "status": "specification_only",
+  "effect_claim": "未执行双组端到端测试，不提供获奖率或效果提升结论。",
+  "rubric": "benchmarks/evaluation-rubric.json",
+  "cases": [
+    {"id":"cumcm-2025-b","contest":"CUMCM","year":2025,"problem":"B","title":"碳化硅外延层厚度的确定","official_source_id":"CUMCM-2025-PROBLEMS","task_type":"信号反演与非线性拟合","local_inputs":[],"baseline_requirements":["单峰频率估计或线性化小例","至少一种训练外或合成真值验证"]},
+    {"id":"cumcm-2024-a","contest":"CUMCM","year":2024,"problem":"A","title":"板凳龙运动路径","official_source_id":"CUMCM-2024-PROBLEMS","task_type":"几何递推与碰撞约束","local_inputs":[],"baseline_requirements":["直接几何递推","解析或高精度小例"]},
+    {"id":"cumcm-2024-c","contest":"CUMCM","year":2024,"problem":"C","title":"农作物的种植策略","official_source_id":"CUMCM-2024-PROBLEMS","task_type":"多期数据驱动优化","local_inputs":[],"baseline_requirements":["确定性线性规划","小规模精确解或界"]},
+    {"id":"cumcm-2023-b","contest":"CUMCM","year":2023,"problem":"B","title":"多波束测线问题","official_source_id":"CUMCM-2023-PROBLEMS","task_type":"空间几何与测线优化","local_inputs":[],"baseline_requirements":["规则间距方案","覆盖率与重叠率手算小例"]},
+    {"id":"mcm-2024-a","contest":"MCM-ICM","year":2024,"problem":"A","title":"Resource Availability and Sex Ratios","official_source_id":"COMAP-2024-A-TOPIC","task_type":"动态机制与情景分析","local_inputs":[],"baseline_requirements":["静态或线性动力学基线","参数与情景敏感性"]}
+  ],
+  "required_artifacts": [
+    "artifacts/problem-scope.md",
+    "artifacts/data-audit.md",
+    "artifacts/model-plan.md",
+    "artifacts/validation-plan.md",
+    "artifacts/reproduction.md",
+    "artifacts/validation-report.md",
+    "results/results-manifest.json",
+    "paper/solution.pdf",
+    "submission/submission-manifest.json"
+  ]
+}

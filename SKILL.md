@@ -38,11 +38,25 @@ For a definition or one isolated formula that does not require data, model selec
 
 Do not bypass a gate to save context.
 
+## Execute an end-to-end competition project
+
+When the user asks to build or deliver a complete project, use the repository tools instead of tracking stages only in prose:
+
+1. Initialize with `tools\new_modeling_project.ps1` and inspect `project-state.json`.
+2. Use `tools\modeling_stage.ps1 -Action Check` before each stage transition; do not treat file presence as scientific validation.
+3. Before paper numbers are finalized, use `tools\freeze_results.ps1`; verify the manifest again before packaging.
+4. Audit the PDF with `tools\validate_submission.ps1`. Keep the private anonymity denylist outside the public repository.
+5. Build a local review bundle with `tools\build_submission.ps1` only after result verification and PDF validation pass. Follow current competition rules for the actual upload format.
+
+Use `benchmarks\manifest.json` only as a fixed evaluation specification. Its current `specification_only` status is not evidence that the Skill improves award outcomes.
+
 ## Maintain the knowledge base
 
 Treat the library as read-only unless the user explicitly authorizes an update. Before any update, use route `knowledge_maintenance` and read all required resources. Preserve original evidence, update `CHANGELOG.md`, and run `tools\validate_library.ps1`. If routing or entry protocols change, also regenerate routing documentation and run the golden routing tests in the order required by `AGENTS.md`.
 
 Enter `sources\` only for an exact evidence trace, dynamic-fact check, or reproduction task. Award papers and third-party repositories are cases or leads, not automatic authority.
+
+For claims already migrated into `evidence\claims_registry.json`, preserve the claim ID, registered source locator, document location, and matching `` `source:...` `` marker. The registries are a validated subset, not a replacement for `sources\来源与证据台账.md`.
 
 ## Non-negotiable quality rules
 

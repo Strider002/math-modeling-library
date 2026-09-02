@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mathematical modeling project state",
+  "type": "object",
+  "required": ["schema_version", "project_id", "contest", "problem", "created_at", "current_stage", "stages"],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "project_id": { "type": "string", "minLength": 1 },
+    "contest": { "enum": ["CUMCM", "MCM-ICM", "Generic"] },
+    "problem": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "current_stage": { "enum": ["problem", "data", "model_selection", "implementation", "validation", "paper", "submission", "complete"] },
+    "stages": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "required": ["id", "status", "required_artifacts"],
+        "properties": {
+          "id": { "type": "string" },
+          "status": { "enum": ["pending", "in_progress", "completed"] },
+          "required_artifacts": { "type": "array", "items": { "type": "string" } },
+          "completed_at": { "type": ["string", "null"] },
+          "artifact_hashes": { "type": "object" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

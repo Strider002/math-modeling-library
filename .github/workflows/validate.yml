@@ -21,6 +21,10 @@ jobs:
         shell: pwsh
         run: ./tools/validate_library.ps1 -Portable
 
+      - name: Run engineering workflow tests
+        shell: pwsh
+        run: ./tests/run_engineering_tests.ps1
+
       - name: Validate GitHub distribution
         shell: pwsh
-        run: ./tools/validate_github_release.ps1
+        run: ./tools/validate_github_release.ps1 -PublicRelease

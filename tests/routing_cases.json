@@ -539,6 +539,46 @@
         "00D_数据阶段门禁.md",
         "00E_选模与验证设计门禁.md"
       ]
+    },
+    {
+      "id": "mechanistic_ab_route",
+      "description": "A/B 题物理机制、微分方程和仿真校准。",
+      "trigger": true,
+      "route_ids": ["mechanistic_ab"],
+      "stages": ["model_selection", "validation_design"],
+      "must": ["36_AB题机理建模与仿真方法卡.md", "08_微分方程与机理模型.md", "10_仿真模型.md"],
+      "must_not": ["20_国赛优秀论文方法论.md", "21_美赛特等奖论文方法论.md", "sources/"],
+      "required_gates": ["00Q_永久质量核心.md", "00E_选模与验证设计门禁.md"]
+    },
+    {
+      "id": "text_modeling_route",
+      "description": "按作者分组的文本分类与 TF-IDF 基线。",
+      "trigger": true,
+      "route_ids": ["text_modeling"],
+      "stages": ["data", "model_selection", "validation_design"],
+      "must": ["37_文本数据建模方法卡.md", "02_数据处理与探索.md", "24_机器学习评审标准.md"],
+      "must_not": ["20_国赛优秀论文方法论.md", "21_美赛特等奖论文方法论.md", "sources/"],
+      "required_gates": ["00Q_永久质量核心.md", "00D_数据阶段门禁.md", "00E_选模与验证设计门禁.md"]
+    },
+    {
+      "id": "signal_modeling_route",
+      "description": "带采样率的多通道信号频谱分析与窗口外验证。",
+      "trigger": true,
+      "route_ids": ["signal_modeling"],
+      "stages": ["data", "model_selection", "validation_design"],
+      "must": ["38_信号处理与频谱建模方法卡.md", "04_预测与时间序列.md"],
+      "must_not": ["20_国赛优秀论文方法论.md", "21_美赛特等奖论文方法论.md", "sources/"],
+      "required_gates": ["00Q_永久质量核心.md", "00D_数据阶段门禁.md", "00E_选模与验证设计门禁.md"]
+    },
+    {
+      "id": "image_modeling_route",
+      "description": "按主体或场景切分的图像分类、检测或分割。",
+      "trigger": true,
+      "route_ids": ["image_modeling"],
+      "stages": ["data", "model_selection", "validation_design"],
+      "must": ["39_图像数据建模方法卡.md", "24_机器学习评审标准.md"],
+      "must_not": ["20_国赛优秀论文方法论.md", "21_美赛特等奖论文方法论.md", "sources/"],
+      "required_gates": ["00Q_永久质量核心.md", "00D_数据阶段门禁.md", "00E_选模与验证设计门禁.md"]
     }
   ]
 }

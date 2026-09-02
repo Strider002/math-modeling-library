@@ -16,6 +16,8 @@ The project does not promise that a model is “absolutely correct.” Instead, 
 - **Stage gates:** data, model selection, validation design, implementation, audit, and delivery have explicit stop conditions.
 - **Evidence levels:** official records, primary research, textbooks, award papers, and community material have different evidentiary roles.
 - **Validation first:** complex models require a structure-matched baseline and out-of-training validation.
+- **Engineering loop:** executable tools track project state, freeze artifact hashes, audit PDFs, and build a local review bundle.
+- **Evidence-binding pilot:** seven high-risk claims are mechanically linked to registered sources and document locations.
 - **Codex Skill packaging:** `SKILL.md` handles discovery and routing while the maintained topic files remain the only method source.
 
 ## Quick start
@@ -36,6 +38,15 @@ Use $math-modeling-library to analyze this modeling task.
 ```
 
 Matching modeling tasks may also trigger the skill automatically. Isolated arithmetic and simple definitions do not load the full workflow.
+
+To initialize a full competition project:
+
+```powershell
+./tools/new_modeling_project.ps1 -Path D:\work\case01 -Contest CUMCM -Problem C
+./tools/modeling_stage.ps1 -ProjectRoot D:\work\case01 -Action Status
+```
+
+See the [engineering workflow](docs/engineering-workflow.en.md) for result freezing, PDF checks, anonymity scanning, and review packaging.
 
 ## How it works
 
@@ -67,6 +78,7 @@ The complete operational rules currently live in Chinese in [00Q_永久质量核
 ## Documentation
 
 - [Installation](docs/installation.en.md)
+- [Competition engineering workflow](docs/engineering-workflow.en.md)
 - [Chinese knowledge index](docs/INDEX.zh-CN.md)
 - [Architecture and single source of truth](docs/architecture.zh-CN.md)
 - [Maintenance and branch workflow](docs/maintenance.zh-CN.md)
@@ -81,6 +93,8 @@ Git distributes maintained knowledge text, routing definitions, tests, tools, an
 ## Release status
 
 The repository uses MIT for software code and CC BY 4.0 for original documentation; third-party material is excluded. The repository remains private until the strict public-release gate and the third-party-rights review are confirmed.
+
+Five historical cases currently have fixed specifications, artifact contracts, and a blind rubric only. No paired Skill/control experiment has been completed, so this project makes no claim that it increases award probability.
 
 ## Citation and contributions
 

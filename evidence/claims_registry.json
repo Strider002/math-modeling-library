@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "scope": "首批高风险规则与公式结论试点；不是全库引用完成声明。",
+  "entries": [
+    {"claim_id":"RULE-CUMCM-FORMAT-2026","statement":"2026 国赛论文与支撑材料的页数、大小、匿名和代码要求以当年官方格式规范为准。","status":"已核验","locations":["12_论文写作与可视化.md#14-国赛当前格式硬约束"],"evidence":[{"source_id":"CUMCM-FORMAT-2026","locator":"官方 PDF 全文","support":"direct"}],"review_due":"2027-06-01"},
+    {"claim_id":"RULE-CUMCM-AI-2026","statement":"2026 国赛 AI 工具规则要求如实声明、人工核验，并在使用时提交规定的详情材料。","status":"已核验","locations":["12_论文写作与可视化.md#141-2026-年-ai-工具使用硬约束"],"evidence":[{"source_id":"CUMCM-AI-RULE-2026","locator":"官方规定全文","support":"direct"}],"review_due":"2027-06-01"},
+    {"claim_id":"RULE-COMAP-2027","statement":"2027 MCM/ICM 当前页面规定单 PDF、25 页主体范围、身份限制及 AI 报告要求。","status":"条件通过","locations":["12_论文写作与可视化.md#15-2027-mcmicm-当前格式硬约束"],"evidence":[{"source_id":"COMAP-RULES-2027","locator":"official instructions page","support":"direct"}],"review_due":"2027-01-01"},
+    {"claim_id":"FORMULA-XGBOOST-GAIN","statement":"在文中给定的 XGBoost 二阶近似符号约定下，正 split gain 表示近似正则目标因分裂而下降。","status":"已核验","locations":["31_树模型与集成学习严谨方法卡.md#4-xgboost-二阶目标与-split-gain"],"evidence":[{"source_id":"XGBOOST-2016","locator":"Eq. (7), Section 2.2","support":"derivation"}]},
+    {"claim_id":"LIMIT-DE-NO-CERTIFICATE","statement":"SciPy differential_evolution 的数值终止条件不是全局最优证书。","status":"条件通过","locations":["25_优化建模进阶.md#差分进化"],"evidence":[{"source_id":"SCIPY-DE-1.16.1","locator":"termination and return documentation","support":"software_contract"}]},
+    {"claim_id":"THEOREM-EM-MONOTONICITY","statement":"在精确 E 步且 M/GEM 步令 Q 不下降等条件下，EM/GEM 的观测似然不下降。","status":"已核验","locations":["33_EM算法与潜变量模型严谨方法卡.md#11-证据声明登记"],"evidence":[{"source_id":"DLR-EM-1977","locator":"Eq. (2.17), Theorem 1","support":"theorem"}]},
+    {"claim_id":"LIMIT-EM-CONVERGENCE","statement":"EM 的目标单调性不推出全局最优或无条件参数序列收敛。","status":"已核验","locations":["33_EM算法与潜变量模型严谨方法卡.md#11-证据声明登记"],"evidence":[{"source_id":"WU-EM-1983","locator":"pp. 95-100, Theorems 1-5","support":"theorem_and_correction"}]}
+  ]
+}
