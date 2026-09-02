@@ -4,6 +4,8 @@ English | [简体中文](README.md)
 
 [![Validate library](https://github.com/Strider002/math-modeling-library/actions/workflows/validate.yml/badge.svg)](https://github.com/Strider002/math-modeling-library/actions/workflows/validate.yml)
 
+Code: [MIT](LICENSE) · Original documentation: [CC BY 4.0](LICENSE-DOCS) · [License scope](LICENSES.md)
+
 A mathematical-modeling knowledge base that can be installed as a Codex Skill. It routes each task to the smallest relevant set of methods and covers data auditing, forecasting, evaluation, optimization, statistical learning, mechanistic modeling, simulation, validation, and competition-paper delivery.
 
 The project does not promise that a model is “absolutely correct.” Instead, it requires important claims to remain traceable to data, assumptions, formulas, implementations, validation evidence, and sources. Award-winning papers are treated as case evidence, not as unquestionable authority.
@@ -78,7 +80,7 @@ Git distributes maintained knowledge text, routing definitions, tests, tools, an
 
 ## Release status
 
-The repository is still being prepared for a public release. Accessibility must not be interpreted as permission to copy, modify, or redistribute the contents until the license scope has been selected and the strict public-release gate passes.
+The repository uses MIT for software code and CC BY 4.0 for original documentation; third-party material is excluded. The repository remains private until the strict public-release gate and the third-party-rights review are confirmed.
 
 ## Citation and contributions
 

@@ -92,5 +92,6 @@
 - [安装](installation.zh-CN.md)
 - [维护与分支流程](maintenance.zh-CN.md)
 - [来源与公开政策](source-policy.zh-CN.md)
+- [双许可证范围](../LICENSES.md)
 - [中文贡献指南](../CONTRIBUTING.zh-CN.md)
 - [English contribution guide](../CONTRIBUTING.md)

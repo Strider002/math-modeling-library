@@ -64,4 +64,4 @@ If routing, the manifest, a generated routing view, or an entry protocol changes
 
 Describe the problem, changed files, evidence, validation commands, remaining uncertainty, and public-distribution impact. A passing mechanical check does not prove mathematical correctness.
 
-By contributing, you confirm that you have the right to submit the material. A public license has not yet been selected; contributions must not assume a future license.
+By contributing, you confirm that you have the right to submit the material. Unless agreed otherwise before submission, software contributions are offered under MIT and original documentation contributions under CC BY 4.0; see [LICENSES.md](LICENSES.md).

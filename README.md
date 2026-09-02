@@ -4,6 +4,8 @@
 
 [![Validate library](https://github.com/Strider002/math-modeling-library/actions/workflows/validate.yml/badge.svg)](https://github.com/Strider002/math-modeling-library/actions/workflows/validate.yml)
 
+代码：[MIT](LICENSE) · 原创文档：[CC BY 4.0](LICENSE-DOCS) · [许可证范围](LICENSES.md)
+
 一个可作为 Codex Skill 使用的、带证据门禁的数学建模知识库。它按任务和阶段只加载必要方法，覆盖数据审计、预测、评价、优化、统计学习、机理建模、仿真、验证与竞赛论文交付。
 
 本项目不承诺“模型绝对正确”。它要求每个重要结论都能追溯到数据、假设、公式、实现、验证和来源，并把获奖论文视为案例证据，而不是无需复核的权威答案。
@@ -80,7 +82,7 @@ Git 只分发原创或允许公开的知识正文、路由、测试、工具和�
 
 ## 当前发布状态
 
-仓库仍处于公开发布准备阶段。文档、验证和隐私门禁正在完善；在许可证范围确定并通过严格公开发布检查前，不应把“可访问”解释为已经授予复制、修改或再发布权利。
+仓库已采用“代码 MIT、原创文档 CC BY 4.0”的双许可证，第三方材料不在授权范围内。仓库目前仍保持私有；改变可见性前必须再次运行严格公开检查并确认第三方权限边界。
 
 ## 引用与贡献
 

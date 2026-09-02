@@ -21,6 +21,9 @@ $requiredDistributionFiles = @(
     'CONTRIBUTING.zh-CN.md',
     'SECURITY.md',
     'CITATION.cff',
+    'LICENSE',
+    'LICENSE-DOCS',
+    'LICENSES.md',
     '.github/workflows/validate.yml'
 )
 foreach ($requiredPath in $requiredDistributionFiles) {
