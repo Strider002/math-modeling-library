@@ -13,6 +13,21 @@
 - 在 GitHub 账号 `Strider002` 下创建私有仓库
   `https://github.com/Strider002/math-modeling-library`，本地 `origin` 指向该仓库；
   提交与推送前仍执行完整知识库、Skill 和发布门禁。
+- 重构根级 `README.md` 为首次访问者入口，删除首页中的全量文件清单，改为项目定位、快速开始、
+  调用流程、质量协议、文档导航和公开边界；新增 `README.en.md`，明确中文专题仍是当前规范性正文。
+- 新增 `docs/INDEX.zh-CN.md`、`docs/architecture.zh-CN.md`、中英文安装说明、维护与分支流程、
+  来源与公开政策；语言版本作为同一发布中的文件维护，不使用长期中英文分支。
+- 新增中英文贡献指南、双语 `SECURITY.md`、`CITATION.cff`、Pull Request 检查模板和
+  Windows GitHub Actions。CI 在干净克隆中运行路由、全库机械审计和 GitHub 分发检查。
+- `tools/validate_library.ps1` 新增 `-Portable`：干净克隆缺少本机 `external-file:` 原件时记录未检查项，
+  本机默认模式仍要求原件存在；`tools/validate_github_release.ps1` 新增 `-PublicRelease`，把缺少许可证、
+  邮箱样式内容、受限来源、疑似密钥和超大文件作为严格公开阻塞项。
+- 修复 `tools/generate_routing_docs.ps1` 的跨平台换行不确定性：生成视图固定使用仓库要求的 LF，
+  避免 Windows 主工作区通过而干净 Git checkout 因 CRLF/LF 差异误报 `00B` 陈旧。
+- 按最小必要原则从公开审读记录中移除第三方联系邮箱，保留作者姓名、项目关系和证据边界。
+- 经仓库所有者明确授权，原创软件代码采用 MIT License，原创文档采用 CC BY 4.0；新增 `LICENSE`、
+  `LICENSE-DOCS` 和 `LICENSES.md`，逐项说明代码、文档、贡献与第三方材料的授权边界。许可证不覆盖
+  无权重新授权的论文、数据、图片、引文、外部代码或网页快照；仓库可见性仍保持私有。
 
 ## 2026-08-26
 
