@@ -1,0 +1,1399 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_role": "唯一手工维护的路由事实源；00B 及其他人类可读路由说明必须由本文件生成。",
+  "path_resolution": "manifest_directory",
+  "controlled_vocabulary": {
+    "intent": ["analyze", "audit_sources", "deliver", "explain", "maintain", "model", "validate"],
+    "data_structure": ["cross_sectional", "hierarchical", "mechanistic", "mixed", "network", "none", "panel", "simulation", "spatial", "survival_censored", "tabular", "time_series"],
+    "response_support": ["binary", "continuous", "count", "decision", "mixed", "multiclass", "multivariate", "none", "ordinal", "positive", "proportion", "state_trajectory", "time_to_event"],
+    "task_goal": ["causal", "classification", "clustering", "data_quality", "delivery", "description", "dimension_reduction", "evaluation", "explanation", "inference", "maintenance", "optimization", "prediction", "problem_definition", "simulation", "source_audit"],
+    "risk": ["causal_identification", "censoring", "data_quality", "delivery", "dependence", "dynamic_fact", "external_evidence", "formula", "high_dimensional", "implementation", "leakage", "optimization_claim", "standard"]
+  },
+  "budgets": {
+    "metric": "bytes",
+    "permanent_max_bytes": 12000,
+    "lightweight_entry_max_bytes": 15000,
+    "lightweight_entries": ["35_回归模型选择与方法总览.md"]
+  },
+  "permanent": {
+    "required": [
+      {
+        "path": "00Q_永久质量核心.md",
+        "reason": "所有已触发的数学建模任务始终加载，保存禁止编造、任务边界、公式审查、泄漏防控、基线与结论强度等永久红线。"
+      }
+    ]
+  },
+  "stages": [
+    {
+      "id": "data",
+      "label": "数据阶段",
+      "required": [
+        {
+          "path": "00D_数据阶段门禁.md",
+          "reason": "在读取、连接、清洗、EDA、插补或特征工程前检查来源、口径、主键、单位、缺失、异常和可得性。"
+        }
+      ],
+      "optional": []
+    },
+    {
+      "id": "model_selection",
+      "label": "模型选择阶段",
+      "required": [
+        {
+          "path": "00E_选模与验证设计门禁.md",
+          "reason": "在筛选模型前明确目标、响应支持集、依赖结构、候选模型、基线和验证目标。"
+        }
+      ],
+      "optional": []
+    },
+    {
+      "id": "validation_design",
+      "label": "验证设计阶段",
+      "required": [
+        {
+          "path": "00E_选模与验证设计门禁.md",
+          "reason": "在拟合或调参前锁定训练外划分、指标、基线、嵌套调参和泄漏边界。"
+        }
+      ],
+      "optional": []
+    },
+    {
+      "id": "implementation",
+      "label": "实现阶段",
+      "required": [
+        {
+          "path": "15_代码与实验规范.md",
+          "reason": "编码、复现或运行实验时执行环境、随机性、日志、配置、输出和公式—代码一致性规范。"
+        }
+      ],
+      "optional": []
+    },
+    {
+      "id": "validation_audit",
+      "label": "验证审计阶段",
+      "required": [
+        {
+          "path": "11_验证敏感性与不确定性.md",
+          "reason": "在首次正式比较结果、形成结论或交付前审查训练外证据、残差、敏感性、压力测试和不确定性。"
+        }
+      ],
+      "optional": []
+    },
+    {
+      "id": "delivery",
+      "label": "论文与报告交付阶段",
+      "required": [
+        {
+          "path": "12_论文写作与可视化.md",
+          "reason": "正式论文或报告交付时检查结构、图表、措辞和数字可追溯性。"
+        },
+        {
+          "path": "13_竞赛工作流与检查清单.md",
+          "reason": "竞赛或正式交付前检查题目覆盖、提交物、格式和最终一致性。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "15_代码与实验规范.md",
+          "reason": "若交付包含代码、支撑材料或可复现实验，则升级为必读；纯文字交付可保持可选。"
+        }
+      ]
+    },
+    {
+      "id": "code_delivery",
+      "label": "含代码的正式交付阶段",
+      "required": [
+        {
+          "path": "12_论文写作与可视化.md",
+          "reason": "正式论文或报告交付时检查结构、图表、措辞和数字可追溯性。"
+        },
+        {
+          "path": "13_竞赛工作流与检查清单.md",
+          "reason": "竞赛或正式交付前检查题目覆盖、提交物、格式和最终一致性。"
+        },
+        {
+          "path": "15_代码与实验规范.md",
+          "reason": "交付包含代码、支撑材料或可复现实验，必须核对环境、配置、随机性和正文数字。"
+        }
+      ],
+      "optional": []
+    }
+  ],
+  "default_forbidden": [
+    {
+      "path": "20_国赛优秀论文方法论.md",
+      "reason": "案例资料仅在明确进行国赛案例对照时读取，不作为默认方法或公式证据。"
+    },
+    {
+      "path": "21_美赛特等奖论文方法论.md",
+      "reason": "案例资料仅在明确进行美赛案例对照时读取，不作为默认方法或公式证据。"
+    },
+    {
+      "path": "30_Expectorpatro全站知识映射与使用边界.md",
+      "reason": "仅在使用或审计 Expectorpatro 网站线索时读取。"
+    },
+    {
+      "path": "sources/",
+      "reason": "原始来源只在精确追溯、动态核验或复现时按文件读取，禁止默认整目录加载。"
+    }
+  ],
+  "routes": [
+    {
+      "id": "problem_selection",
+      "label": "问题识别与方案选型",
+      "description": "题型尚未确定，先识别目标、输出、数据结构和模型族。",
+      "signals": ["问题识别", "方案选型", "应该用什么模型", "模型链"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["analyze", "model"],
+        "data_structure": ["mixed"],
+        "response_support": ["mixed"],
+        "task_goal": ["problem_definition"],
+        "risk": ["standard", "formula"]
+      },
+      "resource_stages": ["model_selection", "validation_design"],
+      "default_stages": ["model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "01_问题识别与模型选择.md",
+          "reason": "把题目语言映射到评价、预测、优化、分类、机理、网络或仿真等模型族。"
+        }
+      ],
+      "optional": [],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "data_eda",
+      "label": "数据处理与 EDA",
+      "description": "数据审计、清洗、缺失、异常、描述性分析和基础特征工程。",
+      "signals": ["数据清洗", "EDA", "缺失值", "异常值", "特征工程"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["analyze"],
+        "data_structure": ["tabular", "mixed"],
+        "response_support": ["mixed"],
+        "task_goal": ["data_quality", "description"],
+        "risk": ["data_quality", "leakage"]
+      },
+      "resource_stages": ["data", "implementation", "validation_audit"],
+      "default_stages": ["data"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "02_数据处理与探索.md",
+          "reason": "提供数据审计、缺失、异常、变换、EDA、特征工程和划分的基础流程。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "22_数据分析与数据挖掘进阶.md",
+          "reason": "需要高级数据审计、成分数据、关联规则、降维或训练外挖掘证据时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "data_mining",
+      "label": "数据分析与数据挖掘",
+      "description": "需要从数据中发现稳定结构、模式、关联或综合指标。",
+      "signals": ["数据挖掘", "关联规则", "模式发现", "综合指标"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["analyze", "model"],
+        "data_structure": ["tabular", "mixed"],
+        "response_support": ["multivariate", "mixed"],
+        "task_goal": ["description", "clustering", "dimension_reduction", "evaluation"],
+        "risk": ["data_quality", "leakage", "high_dimensional"]
+      },
+      "resource_stages": ["data", "model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["data", "model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "02_数据处理与探索.md",
+          "reason": "先建立数据审计和无泄漏处理基础。"
+        },
+        {
+          "path": "22_数据分析与数据挖掘进阶.md",
+          "reason": "建立统计发现、关联规则、降维、聚类和综合指标的证据链。"
+        }
+      ],
+      "optional": [],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "evaluation_decision",
+      "label": "综合评价、排序与决策",
+      "description": "指标体系、赋权、排序、效率评价和多准则决策。",
+      "signals": ["综合评价", "排序", "TOPSIS", "AHP", "DEA", "模糊评价"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["model", "validate"],
+        "data_structure": ["cross_sectional", "tabular"],
+        "response_support": ["multivariate", "decision"],
+        "task_goal": ["evaluation"],
+        "risk": ["data_quality", "formula"]
+      },
+      "resource_stages": ["model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["data", "model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "03_评价与决策模型.md",
+          "reason": "提供评价指标、赋权、排序和决策模型的基础边界。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "27_主成分分析严谨方法卡.md",
+          "reason": "使用 PCA 构造综合指标时追加。"
+        },
+        {
+          "path": "28_多元统计扩展严谨方法卡.md",
+          "reason": "使用因子分析等多元统计方法时追加。"
+        },
+        {
+          "path": "25_优化建模进阶.md",
+          "reason": "排序结果进入稳健或多目标决策时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "regression_general",
+      "label": "普通回归与回归选模",
+      "description": "连续或其他响应的关联、解释或预测回归候选初筛。",
+      "signals": ["回归", "回归预测", "变量关系", "回归选模"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["model", "validate"],
+        "data_structure": ["cross_sectional", "tabular", "mixed"],
+        "response_support": ["continuous", "positive", "proportion", "binary", "multiclass", "ordinal", "count", "mixed"],
+        "task_goal": ["prediction", "explanation", "inference"],
+        "risk": ["data_quality", "leakage", "dependence", "formula"]
+      },
+      "resource_stages": ["model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["data", "model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "35_回归模型选择与方法总览.md",
+          "reason": "先按目标、响应支持集和时间/空间/分组依赖筛选二至五个候选。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "35A_回归模型完整方法索引.md",
+          "reason": "需要查看完整公式、优缺点、评分或跨分支候选时追加；轻量 35 只负责硬门禁与初筛。"
+        },
+        {
+          "path": "29_线性模型与广义线性模型严谨方法卡.md",
+          "reason": "候选涉及经典线性模型、GLM、诊断或正则化时追加。"
+        },
+        {
+          "path": "23_预测建模进阶.md",
+          "reason": "目标是样本外预测时追加。"
+        },
+        {
+          "path": "31_树模型与集成学习严谨方法卡.md",
+          "reason": "候选涉及树与集成学习时追加。"
+        },
+        {
+          "path": "32_神经网络严谨方法卡.md",
+          "reason": "候选涉及神经网络时追加。"
+        },
+        {
+          "path": "17_因果推断与实验设计.md",
+          "reason": "目标是干预效应而非条件关联时追加。"
+        },
+        {
+          "path": "09_图论网络与空间模型.md",
+          "reason": "数据存在空间依赖时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "regression_count_panel",
+      "label": "计数面板与层级回归",
+      "description": "计数响应同时具有个体、组别、重复测量或面板依赖。",
+      "signals": ["计数面板", "Poisson 面板", "负二项面板", "计数纵向", "计数层级"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["model", "validate"],
+        "data_structure": ["panel", "hierarchical"],
+        "response_support": ["count"],
+        "task_goal": ["prediction", "explanation", "inference"],
+        "risk": ["data_quality", "leakage", "dependence", "formula"]
+      },
+      "resource_stages": ["model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["data", "model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "35_回归模型选择与方法总览.md",
+          "reason": "检查计数支持集、过度离散、零机制及面板/层级依赖。"
+        },
+        {
+          "path": "35A_回归模型完整方法索引.md",
+          "reason": "现有独立专题尚未完整覆盖计数面板、层级和动态面板方法，必须读取完整方法索引。"
+        },
+        {
+          "path": "29_线性模型与广义线性模型严谨方法卡.md",
+          "reason": "核验 Poisson、离散、链接函数、标准误与 GLM 诊断。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "07_概率统计与随机模型.md",
+          "reason": "需要计数分布、随机效应或推断理论补充时追加。"
+        },
+        {
+          "path": "17_因果推断与实验设计.md",
+          "reason": "面板回归承担因果识别时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "regression_panel_hierarchical",
+      "label": "泛化面板、纵向与层级回归",
+      "description": "连续、二元、比例或其他一般响应具有个体、组别、重复测量、面板或层级依赖。",
+      "signals": ["面板回归", "连续面板", "纵向数据", "重复测量", "多层模型", "层级回归", "固定效应", "随机效应"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["model", "validate"],
+        "data_structure": ["panel", "hierarchical"],
+        "response_support": ["continuous", "binary", "count", "positive", "proportion", "mixed"],
+        "task_goal": ["prediction", "explanation", "inference"],
+        "risk": ["data_quality", "leakage", "dependence", "formula"]
+      },
+      "resource_stages": ["model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["data", "model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "35_回归模型选择与方法总览.md",
+          "reason": "先识别响应支持集、组内依赖、固定/随机效应目标及新主体或新时间的泛化对象。"
+        },
+        {
+          "path": "35A_回归模型完整方法索引.md",
+          "reason": "现有独立专题尚未完整覆盖 FE/RE、混合效应、GEE 和动态面板，必须读取完整方法索引。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "29_线性模型与广义线性模型严谨方法卡.md",
+          "reason": "使用线性、Logistic、Poisson 或其他 GLM 条件模型时追加。"
+        },
+        {
+          "path": "07_概率统计与随机模型.md",
+          "reason": "需要随机效应、相关结构或推断理论补充时追加。"
+        },
+        {
+          "path": "17_因果推断与实验设计.md",
+          "reason": "面板模型承担因果识别时追加。"
+        },
+        {
+          "path": "23_预测建模进阶.md",
+          "reason": "目标是新主体或未来时间预测时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "regression_survival_censoring",
+      "label": "生存、删失与截断回归",
+      "description": "时间到事件、右删失、区间删失、截断或样本选择问题。",
+      "signals": ["生存分析", "Cox", "AFT", "删失", "截断", "Tobit"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["model", "validate"],
+        "data_structure": ["survival_censored"],
+        "response_support": ["time_to_event"],
+        "task_goal": ["prediction", "explanation", "inference"],
+        "risk": ["censoring", "dependence", "formula"]
+      },
+      "resource_stages": ["model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["data", "model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "35_回归模型选择与方法总览.md",
+          "reason": "区分删失、截断、样本选择和时间到事件，并筛选对应模型。"
+        },
+        {
+          "path": "35A_回归模型完整方法索引.md",
+          "reason": "现有独立专题尚未完整覆盖 Cox、AFT、竞争风险、删失和截断方法，必须读取完整方法索引。"
+        },
+        {
+          "path": "07_概率统计与随机模型.md",
+          "reason": "补充事件时间、删失假设、分布和统计推断基础。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "17_因果推断与实验设计.md",
+          "reason": "生存结局需要因果解释时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "time_forecasting",
+      "label": "时间预测",
+      "description": "有时间顺序的单序列、多序列、回归或机器学习预测。",
+      "signals": ["时间序列", "预测", "ARIMA", "滚动回测", "需求预测"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["model", "validate"],
+        "data_structure": ["time_series"],
+        "response_support": ["continuous", "count", "multivariate"],
+        "task_goal": ["prediction"],
+        "risk": ["data_quality", "leakage", "dependence", "dynamic_fact"]
+      },
+      "resource_stages": ["model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["data", "model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "04_预测与时间序列.md",
+          "reason": "提供预测定义、基线、统计时序、指标和基本回测。"
+        },
+        {
+          "path": "23_预测建模进阶.md",
+          "reason": "锁定滚动回测、概率预测、特殊序列和预测进入优化的严格边界。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "24_机器学习评审标准.md",
+          "reason": "使用机器学习预测时追加。"
+        },
+        {
+          "path": "31_树模型与集成学习严谨方法卡.md",
+          "reason": "候选使用树集成时追加。"
+        },
+        {
+          "path": "32_神经网络严谨方法卡.md",
+          "reason": "候选使用深度时序模型时追加。"
+        },
+        {
+          "path": "35_回归模型选择与方法总览.md",
+          "reason": "候选使用动态回归或回归预测时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "optimization",
+      "label": "优化建模",
+      "description": "线性、整数、非线性、多目标、随机或鲁棒优化。",
+      "signals": ["优化", "最优方案", "线性规划", "整数规划", "多目标", "鲁棒优化"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["model", "validate"],
+        "data_structure": ["tabular", "mixed"],
+        "response_support": ["decision"],
+        "task_goal": ["optimization"],
+        "risk": ["formula", "optimization_claim"]
+      },
+      "resource_stages": ["model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "05_优化模型.md",
+          "reason": "建立变量、目标、约束和基本求解模型。"
+        },
+        {
+          "path": "25_优化建模进阶.md",
+          "reason": "审查凸性、精确性证据、gap、风险、随机/鲁棒和元启发式边界。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "16_插值拟合与数值计算.md",
+          "reason": "涉及连续数值求解、插值或非线性算法时追加。"
+        },
+        {
+          "path": "10_仿真模型.md",
+          "reason": "涉及仿真优化时追加。"
+        },
+        {
+          "path": "23_预测建模进阶.md",
+          "reason": "优化输入来自预测时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "prediction_optimization",
+      "label": "预测—优化组合",
+      "description": "上游预测进入库存、调度、资源配置或其他决策优化。",
+      "signals": ["预测优化", "需求预测与库存", "预测后调度", "不确定性传播"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["model", "validate"],
+        "data_structure": ["time_series", "tabular", "mixed"],
+        "response_support": ["continuous", "count", "decision"],
+        "task_goal": ["prediction", "optimization"],
+        "risk": ["data_quality", "leakage", "dependence", "optimization_claim"]
+      },
+      "resource_stages": ["model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["data", "model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "02_数据处理与探索.md",
+          "reason": "核验上游数据口径与特征可得性。"
+        },
+        {
+          "path": "04_预测与时间序列.md",
+          "reason": "建立预测基线和时序模型候选。"
+        },
+        {
+          "path": "23_预测建模进阶.md",
+          "reason": "设计严格回测并传播预测不确定性。"
+        },
+        {
+          "path": "05_优化模型.md",
+          "reason": "建立下游变量、目标和约束。"
+        },
+        {
+          "path": "25_优化建模进阶.md",
+          "reason": "审查预测—优化耦合、情景、风险、可行性与最优性证据。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "24_机器学习评审标准.md",
+          "reason": "预测器为机器学习时追加。"
+        },
+        {
+          "path": "31_树模型与集成学习严谨方法卡.md",
+          "reason": "预测器为树集成时追加。"
+        },
+        {
+          "path": "34_国赛C题数据驱动建模方法卡.md",
+          "reason": "任务属于国赛 C 题式附件数据组合题时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "classification",
+      "label": "分类与监督学习",
+      "description": "二分类、多分类、有序分类和监督学习评估。",
+      "signals": ["分类", "二分类", "多分类", "监督学习", "类别预测"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["model", "validate"],
+        "data_structure": ["tabular", "mixed"],
+        "response_support": ["binary", "multiclass", "ordinal"],
+        "task_goal": ["classification"],
+        "risk": ["data_quality", "leakage", "high_dimensional"]
+      },
+      "resource_stages": ["model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["data", "model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "06_分类聚类与机器学习.md",
+          "reason": "提供分类模型、指标、阈值和监督学习基本流程。"
+        },
+        {
+          "path": "24_机器学习评审标准.md",
+          "reason": "审查泄漏、嵌套验证、校准、解释、公平和可复现性。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "28_多元统计扩展严谨方法卡.md",
+          "reason": "使用 LDA/QDA/Fisher 判别时追加。"
+        },
+        {
+          "path": "29_线性模型与广义线性模型严谨方法卡.md",
+          "reason": "使用 Logistic 或其他 GLM 分类模型时追加。"
+        },
+        {
+          "path": "31_树模型与集成学习严谨方法卡.md",
+          "reason": "使用树集成时追加。"
+        },
+        {
+          "path": "32_神经网络严谨方法卡.md",
+          "reason": "使用神经网络时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "clustering",
+      "label": "聚类与分群",
+      "description": "无监督分群、簇数选择、稳定性和外部验证。",
+      "signals": ["聚类", "分群", "K-means", "层次聚类", "DBSCAN", "GMM 聚类"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["model", "validate"],
+        "data_structure": ["tabular", "mixed"],
+        "response_support": ["multivariate"],
+        "task_goal": ["clustering"],
+        "risk": ["data_quality", "high_dimensional"]
+      },
+      "resource_stages": ["model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["data", "model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "06_分类聚类与机器学习.md",
+          "reason": "提供聚类模型族和基础流程。"
+        },
+        {
+          "path": "22_数据分析与数据挖掘进阶.md",
+          "reason": "建立聚类证据链和训练外稳定性边界。"
+        },
+        {
+          "path": "26_聚类分析严谨方法卡.md",
+          "reason": "核验距离、算法条件、簇数指标、稳定性和外部验证。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "27_主成分分析严谨方法卡.md",
+          "reason": "确需用 PCA 预处理或可视化时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "pca",
+      "label": "PCA、PCR 与主成分评价",
+      "description": "主成分降维、主成分回归或主成分综合评价。",
+      "signals": ["PCA", "主成分分析", "PCR", "主成分评价"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["model", "validate"],
+        "data_structure": ["tabular"],
+        "response_support": ["multivariate"],
+        "task_goal": ["dimension_reduction", "evaluation"],
+        "risk": ["data_quality", "leakage", "high_dimensional"]
+      },
+      "resource_stages": ["model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["data", "model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "27_主成分分析严谨方法卡.md",
+          "reason": "核验中心化/标准化、SVD、载荷、维数选择、PCR 和综合评价边界。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "02_数据处理与探索.md",
+          "reason": "需要完整数据审计和预处理时追加。"
+        },
+        {
+          "path": "22_数据分析与数据挖掘进阶.md",
+          "reason": "PCA 属于数据挖掘链或需训练外验证时追加。"
+        },
+        {
+          "path": "29_线性模型与广义线性模型严谨方法卡.md",
+          "reason": "使用 PCR 作回归时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "multivariate_statistics",
+      "label": "多元统计扩展",
+      "description": "因子分析、NMF、CCA、LDA/QDA 或 Fisher 判别。",
+      "signals": ["因子分析", "NMF", "CCA", "LDA", "QDA", "Fisher 判别"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["model", "validate"],
+        "data_structure": ["tabular"],
+        "response_support": ["multivariate", "binary", "multiclass"],
+        "task_goal": ["dimension_reduction", "classification", "inference"],
+        "risk": ["data_quality", "high_dimensional", "formula"]
+      },
+      "resource_stages": ["model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["data", "model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "28_多元统计扩展严谨方法卡.md",
+          "reason": "核验各多元统计方法的目标、识别、旋转、正则化和验证边界。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "02_数据处理与探索.md",
+          "reason": "需要完整数据审计时追加。"
+        },
+        {
+          "path": "22_数据分析与数据挖掘进阶.md",
+          "reason": "方法进入数据挖掘流程时追加。"
+        },
+        {
+          "path": "27_主成分分析严谨方法卡.md",
+          "reason": "需要与 PCA 区分或对照时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "linear_glm",
+      "label": "线性模型与 GLM",
+      "description": "OLS/GLS、ANOVA、Ridge、Logistic、Poisson 及诊断。",
+      "signals": ["OLS", "GLS", "ANOVA", "Ridge", "Logistic", "Poisson"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["model", "validate"],
+        "data_structure": ["cross_sectional", "tabular", "mixed"],
+        "response_support": ["continuous", "binary", "count", "positive", "proportion"],
+        "task_goal": ["prediction", "explanation", "inference"],
+        "risk": ["data_quality", "leakage", "formula"]
+      },
+      "resource_stages": ["model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["data", "model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "35_回归模型选择与方法总览.md",
+          "reason": "先通过响应支持集和依赖结构门禁。"
+        },
+        {
+          "path": "29_线性模型与广义线性模型严谨方法卡.md",
+          "reason": "核验线性/GLM 定义、估计、诊断、推断和正则化边界。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "23_预测建模进阶.md",
+          "reason": "目标是预测时追加严格训练外验证。"
+        },
+        {
+          "path": "17_因果推断与实验设计.md",
+          "reason": "系数需要因果解释时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "tree_ensemble",
+      "label": "树模型与集成学习",
+      "description": "CART、Bagging、随机森林、GBDT、XGBoost 等。",
+      "signals": ["决策树", "CART", "随机森林", "GBDT", "XGBoost", "Bagging"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["model", "validate"],
+        "data_structure": ["tabular", "mixed"],
+        "response_support": ["continuous", "binary", "multiclass", "count"],
+        "task_goal": ["prediction", "classification"],
+        "risk": ["leakage", "high_dimensional", "implementation"]
+      },
+      "resource_stages": ["model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["data", "model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "31_树模型与集成学习严谨方法卡.md",
+          "reason": "核验树分裂、集成机制、OOB 边界、重要性、调参和外推。"
+        },
+        {
+          "path": "24_机器学习评审标准.md",
+          "reason": "执行泄漏、嵌套验证、校准、解释和可复现性审查。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "23_预测建模进阶.md",
+          "reason": "用于时间或一般预测时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "neural_network",
+      "label": "神经网络",
+      "description": "感知机、MLP、RNN、LSTM、GRU、CNN 及神经回归/分类。",
+      "signals": ["神经网络", "MLP", "RNN", "LSTM", "GRU", "CNN"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["model", "validate"],
+        "data_structure": ["tabular", "time_series", "mixed"],
+        "response_support": ["continuous", "binary", "multiclass", "count", "multivariate"],
+        "task_goal": ["prediction", "classification"],
+        "risk": ["leakage", "high_dimensional", "implementation"]
+      },
+      "resource_stages": ["model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["data", "model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "32_神经网络严谨方法卡.md",
+          "reason": "核验输出—损失契约、反向传播、序列网络、张量形状和训练风险。"
+        },
+        {
+          "path": "24_机器学习评审标准.md",
+          "reason": "执行泄漏、验证、校准、解释和可复现性审查。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "06_分类聚类与机器学习.md",
+          "reason": "需要监督学习流程或分类指标基础时追加。"
+        },
+        {
+          "path": "04_预测与时间序列.md",
+          "reason": "序列预测任务追加。"
+        },
+        {
+          "path": "23_预测建模进阶.md",
+          "reason": "需要严格时序回测或概率预测时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "em_latent",
+      "label": "EM 与潜变量模型",
+      "description": "EM、GMM、缺失/不完整数据极大似然和潜变量估计。",
+      "signals": ["EM", "GMM", "潜变量", "不完整数据", "期望最大化"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["model", "validate"],
+        "data_structure": ["tabular", "mixed"],
+        "response_support": ["mixed"],
+        "task_goal": ["inference", "clustering"],
+        "risk": ["formula", "implementation"]
+      },
+      "resource_stages": ["model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "33_EM算法与潜变量模型严谨方法卡.md",
+          "reason": "核验 ELBO/KL、E/M 步、单调性、退化、初始化、停止和验证。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "07_概率统计与随机模型.md",
+          "reason": "需要概率与似然基础时追加。"
+        },
+        {
+          "path": "19_数学基础与统计理论补充.md",
+          "reason": "需要可识别性、矩阵或渐近理论时追加。"
+        },
+        {
+          "path": "06_分类聚类与机器学习.md",
+          "reason": "GMM 用作聚类时追加。"
+        },
+        {
+          "path": "26_聚类分析严谨方法卡.md",
+          "reason": "GMM 聚类需要簇数和稳定性审查时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "cumcm_c_pipeline",
+      "label": "国赛 C 题数据驱动组合",
+      "description": "附件数据—分析/预测/评价—优化的国赛 C 题式组合链。",
+      "signals": ["国赛C题", "附件数据", "预测评价优化", "数据驱动组合题"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["analyze", "model", "deliver"],
+        "data_structure": ["mixed"],
+        "response_support": ["mixed"],
+        "task_goal": ["data_quality", "prediction", "evaluation", "optimization", "delivery"],
+        "risk": ["data_quality", "leakage", "dependence", "optimization_claim", "delivery"]
+      },
+      "resource_stages": ["data", "model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["data", "model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "code_delivery"],
+      "required": [
+        {
+          "path": "34_国赛C题数据驱动建模方法卡.md",
+          "reason": "建立 C 题数据粒度、模型链、预测—优化、不确定性传播和专用检查。"
+        },
+        {
+          "path": "02_数据处理与探索.md",
+          "reason": "先完成附件数据审计。"
+        },
+        {
+          "path": "22_数据分析与数据挖掘进阶.md",
+          "reason": "建立数据分析和挖掘证据链。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "03_评价与决策模型.md",
+          "reason": "题目含评价排序时追加。"
+        },
+        {
+          "path": "04_预测与时间序列.md",
+          "reason": "题目含时间预测时追加。"
+        },
+        {
+          "path": "23_预测建模进阶.md",
+          "reason": "题目含严格回测或概率预测时追加。"
+        },
+        {
+          "path": "24_机器学习评审标准.md",
+          "reason": "题目使用机器学习时追加。"
+        },
+        {
+          "path": "05_优化模型.md",
+          "reason": "题目含优化决策时追加。"
+        },
+        {
+          "path": "25_优化建模进阶.md",
+          "reason": "题目含鲁棒、多目标或预测—优化时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "probability_stochastic",
+      "label": "概率统计与随机模型",
+      "description": "统计推断、贝叶斯、马尔可夫、排队、可靠性和随机过程。",
+      "signals": ["概率", "统计推断", "贝叶斯", "马尔可夫", "排队", "可靠性"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["explain", "model", "validate"],
+        "data_structure": ["mixed"],
+        "response_support": ["mixed"],
+        "task_goal": ["inference"],
+        "risk": ["formula"]
+      },
+      "resource_stages": ["model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "07_概率统计与随机模型.md",
+          "reason": "提供分布、估计、检验、贝叶斯、随机过程和可靠性基础。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "19_数学基础与统计理论补充.md",
+          "reason": "需要估计理论、渐近、矩阵和多元统计补充时追加。"
+        },
+        {
+          "path": "10_仿真模型.md",
+          "reason": "需要蒙特卡洛验证或随机仿真时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "mechanistic_model",
+      "label": "机理与微分方程",
+      "description": "ODE/PDE、差分方程、传染病、种群及机理参数估计。",
+      "signals": ["微分方程", "ODE", "PDE", "机理模型", "传染病", "种群"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["model", "validate"],
+        "data_structure": ["mechanistic"],
+        "response_support": ["state_trajectory", "continuous"],
+        "task_goal": ["simulation", "explanation", "prediction"],
+        "risk": ["formula", "implementation"]
+      },
+      "resource_stages": ["model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "08_微分方程与机理模型.md",
+          "reason": "建立机理结构、守恒、边界条件、参数估计和量纲分析。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "16_插值拟合与数值计算.md",
+          "reason": "需要数值积分、求解、拟合和稳定性时追加。"
+        },
+        {
+          "path": "07_概率统计与随机模型.md",
+          "reason": "参数或过程具有随机性时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "network_spatial",
+      "label": "图、网络与空间",
+      "description": "路径、流、匹配、选址、网络传播和空间统计/回归。",
+      "signals": ["图论", "网络", "最短路", "最大流", "选址", "空间回归"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["model", "validate"],
+        "data_structure": ["network", "spatial"],
+        "response_support": ["mixed"],
+        "task_goal": ["optimization", "prediction", "explanation"],
+        "risk": ["dependence", "formula"]
+      },
+      "resource_stages": ["model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["data", "model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "09_图论网络与空间模型.md",
+          "reason": "提供图网络模型、空间依赖、权重矩阵和空间验证基础。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "05_优化模型.md",
+          "reason": "路径、流、匹配或选址进入优化时追加。"
+        },
+        {
+          "path": "25_优化建模进阶.md",
+          "reason": "需要严谨优化证据时追加。"
+        },
+        {
+          "path": "08_微分方程与机理模型.md",
+          "reason": "网络传播具有机理动力学时追加。"
+        },
+        {
+          "path": "35_回归模型选择与方法总览.md",
+          "reason": "任务是空间回归时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "simulation",
+      "label": "仿真",
+      "description": "蒙特卡洛、离散事件、Agent 和系统动力学仿真。",
+      "signals": ["蒙特卡洛", "离散事件", "Agent", "系统动力学", "仿真"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["model", "validate"],
+        "data_structure": ["simulation"],
+        "response_support": ["state_trajectory", "decision", "mixed"],
+        "task_goal": ["simulation"],
+        "risk": ["formula", "implementation"]
+      },
+      "resource_stages": ["model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "10_仿真模型.md",
+          "reason": "建立仿真对象、事件、状态、随机输入、验证和实验设计。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "07_概率统计与随机模型.md",
+          "reason": "需要随机过程或输入分布时追加。"
+        },
+        {
+          "path": "25_优化建模进阶.md",
+          "reason": "涉及仿真优化时追加。"
+        },
+        {
+          "path": "15_代码与实验规范.md",
+          "reason": "进入实现阶段时由阶段门禁升级为必读。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "causal_inference",
+      "label": "因果推断与实验设计",
+      "description": "RCT、DAG、DID、RDD、IV、匹配、中介和因果效应估计。",
+      "signals": ["因果", "DID", "RDD", "IV", "匹配", "实验设计"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["analyze", "model", "validate"],
+        "data_structure": ["cross_sectional", "panel", "time_series"],
+        "response_support": ["mixed"],
+        "task_goal": ["causal"],
+        "risk": ["causal_identification", "dependence", "formula"]
+      },
+      "resource_stages": ["model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["data", "model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "17_因果推断与实验设计.md",
+          "reason": "先定义 estimand、识别假设、设计和反事实，再选择估计器。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "35_回归模型选择与方法总览.md",
+          "reason": "使用回归估计器时追加。"
+        },
+        {
+          "path": "29_线性模型与广义线性模型严谨方法卡.md",
+          "reason": "使用线性/GLM 估计因果效应时追加。"
+        },
+        {
+          "path": "07_概率统计与随机模型.md",
+          "reason": "需要统计推断理论时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "game_behavior",
+      "label": "博弈与行为决策",
+      "description": "静态/动态博弈、演化博弈、机制与风险行为决策。",
+      "signals": ["博弈", "纳什均衡", "演化博弈", "机制设计", "行为决策"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["model", "validate"],
+        "data_structure": ["mixed"],
+        "response_support": ["decision", "state_trajectory"],
+        "task_goal": ["optimization", "simulation", "explanation"],
+        "risk": ["formula", "optimization_claim"]
+      },
+      "resource_stages": ["model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "18_博弈论与行为决策.md",
+          "reason": "建立参与者、策略、信息、收益、均衡和行为假设。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "05_优化模型.md",
+          "reason": "均衡或机制需要优化求解时追加。"
+        },
+        {
+          "path": "25_优化建模进阶.md",
+          "reason": "需要多目标、风险或算法审计时追加。"
+        },
+        {
+          "path": "10_仿真模型.md",
+          "reason": "需要演化或 Agent 仿真时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "numerical_computation",
+      "label": "插值、拟合与数值计算",
+      "description": "插值、求根、数值积分、数值线性代数和非线性拟合。",
+      "signals": ["插值", "拟合", "求根", "数值积分", "数值线性代数"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["explain", "model", "validate"],
+        "data_structure": ["mixed"],
+        "response_support": ["continuous", "state_trajectory"],
+        "task_goal": ["inference", "simulation"],
+        "risk": ["formula", "implementation"]
+      },
+      "resource_stages": ["model_selection", "validation_design", "implementation", "validation_audit"],
+      "default_stages": ["model_selection", "validation_design"],
+      "deferred_stages": ["implementation", "validation_audit", "delivery"],
+      "required": [
+        {
+          "path": "16_插值拟合与数值计算.md",
+          "reason": "核验数值方法、误差、稳定性、收敛和边界。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "19_数学基础与统计理论补充.md",
+          "reason": "需要矩阵病态、凸性或理论条件时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "paper_delivery",
+      "label": "建模论文与正式交付",
+      "description": "撰写、检查或提交数学建模论文、报告和支撑材料。",
+      "signals": ["论文写作", "建模论文", "摘要", "提交检查", "支撑材料"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["deliver"],
+        "data_structure": ["none", "mixed"],
+        "response_support": ["none"],
+        "task_goal": ["delivery"],
+        "risk": ["delivery", "dynamic_fact"]
+      },
+      "resource_stages": ["delivery", "code_delivery"],
+      "default_stages": ["delivery"],
+      "deferred_stages": ["code_delivery"],
+      "required": [],
+      "optional": [],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "knowledge_maintenance",
+      "label": "知识库维护",
+      "description": "新增、修订、迁移或审计知识库内容与工具。",
+      "signals": ["知识库维护", "更新知识库", "修改路由", "来源台账", "维护规范"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["maintain"],
+        "data_structure": ["none"],
+        "response_support": ["none"],
+        "task_goal": ["maintenance"],
+        "risk": ["external_evidence", "implementation"]
+      },
+      "resource_stages": ["any"],
+      "default_stages": [],
+      "deferred_stages": [],
+      "required": [
+        {
+          "path": "00A_证据与质量门禁.md",
+          "reason": "知识库维护涉及外部事实、公式、来源或版本时，必须执行完整证据准入与冲突门禁。"
+        },
+        {
+          "path": "00C_知识条目与证据维护规范.md",
+          "reason": "知识库写入前必须遵守条目、证据、版本和迁移规范。"
+        },
+        {
+          "path": "CHANGELOG.md",
+          "reason": "知识库内容变化后必须记录日期、原因、证据和影响范围。"
+        },
+        {
+          "path": "tools/validate_library.ps1",
+          "reason": "修改完成前必须运行全库机械验证并读取完整输出。"
+        }
+      ],
+      "optional": [],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "competition_cases",
+      "label": "竞赛优秀论文案例对照",
+      "description": "仅在明确需要国赛或美赛优秀论文的模型链与表达案例时读取。",
+      "signals": ["国赛优秀论文案例", "美赛特等奖案例", "获奖论文对照"],
+      "conditional": true,
+      "dimensions": {
+        "intent": ["analyze"],
+        "data_structure": ["none", "mixed"],
+        "response_support": ["none"],
+        "task_goal": ["explanation"],
+        "risk": ["external_evidence"]
+      },
+      "resource_stages": ["any"],
+      "default_stages": [],
+      "deferred_stages": [],
+      "required": [
+        {
+          "path": "00A_证据与质量门禁.md",
+          "reason": "竞赛论文与奖项案例必须先执行身份、全文真实性、方法正确性、代码和冲突门禁。"
+        },
+        {
+          "path": "20_国赛优秀论文方法论.md",
+          "reason": "明确请求国赛优秀论文案例对照。"
+        },
+        {
+          "path": "21_美赛特等奖论文方法论.md",
+          "reason": "明确请求美赛特等奖案例对照。"
+        }
+      ],
+      "optional": [],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "expectorpatro_audit",
+      "label": "Expectorpatro 网站线索审计",
+      "description": "仅在明确使用、复核或纠正 Expectorpatro 网站内容时读取。",
+      "signals": ["Expectorpatro", "expectorpatro.github.io", "网站知识复核"],
+      "conditional": true,
+      "dimensions": {
+        "intent": ["audit_sources"],
+        "data_structure": ["none"],
+        "response_support": ["none"],
+        "task_goal": ["source_audit"],
+        "risk": ["external_evidence", "dynamic_fact"]
+      },
+      "resource_stages": ["any"],
+      "default_stages": [],
+      "deferred_stages": [],
+      "required": [
+        {
+          "path": "00A_证据与质量门禁.md",
+          "reason": "第三方网站内容只能作为线索，进入知识库前必须执行来源等级、公式和冲突门禁。"
+        },
+        {
+          "path": "30_Expectorpatro全站知识映射与使用边界.md",
+          "reason": "明确使用或审计该网站线索，需要读取其版本、错误和适用边界。"
+        }
+      ],
+      "optional": [],
+      "deferred": [],
+      "forbidden": []
+    },
+    {
+      "id": "evidence_trace",
+      "label": "来源追溯与复现",
+      "description": "仅在精确核验来源、动态事实、奖项身份或复现实验时进入来源区。",
+      "signals": ["核验来源", "追溯原文", "复现实验", "核验奖项", "动态事实"],
+      "conditional": true,
+      "dimensions": {
+        "intent": ["audit_sources"],
+        "data_structure": ["none"],
+        "response_support": ["none"],
+        "task_goal": ["source_audit"],
+        "risk": ["external_evidence", "dynamic_fact"]
+      },
+      "resource_stages": ["any"],
+      "default_stages": [],
+      "deferred_stages": [],
+      "required": [
+        {
+          "path": "00A_证据与质量门禁.md",
+          "reason": "来源追溯、动态事实、奖项核验和复现必须执行完整证据与第三方准入门禁。"
+        },
+        {
+          "path": "sources/README.md",
+          "reason": "进入来源区前先读取索引与边界，随后只读取与当前主张对应的精确文件。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "sources/",
+          "reason": "只按来源 ID 或精确路径读取所需文件，禁止整目录加载。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "date": "2026-08-09",
+  "python_dependency": "numpy==2.4.6",
+  "source_commit": "df67be9e166221776f96883a5f2cd42df2a73f49",
+  "source_sha256": "2981D7EC4A2F598A2B4DE0798AE1423821FF17228479386454B7B6346BD04577",
+  "results": {
+    "softmax_max_sum_error": 1.1102230246251565e-16,
+    "softmax_max_shift_error": 0.0,
+    "mlp_initial_loss": 0.7102990823071446,
+    "mlp_gradient_max_abs_error": 9.912698439862311e-11,
+    "mlp_gradient_relative_error": 1.4969864783078907e-10,
+    "gru_prose_value": 0.30000000000000004,
+    "gru_algorithm_17_8_value": -0.30000000000000004,
+    "cross_correlation_output": [[-4.0, -4.0], [-4.0, -4.0]],
+    "kernel_flipped_convolution_output": [[4.0, 4.0], [4.0, 4.0]],
+    "conv_output_size_cases": 4,
+    "clipped_gradient": [1.2000000000000002, 1.6],
+    "lstm_cell_after_20_steps": 19.999999567157737,
+    "lstm_hidden_after_20_steps": 0.9999999979388463
+  },
+  "claim_boundary": "The checks verify formulas and deterministic implementation only; they do not support any real-data performance claim."
+}

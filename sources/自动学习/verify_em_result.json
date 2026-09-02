@@ -1,0 +1,27 @@
+{
+  "scope": "deterministic formula/code checks; not an empirical benchmark",
+  "iterations": 4,
+  "initial_loglik": -15.183616475245667,
+  "final_loglik": -6.020232428626492,
+  "minimum_loglik_increment": 0.0,
+  "max_responsibility_row_sum_error": 2.220446049250313e-16,
+  "final_weights": [0.5, 0.5],
+  "final_means": [-2.766666666666667, 2.3666666666666667],
+  "final_variances": [0.10888888888888897, 0.10888888888888885],
+  "arbitrary_q_identity_error": 1.3589129821411916e-13,
+  "posterior_kl": 0.0,
+  "label_swap_loglik_error": 0.0,
+  "degeneracy_scales": [0.1, 0.01, 0.001],
+  "degeneracy_loglik": [-4.982267435617079, -3.007229013638742, -0.7441709007886175],
+  "checks": {
+    "responsibilities_sum_to_one": true,
+    "observed_loglik_nondecreasing": true,
+    "elbo_identity_arbitrary_q": true,
+    "posterior_makes_elbo_tight": true,
+    "label_switching_preserves_likelihood": true,
+    "smaller_variance_can_raise_gmm_likelihood_without_bound": true,
+    "weights_are_normalized": true,
+    "variances_are_positive_in_this_example": true
+  },
+  "all_checks_passed": true
+}

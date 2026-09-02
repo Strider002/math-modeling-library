@@ -1,0 +1,544 @@
+{
+  "schema_version": "1.0.0",
+  "semantics": {
+    "must": "必须出现在路由结果 required 中。",
+    "must_not": "不得出现在当前加载集合 required 或 optional 中；可以作为 forbidden 或 deferred 提示。",
+    "required_gates": "必须出现在 required 中的永久或阶段门禁。"
+  },
+  "cases": [
+    {
+      "id": "python_debug_no_trigger",
+      "description": "普通 Python 报错排查，不涉及模型、数据分析结果或建模知识库维护。",
+      "trigger": false,
+      "route_ids": [],
+      "stages": [],
+      "must": [],
+      "must_not": [
+        "00Q_永久质量核心.md",
+        "02_数据处理与探索.md",
+        "35_回归模型选择与方法总览.md"
+      ],
+      "required_gates": []
+    },
+    {
+      "id": "data_eda",
+      "description": "对附件表格做数据审计、缺失统计和探索性分析。",
+      "trigger": true,
+      "route_ids": ["data_eda"],
+      "stages": ["data"],
+      "must": ["02_数据处理与探索.md"],
+      "must_not": [
+        "20_国赛优秀论文方法论.md",
+        "21_美赛特等奖论文方法论.md",
+        "30_Expectorpatro全站知识映射与使用边界.md",
+        "sources/"
+      ],
+      "required_gates": [
+        "00Q_永久质量核心.md",
+        "00D_数据阶段门禁.md"
+      ]
+    },
+    {
+      "id": "evaluation_model",
+      "description": "建立指标体系并完成综合评价与排序。",
+      "trigger": true,
+      "route_ids": ["evaluation_decision"],
+      "stages": ["data", "model_selection", "validation_design"],
+      "must": ["03_评价与决策模型.md"],
+      "must_not": [
+        "20_国赛优秀论文方法论.md",
+        "21_美赛特等奖论文方法论.md",
+        "30_Expectorpatro全站知识映射与使用边界.md",
+        "sources/"
+      ],
+      "required_gates": [
+        "00Q_永久质量核心.md",
+        "00D_数据阶段门禁.md",
+        "00E_选模与验证设计门禁.md"
+      ]
+    },
+    {
+      "id": "ordinary_regression",
+      "description": "连续响应的普通回归选模，先筛选二至五个候选。",
+      "trigger": true,
+      "route_ids": ["regression_general"],
+      "stages": ["data", "model_selection", "validation_design"],
+      "must": ["35_回归模型选择与方法总览.md"],
+      "must_not": [
+        "20_国赛优秀论文方法论.md",
+        "21_美赛特等奖论文方法论.md",
+        "30_Expectorpatro全站知识映射与使用边界.md",
+        "sources/"
+      ],
+      "required_gates": [
+        "00Q_永久质量核心.md",
+        "00D_数据阶段门禁.md",
+        "00E_选模与验证设计门禁.md"
+      ]
+    },
+    {
+      "id": "count_panel_regression",
+      "description": "计数响应的面板数据回归，需要检查过度离散和组内依赖。",
+      "trigger": true,
+      "route_ids": ["regression_count_panel"],
+      "stages": ["data", "model_selection", "validation_design"],
+      "must": [
+        "35_回归模型选择与方法总览.md",
+        "35A_回归模型完整方法索引.md",
+        "29_线性模型与广义线性模型严谨方法卡.md"
+      ],
+      "must_not": [
+        "20_国赛优秀论文方法论.md",
+        "21_美赛特等奖论文方法论.md",
+        "30_Expectorpatro全站知识映射与使用边界.md",
+        "sources/"
+      ],
+      "required_gates": [
+        "00Q_永久质量核心.md",
+        "00D_数据阶段门禁.md",
+        "00E_选模与验证设计门禁.md"
+      ]
+    },
+    {
+      "id": "time_series_forecast",
+      "description": "按时间顺序预测需求并设计滚动回测。",
+      "trigger": true,
+      "route_ids": ["time_forecasting"],
+      "stages": ["data", "model_selection", "validation_design"],
+      "must": [
+        "04_预测与时间序列.md",
+        "23_预测建模进阶.md"
+      ],
+      "must_not": [
+        "20_国赛优秀论文方法论.md",
+        "21_美赛特等奖论文方法论.md",
+        "30_Expectorpatro全站知识映射与使用边界.md",
+        "sources/"
+      ],
+      "required_gates": [
+        "00Q_永久质量核心.md",
+        "00D_数据阶段门禁.md",
+        "00E_选模与验证设计门禁.md"
+      ]
+    },
+    {
+      "id": "forecast_to_optimization",
+      "description": "需求预测进入库存优化，并在结论前传播不确定性。",
+      "trigger": true,
+      "route_ids": ["prediction_optimization"],
+      "stages": ["data", "model_selection", "validation_design", "validation_audit"],
+      "must": [
+        "02_数据处理与探索.md",
+        "04_预测与时间序列.md",
+        "23_预测建模进阶.md",
+        "05_优化模型.md",
+        "25_优化建模进阶.md"
+      ],
+      "must_not": [
+        "20_国赛优秀论文方法论.md",
+        "21_美赛特等奖论文方法论.md",
+        "30_Expectorpatro全站知识映射与使用边界.md",
+        "sources/"
+      ],
+      "required_gates": [
+        "00Q_永久质量核心.md",
+        "00D_数据阶段门禁.md",
+        "00E_选模与验证设计门禁.md",
+        "11_验证敏感性与不确定性.md"
+      ]
+    },
+    {
+      "id": "clustering_analysis",
+      "description": "无监督分群并检查簇数、稳定性和外部解释。",
+      "trigger": true,
+      "route_ids": ["clustering"],
+      "stages": ["data", "model_selection", "validation_design"],
+      "must": [
+        "06_分类聚类与机器学习.md",
+        "22_数据分析与数据挖掘进阶.md",
+        "26_聚类分析严谨方法卡.md"
+      ],
+      "must_not": [
+        "20_国赛优秀论文方法论.md",
+        "21_美赛特等奖论文方法论.md",
+        "30_Expectorpatro全站知识映射与使用边界.md",
+        "sources/"
+      ],
+      "required_gates": [
+        "00Q_永久质量核心.md",
+        "00D_数据阶段门禁.md",
+        "00E_选模与验证设计门禁.md"
+      ]
+    },
+    {
+      "id": "pca_model",
+      "description": "使用 PCA 降维或构建主成分综合评价。",
+      "trigger": true,
+      "route_ids": ["pca"],
+      "stages": ["data", "model_selection", "validation_design"],
+      "must": ["27_主成分分析严谨方法卡.md"],
+      "must_not": [
+        "20_国赛优秀论文方法论.md",
+        "21_美赛特等奖论文方法论.md",
+        "30_Expectorpatro全站知识映射与使用边界.md",
+        "sources/"
+      ],
+      "required_gates": [
+        "00Q_永久质量核心.md",
+        "00D_数据阶段门禁.md",
+        "00E_选模与验证设计门禁.md"
+      ]
+    },
+    {
+      "id": "tree_ensemble_implementation",
+      "description": "实现并验证随机森林或梯度提升树。",
+      "trigger": true,
+      "route_ids": ["tree_ensemble"],
+      "stages": ["data", "model_selection", "validation_design", "implementation", "validation_audit"],
+      "must": [
+        "31_树模型与集成学习严谨方法卡.md",
+        "24_机器学习评审标准.md"
+      ],
+      "must_not": [
+        "20_国赛优秀论文方法论.md",
+        "21_美赛特等奖论文方法论.md",
+        "30_Expectorpatro全站知识映射与使用边界.md",
+        "sources/"
+      ],
+      "required_gates": [
+        "00Q_永久质量核心.md",
+        "00D_数据阶段门禁.md",
+        "00E_选模与验证设计门禁.md",
+        "15_代码与实验规范.md",
+        "11_验证敏感性与不确定性.md"
+      ]
+    },
+    {
+      "id": "neural_network_implementation",
+      "description": "实现神经网络并检查输出—损失契约和训练外验证。",
+      "trigger": true,
+      "route_ids": ["neural_network"],
+      "stages": ["data", "model_selection", "validation_design", "implementation", "validation_audit"],
+      "must": [
+        "32_神经网络严谨方法卡.md",
+        "24_机器学习评审标准.md"
+      ],
+      "must_not": [
+        "20_国赛优秀论文方法论.md",
+        "21_美赛特等奖论文方法论.md",
+        "30_Expectorpatro全站知识映射与使用边界.md",
+        "sources/"
+      ],
+      "required_gates": [
+        "00Q_永久质量核心.md",
+        "00D_数据阶段门禁.md",
+        "00E_选模与验证设计门禁.md",
+        "15_代码与实验规范.md",
+        "11_验证敏感性与不确定性.md"
+      ]
+    },
+    {
+      "id": "em_latent_model",
+      "description": "EM、GMM 或不完整数据极大似然建模。",
+      "trigger": true,
+      "route_ids": ["em_latent"],
+      "stages": ["model_selection", "validation_design"],
+      "must": ["33_EM算法与潜变量模型严谨方法卡.md"],
+      "must_not": [
+        "20_国赛优秀论文方法论.md",
+        "21_美赛特等奖论文方法论.md",
+        "30_Expectorpatro全站知识映射与使用边界.md",
+        "sources/"
+      ],
+      "required_gates": [
+        "00Q_永久质量核心.md",
+        "00E_选模与验证设计门禁.md"
+      ]
+    },
+    {
+      "id": "cumcm_c_full_pipeline",
+      "description": "国赛 C 题附件数据组合建模，最终提交含代码支撑材料。",
+      "trigger": true,
+      "route_ids": ["cumcm_c_pipeline"],
+      "stages": ["data", "model_selection", "validation_design", "validation_audit", "code_delivery"],
+      "must": [
+        "34_国赛C题数据驱动建模方法卡.md",
+        "02_数据处理与探索.md",
+        "22_数据分析与数据挖掘进阶.md"
+      ],
+      "must_not": [
+        "20_国赛优秀论文方法论.md",
+        "21_美赛特等奖论文方法论.md",
+        "30_Expectorpatro全站知识映射与使用边界.md",
+        "sources/"
+      ],
+      "required_gates": [
+        "00Q_永久质量核心.md",
+        "00D_数据阶段门禁.md",
+        "00E_选模与验证设计门禁.md",
+        "11_验证敏感性与不确定性.md",
+        "12_论文写作与可视化.md",
+        "13_竞赛工作流与检查清单.md",
+        "15_代码与实验规范.md"
+      ]
+    },
+    {
+      "id": "spatial_regression",
+      "description": "连续响应具有空间相关，需要普通回归和空间模型共同路由。",
+      "trigger": true,
+      "route_ids": ["regression_general", "network_spatial"],
+      "stages": ["data", "model_selection", "validation_design"],
+      "must": [
+        "35_回归模型选择与方法总览.md",
+        "09_图论网络与空间模型.md"
+      ],
+      "must_not": [
+        "20_国赛优秀论文方法论.md",
+        "21_美赛特等奖论文方法论.md",
+        "30_Expectorpatro全站知识映射与使用边界.md",
+        "sources/"
+      ],
+      "required_gates": [
+        "00Q_永久质量核心.md",
+        "00D_数据阶段门禁.md",
+        "00E_选模与验证设计门禁.md"
+      ]
+    },
+    {
+      "id": "survival_censoring",
+      "description": "时间到事件含右删失，需要区分 Cox、AFT、删失和截断。",
+      "trigger": true,
+      "route_ids": ["regression_survival_censoring"],
+      "stages": ["data", "model_selection", "validation_design"],
+      "must": [
+        "35_回归模型选择与方法总览.md",
+        "35A_回归模型完整方法索引.md",
+        "07_概率统计与随机模型.md"
+      ],
+      "must_not": [
+        "20_国赛优秀论文方法论.md",
+        "21_美赛特等奖论文方法论.md",
+        "30_Expectorpatro全站知识映射与使用边界.md",
+        "sources/"
+      ],
+      "required_gates": [
+        "00Q_永久质量核心.md",
+        "00D_数据阶段门禁.md",
+        "00E_选模与验证设计门禁.md"
+      ]
+    },
+    {
+      "id": "paper_delivery",
+      "description": "撰写并检查数学建模论文，不默认读取代码规范。",
+      "trigger": true,
+      "route_ids": ["paper_delivery"],
+      "stages": ["delivery"],
+      "must": [
+        "12_论文写作与可视化.md",
+        "13_竞赛工作流与检查清单.md"
+      ],
+      "must_not": [
+        "20_国赛优秀论文方法论.md",
+        "21_美赛特等奖论文方法论.md",
+        "30_Expectorpatro全站知识映射与使用边界.md",
+        "sources/"
+      ],
+      "required_gates": [
+        "00Q_永久质量核心.md",
+        "12_论文写作与可视化.md",
+        "13_竞赛工作流与检查清单.md"
+      ]
+    },
+    {
+      "id": "knowledge_base_maintenance",
+      "description": "修改知识库结构、来源或路由，必须读取维护规范并运行验证。",
+      "trigger": true,
+      "route_ids": ["knowledge_maintenance"],
+      "stages": [],
+      "must": [
+        "00A_证据与质量门禁.md",
+        "00C_知识条目与证据维护规范.md",
+        "CHANGELOG.md",
+        "tools/validate_library.ps1"
+      ],
+      "must_not": [
+        "20_国赛优秀论文方法论.md",
+        "21_美赛特等奖论文方法论.md",
+        "30_Expectorpatro全站知识映射与使用边界.md",
+        "sources/"
+      ],
+      "required_gates": ["00Q_永久质量核心.md"]
+    },
+    {
+      "id": "regression_data_stage_minimal",
+      "description": "回归任务仍处于数据阶段，只加载永久与数据门禁，不提前加载回归选择或完整索引。",
+      "trigger": true,
+      "route_ids": ["regression_general"],
+      "stages": ["data"],
+      "must": [],
+      "must_not": [
+        "35_回归模型选择与方法总览.md",
+        "35A_回归模型完整方法索引.md",
+        "20_国赛优秀论文方法论.md",
+        "21_美赛特等奖论文方法论.md",
+        "30_Expectorpatro全站知识映射与使用边界.md",
+        "sources/"
+      ],
+      "required_gates": [
+        "00Q_永久质量核心.md",
+        "00D_数据阶段门禁.md"
+      ]
+    },
+    {
+      "id": "regression_delivery_stage_minimal",
+      "description": "回归任务进入纯论文交付阶段，不重新激活回归方法表。",
+      "trigger": true,
+      "route_ids": ["regression_general"],
+      "stages": ["delivery"],
+      "must": [
+        "12_论文写作与可视化.md",
+        "13_竞赛工作流与检查清单.md"
+      ],
+      "must_not": [
+        "35_回归模型选择与方法总览.md",
+        "35A_回归模型完整方法索引.md",
+        "20_国赛优秀论文方法论.md",
+        "21_美赛特等奖论文方法论.md",
+        "30_Expectorpatro全站知识映射与使用边界.md",
+        "sources/"
+      ],
+      "required_gates": [
+        "00Q_永久质量核心.md",
+        "12_论文写作与可视化.md",
+        "13_竞赛工作流与检查清单.md"
+      ]
+    },
+    {
+      "id": "tree_regression_combo",
+      "description": "回归预测候选包含树集成，必须组合回归、树和机器学习评审路由。",
+      "trigger": true,
+      "route_ids": ["regression_general", "tree_ensemble"],
+      "stages": ["model_selection", "validation_design"],
+      "must": [
+        "35_回归模型选择与方法总览.md",
+        "31_树模型与集成学习严谨方法卡.md",
+        "24_机器学习评审标准.md"
+      ],
+      "must_not": [
+        "20_国赛优秀论文方法论.md",
+        "21_美赛特等奖论文方法论.md",
+        "30_Expectorpatro全站知识映射与使用边界.md",
+        "sources/"
+      ],
+      "required_gates": [
+        "00Q_永久质量核心.md",
+        "00E_选模与验证设计门禁.md"
+      ]
+    },
+    {
+      "id": "neural_regression_combo",
+      "description": "回归预测候选包含神经网络，必须组合回归、神经网络和机器学习评审路由。",
+      "trigger": true,
+      "route_ids": ["regression_general", "neural_network"],
+      "stages": ["model_selection", "validation_design"],
+      "must": [
+        "35_回归模型选择与方法总览.md",
+        "32_神经网络严谨方法卡.md",
+        "24_机器学习评审标准.md"
+      ],
+      "must_not": [
+        "20_国赛优秀论文方法论.md",
+        "21_美赛特等奖论文方法论.md",
+        "30_Expectorpatro全站知识映射与使用边界.md",
+        "sources/"
+      ],
+      "required_gates": [
+        "00Q_永久质量核心.md",
+        "00E_选模与验证设计门禁.md"
+      ]
+    },
+    {
+      "id": "causal_regression_combo",
+      "description": "因果任务使用回归估计器，识别设计与回归选模必须共同加载。",
+      "trigger": true,
+      "route_ids": ["causal_inference", "regression_general"],
+      "stages": ["model_selection", "validation_design"],
+      "must": [
+        "17_因果推断与实验设计.md",
+        "35_回归模型选择与方法总览.md"
+      ],
+      "must_not": [
+        "20_国赛优秀论文方法论.md",
+        "21_美赛特等奖论文方法论.md",
+        "30_Expectorpatro全站知识映射与使用边界.md",
+        "sources/"
+      ],
+      "required_gates": [
+        "00Q_永久质量核心.md",
+        "00E_选模与验证设计门禁.md"
+      ]
+    },
+    {
+      "id": "dynamic_regression_combo",
+      "description": "动态回归或带外生变量时序回归，组合回归与时间预测路由。",
+      "trigger": true,
+      "route_ids": ["regression_general", "time_forecasting"],
+      "stages": ["model_selection", "validation_design"],
+      "must": [
+        "35_回归模型选择与方法总览.md",
+        "04_预测与时间序列.md",
+        "23_预测建模进阶.md"
+      ],
+      "must_not": [
+        "20_国赛优秀论文方法论.md",
+        "21_美赛特等奖论文方法论.md",
+        "30_Expectorpatro全站知识映射与使用边界.md",
+        "sources/"
+      ],
+      "required_gates": [
+        "00Q_永久质量核心.md",
+        "00E_选模与验证设计门禁.md"
+      ]
+    },
+    {
+      "id": "general_panel_route",
+      "description": "一般连续或混合响应面板/纵向/层级回归，不误用计数专用路由。",
+      "trigger": true,
+      "route_ids": ["regression_panel_hierarchical"],
+      "stages": ["model_selection", "validation_design"],
+      "must": [
+        "35_回归模型选择与方法总览.md",
+        "35A_回归模型完整方法索引.md"
+      ],
+      "must_not": [
+        "20_国赛优秀论文方法论.md",
+        "21_美赛特等奖论文方法论.md",
+        "30_Expectorpatro全站知识映射与使用边界.md",
+        "sources/"
+      ],
+      "required_gates": [
+        "00Q_永久质量核心.md",
+        "00E_选模与验证设计门禁.md"
+      ]
+    },
+    {
+      "id": "causal_model",
+      "description": "估计干预效应，先审查识别策略而非按拟合优度选回归。",
+      "trigger": true,
+      "route_ids": ["causal_inference"],
+      "stages": ["data", "model_selection", "validation_design"],
+      "must": ["17_因果推断与实验设计.md"],
+      "must_not": [
+        "20_国赛优秀论文方法论.md",
+        "21_美赛特等奖论文方法论.md",
+        "30_Expectorpatro全站知识映射与使用边界.md",
+        "sources/"
+      ],
+      "required_gates": [
+        "00Q_永久质量核心.md",
+        "00D_数据阶段门禁.md",
+        "00E_选模与验证设计门禁.md"
+      ]
+    }
+  ]
+}

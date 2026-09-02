@@ -1,0 +1,32 @@
+# Third-party or externally sourced materials kept only in the local evidence store.
+/sources/原文/
+/sources/国赛/
+/sources/美赛/
+/sources/GitHub方法/
+
+# Binary source artifacts are not distributed through Git.
+/sources/**/*.pdf
+/sources/**/*.jpg
+/sources/**/*.jpeg
+/sources/**/*.png
+/sources/**/*.zip
+/sources/**/*.rar
+/sources/**/*.7z
+/sources/**/*.xlsx
+/sources/**/*.xls
+/sources/**/*.html
+/sources/**/*.htm
+
+# Local environments, caches, generated output, and editor files.
+**/__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
