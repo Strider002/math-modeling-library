@@ -1,0 +1,7 @@
+interface:
+  display_name: "严谨数学建模知识库"
+  short_description: "按任务与阶段路由数学建模方法，并执行证据和验证门禁"
+  default_prompt: "Use $math-modeling-library to analyze this modeling task with the smallest applicable knowledge route and required validation gates."
+
+policy:
+  allow_implicit_invocation: true

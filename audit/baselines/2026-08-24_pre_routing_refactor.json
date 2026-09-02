@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "captured_on": "2026-08-24",
+  "purpose": "Baseline before the deterministic-routing and staged-gate refactor.",
+  "repository": {
+    "path": "D:\\数学建模\\library",
+    "git_repository": false,
+    "file_count": 272,
+    "total_bytes": 119509754,
+    "aggregate_sha256": "922F099E2F17A0EEC3747E96A96C5A24793197E2A531DDEBA4EA105B1C1704E3",
+    "aggregate_definition": "SHA-256 of UTF-8 lines HASH<TAB>relative/path, sorted by full path and joined with LF."
+  },
+  "tracked_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "82C884BC160E30E6E8F38020D9339B6B94289DA9D01330D32592CA14E18FF293"
+    },
+    {
+      "path": "README.md",
+      "sha256": "EF1331F5D6F5F518D5A7DFBA1144F912EB6B3B13A25772F6E72D961080937704"
+    },
+    {
+      "path": "00_建模前必读.md",
+      "sha256": "D5C061A5C9AFB4547B127928619AEBD3327E864BAB11F40A954CB0FAB4BDAC27"
+    },
+    {
+      "path": "00A_证据与质量门禁.md",
+      "sha256": "49FCBCD4264A66D35AD15C1E374A634B457E80A755FC2ABF422C7A52EACA384D"
+    },
+    {
+      "path": "00B_任务路由与最小读取集.md",
+      "sha256": "A637CDB43382D26A4149AA0BEBA18E61D9B432B6824BAB855640030159D272F4"
+    },
+    {
+      "path": "00C_知识条目与证据维护规范.md",
+      "sha256": "F0165E79C73E071C9B0E0D108D2F4D88CAFC6BCCA98B3C3F3273882D62D15E68"
+    },
+    {
+      "path": "11_验证敏感性与不确定性.md",
+      "sha256": "DF96BFFF04663C8E808EE2035C0D37107995F91B809C35549920F9363847BB7C"
+    },
+    {
+      "path": "35_回归模型选择与方法总览.md",
+      "sha256": "35B38CF1E0F7D457C719CFE2655732622DB0C0110DFF4E3540D7507F23F4167D"
+    },
+    {
+      "path": "tools/validate_library.ps1",
+      "sha256": "E2EA306679A489E83BFA2BC11FF255C540006EAB8DE4D1197613397B9E952519"
+    }
+  ],
+  "external_tracked_files": [
+    {
+      "path": "C:\\Users\\Strid\\.codex\\AGENTS.md",
+      "sha256": "259AC8C359F34D39BE6703917696F4196F488FD5237D6991A69727BC39587A72"
+    }
+  ],
+  "rollback_note": "This record is evidence of the pre-refactor state, not an automatic restore package. Restore only from a separately retained copy or a trusted backup matching these hashes."
+}
