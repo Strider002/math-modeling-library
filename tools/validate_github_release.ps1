@@ -67,6 +67,12 @@ $secretPatterns = @(
     '-----BEGIN [A-Z ]*PRIVATE KEY-----',
     '(?i)(api[_-]?key|access[_-]?token|client[_-]?secret)\s*[:=]\s*["''][^"'']{8,}["'']'
 )
+$privacyPatterns = @(
+    @{
+        Code = 'MULTI_PERSON_ATTACHMENT_PATH'
+        Pattern = '(?i)(?:[A-Z]:\\|/)[^`"\r\n]*[一-龥]{2,4}(?:[，,、][一-龥]{2,4}){2,}\.(?:pdf|docx?|xlsx?|pptx?)'
+    }
+)
 
 $tracked = @(& git -c core.quotePath=false -C $root ls-files)
 if ($LASTEXITCODE -ne 0) {
@@ -75,6 +81,7 @@ if ($LASTEXITCODE -ne 0) {
 
 $totalBytes = [int64]0
 $emailOccurrences = 0
+$privacyFindings = 0
 foreach ($relativePath in $tracked) {
     $normalized = $relativePath -replace '\\', '/'
     $fullPath = Join-Path $root ($normalized -replace '/', [IO.Path]::DirectorySeparatorChar)
@@ -110,6 +117,18 @@ foreach ($relativePath in $tracked) {
                 $errors.Add("POSSIBLE_SECRET path=$normalized pattern=$pattern")
             }
         }
+        foreach ($privacyPattern in $privacyPatterns) {
+            if ($content -match $privacyPattern.Pattern) {
+                $privacyFindings++
+                $publicReleaseReady = $false
+                $message = "POSSIBLE_PERSONAL_DATA path=$normalized type=$($privacyPattern.Code)"
+                if ($PublicRelease) {
+                    $errors.Add("$message public_release_blocked=true")
+                } else {
+                    $warnings.Add("$message review_before_public_release=true")
+                }
+            }
+        }
         $emailOccurrences += [regex]::Matches(
             $content,
             '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}'
@@ -138,6 +157,7 @@ $skillHash = if (Test-Path -LiteralPath $skillPath -PathType Leaf) {
 "TRACKED_FILES=$($tracked.Count)"
 "TRACKED_BYTES=$totalBytes"
 "SKILL_SHA256=$skillHash"
+"PRIVACY_FINDINGS=$privacyFindings"
 "PUBLIC_RELEASE_MODE=$([bool]$PublicRelease)"
 "PUBLIC_RELEASE_READY=$($publicReleaseReady -and $errors.Count -eq 0)"
 "WARNINGS=$($warnings.Count)"
