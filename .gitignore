@@ -1,21 +1,21 @@
 # Third-party or externally sourced materials kept only in the local evidence store.
-/sources/原文/
-/sources/国赛/
-/sources/美赛/
-/sources/GitHub方法/
+/来源资料/原文/
+/来源资料/国赛/
+/来源资料/美赛/
+/来源资料/GitHub方法/
 
 # Binary source artifacts are not distributed through Git.
-/sources/**/*.pdf
-/sources/**/*.jpg
-/sources/**/*.jpeg
-/sources/**/*.png
-/sources/**/*.zip
-/sources/**/*.rar
-/sources/**/*.7z
-/sources/**/*.xlsx
-/sources/**/*.xls
-/sources/**/*.html
-/sources/**/*.htm
+/来源资料/**/*.pdf
+/来源资料/**/*.jpg
+/来源资料/**/*.jpeg
+/来源资料/**/*.png
+/来源资料/**/*.zip
+/来源资料/**/*.rar
+/来源资料/**/*.7z
+/来源资料/**/*.xlsx
+/来源资料/**/*.xls
+/来源资料/**/*.html
+/来源资料/**/*.htm
 
 # Local environments, caches, generated output, and editor files.
 **/__pycache__/

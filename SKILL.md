@@ -50,27 +50,27 @@ When the user asks to build or deliver a complete project, use the repository to
 4. Audit the PDF with `tools\validate_submission.ps1`. Keep the private anonymity denylist outside the public repository.
 5. Build a local review bundle with `tools\build_submission.ps1` only after result verification and PDF validation pass. Follow current competition rules for the actual upload format.
 
-Use `benchmarks\manifest.json` only as a fixed evaluation specification. Its current `specification_only` status is not evidence that the Skill improves award outcomes.
+Use `基准评测\manifest.json` only as a fixed evaluation specification. Its current `specification_only` status is not evidence that the Skill improves award outcomes.
 
 ### Apply the CUMCM AI-use delivery gate
 
-For a CUMCM paper or support-material delivery, recheck the current official AI-use rule before packaging and read the CUMCM sections in `knowledge/foundations/12_论文写作与可视化.md` and `knowledge/foundations/13_竞赛工作流与检查清单.md`. Determine `NotUsed` or `Used` from the team's actual process; do not infer, conceal, or reconstruct a false history.
+For a CUMCM paper or support-material delivery, recheck the current official AI-use rule before packaging and read the CUMCM sections in `知识库/基础方法/12_论文写作与可视化.md` and `知识库/基础方法/13_竞赛工作流与检查清单.md`. Determine `NotUsed` or `Used` from the team's actual process; do not infer, conceal, or reconstruct a false history.
 
-For the 2026 trial rule, place the applicable official declaration before the references. If AI was used, require a support PDF named exactly `AI工具使用详情.pdf`, use `templates/AI工具使用详情模板.md` as a truthful drafting aid, and keep the team's manual review and verification evidence. Call `tools\validate_submission.ps1` with `-CumcmAiUse NotUsed`, or with `-CumcmAiUse Used -AiDetailsPath <path>` as applicable. The mechanical check does not prove the declaration is truthful or the human verification adequate.
+For the 2026 trial rule, place the applicable official declaration before the references. If AI was used, require a support PDF named exactly `AI工具使用详情.pdf`, use `模板/AI工具使用详情模板.md` as a truthful drafting aid, and keep the team's manual review and verification evidence. Call `tools\validate_submission.ps1` with `-CumcmAiUse NotUsed`, or with `-CumcmAiUse Used -AiDetailsPath <path>` as applicable. The mechanical check does not prove the declaration is truthful or the human verification adequate.
 
 ## Maintain the knowledge base
 
 Treat the library as read-only unless the user explicitly authorizes an update. Before any update, use route `knowledge_maintenance` and read all required resources. Preserve original evidence, update `CHANGELOG.md`, and run `tools\validate_library.ps1`. If routing or entry protocols change, also regenerate routing documentation and run the golden routing tests in the order required by `AGENTS.md`.
 
-Enter `sources\` only for an exact evidence trace, dynamic-fact check, or reproduction task. Award papers and third-party repositories are cases or leads, not automatic authority.
+Enter `来源资料\` only for an exact evidence trace, dynamic-fact check, or reproduction task. Award papers and third-party repositories are cases or leads, not automatic authority.
 
-For claims already migrated into `evidence\claims_registry.json`, preserve the claim ID, registered source locator, document location, and matching `` `source:...` `` marker. The registries are a validated subset, not a replacement for `sources\来源与证据台账.md`.
+For claims already migrated into `证据注册\claims_registry.json`, preserve the claim ID, registered source locator, document location, and matching `` `source:...` `` marker. The registries are a validated subset, not a replacement for `来源资料\来源与证据台账.md`.
 
 ### Learn from completed projects
 
 When the user explicitly asks to preserve a modeling retrospective, separate three layers:
 
-1. Put task-specific numbers, artifacts, failures, and unresolved issues in one dated retrospective based on `templates/建模复盘模板.md`.
+1. Put task-specific numbers, artifacts, failures, and unresolved issues in one dated retrospective based on `模板/建模复盘模板.md`.
 2. Promote only cross-task workflow lessons into the relevant library topic; do not turn one dataset's thresholds, model choice, or metric differences into universal guidance.
 3. Change this launcher only when invocation, routing, maintenance, or stopping behavior should change; do not copy the retrospective or method content into the skill.
 

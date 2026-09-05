@@ -76,10 +76,10 @@ $externalFileRefs = 0
 $externalRepoRefs = 0
 $tombstoneRefs = 0
 $portableLocalEvidencePrefixes = @(
-    'sources/原文/',
-    'sources/国赛/',
-    'sources/美赛/',
-    'sources/GitHub方法/'
+    '来源资料/原文/',
+    '来源资料/国赛/',
+    '来源资料/美赛/',
+    '来源资料/GitHub方法/'
 )
 
 foreach ($file in $markdownFiles) {
@@ -222,7 +222,7 @@ if (-not (Test-Path -LiteralPath $readmePath)) {
 }
 
 $sourceIds = @()
-$sourcesPath = Join-Path $root 'sources'
+$sourcesPath = Join-Path $root '来源资料'
 $ledgerCandidates = @()
 if (Test-Path -LiteralPath $sourcesPath) {
     $ledgerCandidates = @(Get-ChildItem -LiteralPath $sourcesPath -File -Filter '*.md' |
@@ -514,8 +514,8 @@ if (-not $SkipRoutingTests) {
     }
 }
 
-$sourceRegistryPath = Join-Path $root 'evidence\source_registry.json'
-$claimsRegistryPath = Join-Path $root 'evidence\claims_registry.json'
+$sourceRegistryPath = Join-Path $root '证据注册\source_registry.json'
+$claimsRegistryPath = Join-Path $root '证据注册\claims_registry.json'
 $evidenceRegistryStatus = 'NOT_CONFIGURED'
 if ((Test-Path -LiteralPath $sourceRegistryPath) -or (Test-Path -LiteralPath $claimsRegistryPath)) {
     $evidenceRegistryStatus = 'PARTIAL'

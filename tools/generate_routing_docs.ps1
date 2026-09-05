@@ -131,10 +131,10 @@ foreach ($stage in @(Get-PropertyArray -Object $manifest -Name 'stages')) {
 }
 $lines.Add('')
 $lines.Add('说明：普通 ' + (Format-Code 'delivery') + ' 必读 ' +
-    (Format-Code 'knowledge/foundations/12_论文写作与可视化.md') + ' 与 ' +
-    (Format-Code 'knowledge/foundations/13_竞赛工作流与检查清单.md') +
+    (Format-Code '知识库/基础方法/12_论文写作与可视化.md') + ' 与 ' +
+    (Format-Code '知识库/基础方法/13_竞赛工作流与检查清单.md') +
     '；含代码或支撑材料时改用 ' + (Format-Code 'code_delivery') +
-    '，同时强制读取 ' + (Format-Code 'knowledge/foundations/15_代码与实验规范.md') + '。')
+    '，同时强制读取 ' + (Format-Code '知识库/基础方法/15_代码与实验规范.md') + '。')
 $lines.Add('')
 $lines.Add('## 5. 默认任务路由')
 $lines.Add('')

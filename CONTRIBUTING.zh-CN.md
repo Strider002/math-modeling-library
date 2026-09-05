@@ -15,7 +15,7 @@
 
 从 `main` 创建短期分支：
 
-- `docs/<topic>`：文档；
+- `使用文档/<topic>`：文档；
 - `i18n/<topic>`：翻译；
 - `feature/<topic>`：新能力；
 - `fix/<topic>`：纠错；

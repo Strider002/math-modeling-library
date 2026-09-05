@@ -28,10 +28,10 @@ $requiredDistributionFiles = @(
     'SKILL.md',
     'agents/openai.yaml',
     'routing-manifest.yaml',
-    'evidence/source_registry.json',
-    'evidence/claims_registry.json',
-    'benchmarks/manifest.json',
-    'benchmarks/evaluation-rubric.json',
+    '证据注册/source_registry.json',
+    '证据注册/claims_registry.json',
+    '基准评测/manifest.json',
+    '基准评测/evaluation-rubric.json',
     'tools/new_modeling_project.ps1',
     'tools/modeling_stage.ps1',
     'tools/freeze_results.ps1',
@@ -59,10 +59,10 @@ if (-not $hasLicense) {
 }
 
 $blockedPrefixes = @(
-    'sources/原文/',
-    'sources/国赛/',
-    'sources/美赛/',
-    'sources/GitHub方法/'
+    '来源资料/原文/',
+    '来源资料/国赛/',
+    '来源资料/美赛/',
+    '来源资料/GitHub方法/'
 )
 $blockedSourceExtensions = @(
     '.pdf', '.jpg', '.jpeg', '.png', '.zip', '.rar', '.7z',
@@ -117,7 +117,7 @@ foreach ($relativePath in $tracked) {
     }
 
     $extension = $file.Extension.ToLowerInvariant()
-    if ($normalized.StartsWith('sources/', [System.StringComparison]::OrdinalIgnoreCase) -and
+    if ($normalized.StartsWith('来源资料/', [System.StringComparison]::OrdinalIgnoreCase) -and
         $extension -in $blockedSourceExtensions) {
         $errors.Add("BLOCKED_SOURCE_EXTENSION path=$normalized extension=$extension")
     }

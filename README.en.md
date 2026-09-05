@@ -29,7 +29,7 @@ Set-Location math-modeling-library
 ./tools/route_knowledge.ps1 -RouteId regression_general -Stage model_selection,validation_design
 ```
 
-To install the repository as a Codex Skill, clone it directly into the Codex skills directory or keep it elsewhere and create a directory junction. See the [installation guide](docs/installation.en.md).
+To install the repository as a Codex Skill, clone it directly into the Codex skills directory or keep it elsewhere and create a directory junction. See the [installation guide](使用文档/installation.en.md).
 
 After installation, invoke it explicitly with:
 
@@ -46,7 +46,7 @@ To initialize a full competition project:
 ./tools/modeling_stage.ps1 -ProjectRoot D:\work\case01 -Action Status
 ```
 
-See the [engineering workflow](docs/engineering-workflow.en.md) for result freezing, PDF checks, anonymity scanning, and review packaging.
+See the [engineering workflow](使用文档/engineering-workflow.en.md) for result freezing, PDF checks, anonymity scanning, and review packaging.
 
 ## How it works
 
@@ -62,21 +62,23 @@ Minimum required method cards and stage gates
 Baseline, out-of-training validation, sensitivity, and delivery audit
 ```
 
-The README is not a routing source. Chinese remains the canonical language for the maintained method cards. See the [architecture guide](docs/architecture.zh-CN.md) and [Chinese knowledge index](docs/INDEX.zh-CN.md) for the full structure.
+The README is not a routing source. Chinese remains the canonical language for the maintained method cards. See the [architecture guide](使用文档/architecture.zh-CN.md) and [Chinese knowledge index](使用文档/INDEX.zh-CN.md) for the full structure.
 
 ## Repository layout
 
 ```text
-knowledge/
-├─ foundations/   Core methods 01–19 and competition workflow
-├─ advanced/      Advanced standards and method cards 22–40
-└─ competition/   CUMCM and MCM/ICM award-paper case methodology
-templates/        Reusable digestion, retrospective, and AI-use templates
-retrospectives/   Dated task-specific retrospectives
-docs/             Installation, architecture, maintenance, and workflows
-evidence/         Structured bindings for migrated high-risk claims
-sources/          Source ledger and local evidence area
-tools/ + tests/   Routing, validation, delivery tools, and regression tests
+知识库/
+├─ 基础方法/       Core methods 01–19 and competition workflow
+├─ 进阶方法/       Advanced standards and method cards 22–40
+└─ 竞赛论文/       CUMCM and MCM/ICM award-paper case methodology
+模板/               Reusable digestion, retrospective, and AI-use templates
+复盘记录/           Dated task-specific retrospectives
+使用文档/           Installation, architecture, maintenance, and workflows
+质量审计/           Quality audit reports and historical baselines
+证据注册/           Structured bindings for migrated high-risk claims
+来源资料/           Source ledger and local evidence area
+基准评测/           Historical-problem evaluation specs and blind rubrics
+tools/ + tests/      Routing, validation, delivery tools, and regression tests
 ```
 
 The repository root is reserved for the Skill entry point, routing and quality gates, project metadata, licenses, and collaboration files.
@@ -94,12 +96,12 @@ The complete operational rules currently live in Chinese in [00Q_永久质量核
 
 ## Documentation
 
-- [Installation](docs/installation.en.md)
-- [Competition engineering workflow](docs/engineering-workflow.en.md)
-- [Chinese knowledge index](docs/INDEX.zh-CN.md)
-- [Architecture and single source of truth](docs/architecture.zh-CN.md)
-- [Maintenance and branch workflow](docs/maintenance.zh-CN.md)
-- [Source, copyright, and publication policy](docs/source-policy.zh-CN.md)
+- [Installation](使用文档/installation.en.md)
+- [Competition engineering workflow](使用文档/engineering-workflow.en.md)
+- [Chinese knowledge index](使用文档/INDEX.zh-CN.md)
+- [Architecture and single source of truth](使用文档/architecture.zh-CN.md)
+- [Maintenance and branch workflow](使用文档/maintenance.zh-CN.md)
+- [Source, copyright, and publication policy](使用文档/source-policy.zh-CN.md)
 - [Contributing](CONTRIBUTING.md) / [中文贡献指南](CONTRIBUTING.zh-CN.md)
 - [Security and privacy reporting](SECURITY.md)
 

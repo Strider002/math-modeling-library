@@ -15,7 +15,7 @@ Contributions are welcome when they improve traceability, correctness, reproduci
 
 Create a short-lived branch from `main`:
 
-- `docs/<topic>` for documentation;
+- `使用文档/<topic>` for documentation;
 - `i18n/<topic>` for translations;
 - `feature/<topic>` for new capability;
 - `fix/<topic>` for corrections;
