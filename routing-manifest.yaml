@@ -1468,6 +1468,41 @@
       "optional": [{"path":"02_数据处理与探索.md","reason":"存在表格元数据、标签联结或批次口径时追加。"}],
       "deferred": [],
       "forbidden": []
+    },
+    {
+      "id": "sensitivity_analysis",
+      "label": "敏感性分析与稳定性诊断",
+      "description": "局部或全局敏感性、不确定性传播、Bootstrap、算法与聚类稳定性以及结论翻转分析。",
+      "signals": ["敏感性分析", "灵敏度分析", "全局敏感性", "Sobol", "Bootstrap 稳定性", "算法稳定性", "聚类稳定性", "结论翻转"],
+      "conditional": false,
+      "dimensions": {
+        "intent": ["analyze", "validate"],
+        "data_structure": ["mixed", "none", "tabular"],
+        "response_support": ["mixed", "none"],
+        "task_goal": ["evaluation", "explanation", "inference", "prediction"],
+        "risk": ["dependence", "formula", "implementation"]
+      },
+      "resource_stages": ["validation_design", "implementation", "validation_audit"],
+      "default_stages": ["validation_audit"],
+      "deferred_stages": ["delivery"],
+      "required": [
+        {
+          "path": "40_敏感性分析与稳定性诊断方法卡.md",
+          "reason": "定义扰动对象、联合输入空间、依赖保持重采样、完整流水线复跑、结论翻转指标及停止边界。"
+        }
+      ],
+      "optional": [
+        {
+          "path": "26_聚类分析严谨方法卡.md",
+          "reason": "任务涉及聚类稳定性时追加，核对样本单位、距离、簇数和外部有效性。"
+        },
+        {
+          "path": "24_机器学习评审标准.md",
+          "reason": "任务涉及学习算法稳定性、训练外比较或调参时追加。"
+        }
+      ],
+      "deferred": [],
+      "forbidden": []
     }
   ]
 }

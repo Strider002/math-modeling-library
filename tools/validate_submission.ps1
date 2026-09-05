@@ -4,6 +4,8 @@ param(
     [ValidateSet('CUMCM', 'MCM-ICM', 'Generic')][string]$Profile = 'Generic',
     [string]$ControlNumber,
     [string]$DenyListPath,
+    [ValidateSet('Unspecified', 'NotUsed', 'Used')][string]$CumcmAiUse = 'Unspecified',
+    [string]$AiDetailsPath,
     [switch]$RequireTextExtraction
 )
 
@@ -29,6 +31,31 @@ if ($Profile -eq 'MCM-ICM') {
         $errors.Add('CONTROL_NUMBER required_for_mcm_icm')
     } elseif ($item.BaseName -ne $ControlNumber) {
         $errors.Add("PAPER_FILENAME expected=$ControlNumber.pdf actual=$($item.Name)")
+    }
+}
+if ($Profile -eq 'CUMCM') {
+    if ($CumcmAiUse -eq 'Unspecified') {
+        $errors.Add('CUMCM_AI_USE_STATUS required_values=NotUsed_or_Used')
+    } elseif ($CumcmAiUse -eq 'Used') {
+        if ([string]::IsNullOrWhiteSpace($AiDetailsPath)) {
+            $errors.Add('CUMCM_AI_DETAILS required_when_ai_used')
+        } elseif (-not (Test-Path -LiteralPath $AiDetailsPath -PathType Leaf)) {
+            $errors.Add("CUMCM_AI_DETAILS missing=$AiDetailsPath")
+        } else {
+            $aiDetails = Get-Item -LiteralPath $AiDetailsPath
+            if ($aiDetails.Name -cne 'AI工具使用详情.pdf') {
+                $errors.Add("CUMCM_AI_DETAILS_FILENAME expected=AI工具使用详情.pdf actual=$($aiDetails.Name)")
+            }
+            $detailsStream = [IO.File]::OpenRead($aiDetails.FullName)
+            try {
+                $detailsBuffer = New-Object byte[] 5
+                $detailsCount = $detailsStream.Read($detailsBuffer, 0, 5)
+                $detailsMagic = if ($detailsCount -eq 5) { [Text.Encoding]::ASCII.GetString($detailsBuffer) } else { '' }
+                if ($detailsMagic -ne '%PDF-') { $errors.Add('CUMCM_AI_DETAILS invalid_pdf_header') }
+            } finally { $detailsStream.Dispose() }
+        }
+    } elseif (-not [string]::IsNullOrWhiteSpace($AiDetailsPath)) {
+        $errors.Add('CUMCM_AI_DETAILS inconsistent_with_not_used')
     }
 }
 
@@ -79,6 +106,7 @@ if ($denyTerms.Count -gt 0 -or $RequireTextExtraction) {
 
 Write-Output "PAPER_BYTES=$($item.Length)"
 Write-Output "PROFILE=$Profile"
+if ($Profile -eq 'CUMCM') { Write-Output "CUMCM_AI_USE=$CumcmAiUse" }
 Write-Output "WARNINGS=$($warnings.Count)"
 foreach ($warning in $warnings) { Write-Output "WARNING $warning" }
 Write-Output "ERRORS=$($errors.Count)"

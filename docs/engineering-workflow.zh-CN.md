@@ -23,11 +23,16 @@
 ## 3. PDF 与提交审计
 
 ```powershell
-./tools/validate_submission.ps1 -PaperPath D:\work\case01\paper\solution.pdf -Profile CUMCM -DenyListPath D:\work\private-denylist.txt -RequireTextExtraction
-./tools/build_submission.ps1 -ProjectRoot D:\work\case01 -PaperPath D:\work\case01\paper\solution.pdf -Profile CUMCM -DenyListPath D:\work\private-denylist.txt
+./tools/validate_submission.ps1 -PaperPath D:\work\case01\paper\solution.pdf -Profile CUMCM -CumcmAiUse NotUsed -DenyListPath D:\work\private-denylist.txt -RequireTextExtraction
+./tools/build_submission.ps1 -ProjectRoot D:\work\case01 -PaperPath D:\work\case01\paper\solution.pdf -Profile CUMCM -CumcmAiUse NotUsed -DenyListPath D:\work\private-denylist.txt
 ```
 
-匿名词表应保存在项目外或私有工作区，每行一个不得出现的姓名、学校、赛区或账号。`-RequireTextExtraction` 在没有 `pdftotext` 时会失败关闭。页数检查依赖 `pdfinfo`；脚本会明确报告未执行的检查。生成的 ZIP 是本地审阅包，不等同于赛事上传格式；国赛和美赛仍分别遵循当年官方规则。
+匿名词表应保存在项目外或私有工作区，每行一个不得出现的姓名、学校、赛区或账号。若使用了 AI，
+把 `-CumcmAiUse NotUsed` 改为 `-CumcmAiUse Used -AiDetailsPath D:\work\case01\AI工具使用详情.pdf`；
+详情可按 [AI 工具使用详情模板](../AI工具使用详情模板.md) 整理。校验器会检查使用状态、详情文件名和
+PDF 文件头，但不能证明声明真实或人工核验充分。`-RequireTextExtraction` 在没有 `pdftotext` 时会
+失败关闭。页数检查依赖 `pdfinfo`；脚本会明确报告未执行的检查。生成的 ZIP 是本地审阅包，不等同于
+赛事上传格式；国赛和美赛仍分别遵循当年官方规则。
 
 ## 4. 证据绑定
 

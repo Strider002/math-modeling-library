@@ -6,6 +6,8 @@ param(
     [string]$ControlNumber,
     [string]$DenyListPath,
     [string[]]$SupportPaths = @(),
+    [ValidateSet('Unspecified', 'NotUsed', 'Used')][string]$CumcmAiUse = 'Unspecified',
+    [string]$AiDetailsPath,
     [switch]$RequireTextExtraction
 )
 
@@ -18,6 +20,8 @@ $freezer = Join-Path $PSScriptRoot 'freeze_results.ps1'
 $validationArgs = @{ PaperPath = $PaperPath; Profile = $Profile }
 if (-not [string]::IsNullOrWhiteSpace($ControlNumber)) { $validationArgs.ControlNumber = $ControlNumber }
 if (-not [string]::IsNullOrWhiteSpace($DenyListPath)) { $validationArgs.DenyListPath = $DenyListPath }
+if ($Profile -eq 'CUMCM') { $validationArgs.CumcmAiUse = $CumcmAiUse }
+if (-not [string]::IsNullOrWhiteSpace($AiDetailsPath)) { $validationArgs.AiDetailsPath = $AiDetailsPath }
 if ($RequireTextExtraction) { $validationArgs.RequireTextExtraction = $true }
 $validationOutput = @(& $validator @validationArgs 2>&1)
 foreach ($line in $validationOutput) { Write-Output "VALIDATION $line" }
@@ -34,6 +38,10 @@ if (Test-Path -LiteralPath $archivePath) { throw "Refusing to overwrite existing
 $files = [System.Collections.Generic.List[string]]::new()
 $files.Add((Resolve-Path -LiteralPath $PaperPath).Path)
 foreach ($pathValue in $SupportPaths) { $files.Add((Resolve-Path -LiteralPath $pathValue).Path) }
+if ($Profile -eq 'CUMCM' -and $CumcmAiUse -eq 'Used') {
+    $resolvedAiDetails = (Resolve-Path -LiteralPath $AiDetailsPath).Path
+    if ($resolvedAiDetails -notin $files) { $files.Add($resolvedAiDetails) }
+}
 Compress-Archive -LiteralPath $files.ToArray() -DestinationPath $archivePath -CompressionLevel Optimal
 
 $archiveItem = Get-Item -LiteralPath $archivePath

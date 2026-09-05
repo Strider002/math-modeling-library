@@ -579,6 +579,16 @@
       "must": ["39_图像数据建模方法卡.md", "24_机器学习评审标准.md"],
       "must_not": ["20_国赛优秀论文方法论.md", "21_美赛特等奖论文方法论.md", "sources/"],
       "required_gates": ["00Q_永久质量核心.md", "00D_数据阶段门禁.md", "00E_选模与验证设计门禁.md"]
+    },
+    {
+      "id": "sensitivity_analysis_route",
+      "description": "要求对模型做全局敏感性、Bootstrap 与结论翻转诊断。",
+      "trigger": true,
+      "route_ids": ["sensitivity_analysis"],
+      "stages": ["validation_audit"],
+      "must": ["40_敏感性分析与稳定性诊断方法卡.md", "11_验证敏感性与不确定性.md"],
+      "must_not": ["20_国赛优秀论文方法论.md", "21_美赛特等奖论文方法论.md", "sources/"],
+      "required_gates": ["00Q_永久质量核心.md", "11_验证敏感性与不确定性.md"]
     }
   ]
 }

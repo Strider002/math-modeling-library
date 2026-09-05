@@ -23,11 +23,16 @@ The manifest records relative paths, byte counts, SHA-256 hashes, timestamps, an
 ## Audit and build a review package
 
 ```powershell
-./tools/validate_submission.ps1 -PaperPath D:\work\case01\paper\solution.pdf -Profile CUMCM -DenyListPath D:\work\private-denylist.txt -RequireTextExtraction
-./tools/build_submission.ps1 -ProjectRoot D:\work\case01 -PaperPath D:\work\case01\paper\solution.pdf -Profile CUMCM
+./tools/validate_submission.ps1 -PaperPath D:\work\case01\paper\solution.pdf -Profile CUMCM -CumcmAiUse NotUsed -DenyListPath D:\work\private-denylist.txt -RequireTextExtraction
+./tools/build_submission.ps1 -ProjectRoot D:\work\case01 -PaperPath D:\work\case01\paper\solution.pdf -Profile CUMCM -CumcmAiUse NotUsed
 ```
 
-Keep the private denylist outside the public repository. Text extraction requires `pdftotext`; page counting uses `pdfinfo`. The generated ZIP is a local review bundle, not a claim about the official upload format.
+Keep the private denylist outside the public repository. If AI was used, replace `-CumcmAiUse NotUsed` with
+`-CumcmAiUse Used -AiDetailsPath D:\work\case01\AI工具使用详情.pdf` and prepare the report from the
+[AI-use details template](../AI工具使用详情模板.md). The validator checks the declared state, exact details
+filename, and PDF header; it cannot prove the declaration truthful or the human verification adequate. Text extraction
+requires `pdftotext`; page counting uses `pdfinfo`. The generated ZIP is a local review bundle, not a claim about the
+official upload format.
 
 ## Evidence and benchmarks
 
@@ -41,4 +46,3 @@ The evidence registries pilot mechanical binding for seven high-risk claims. The
 ./tools/validate_library.ps1 -Portable
 ./tools/validate_github_release.ps1 -PublicRelease
 ```
-

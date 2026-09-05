@@ -67,11 +67,13 @@
 | 37 | [文本数据建模方法卡](../37_文本数据建模方法卡.md) |
 | 38 | [信号处理与频谱建模方法卡](../38_信号处理与频谱建模方法卡.md) |
 | 39 | [图像数据建模方法卡](../39_图像数据建模方法卡.md) |
+| 40 | [敏感性分析与稳定性诊断方法卡](../40_敏感性分析与稳定性诊断方法卡.md) |
 
 ## 模板、复盘与审计
 
 - [资料消化模板](../资料消化模板.md)
 - [建模复盘模板](../建模复盘模板.md)
+- [国赛 AI 工具使用详情模板](../AI工具使用详情模板.md)
 - [质量审计报告](../质量审计报告.md)
 - [更新记录](../CHANGELOG.md)
 
@@ -87,8 +89,8 @@
 - [`new_modeling_project.ps1`](../tools/new_modeling_project.ps1)：初始化七阶段竞赛项目状态与目录。
 - [`modeling_stage.ps1`](../tools/modeling_stage.ps1)：检查产物并推进项目阶段。
 - [`freeze_results.ps1`](../tools/freeze_results.ps1)：冻结或验证表格、图片、模型输出的 SHA-256。
-- [`validate_submission.ps1`](../tools/validate_submission.ps1)：检查 PDF、大小、页数能力和匿名词表。
-- [`build_submission.ps1`](../tools/build_submission.ps1)：在结果未被篡改且 PDF 通过后生成本地审阅包。
+- [`validate_submission.ps1`](../tools/validate_submission.ps1)：检查 PDF、大小、页数能力、匿名词表及国赛 AI 使用状态/详情文件。
+- [`build_submission.ps1`](../tools/build_submission.ps1)：在结果未被篡改且 PDF 通过后生成本地审阅包，并按声明纳入 AI 详情文件。
 - [`validate_benchmarks.ps1`](../tools/validate_benchmarks.ps1)：校验历年赛题基准规范与盲评分表。
 - [`github_repo_audit.py`](../tools/github_repo_audit.py)：只读核验外部 GitHub 仓库元数据。
 
