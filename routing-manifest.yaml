@@ -13,7 +13,7 @@
     "metric": "bytes",
     "permanent_max_bytes": 12000,
     "lightweight_entry_max_bytes": 15000,
-    "lightweight_entries": ["35_回归模型选择与方法总览.md"]
+    "lightweight_entries": ["knowledge/advanced/35_回归模型选择与方法总览.md"]
   },
   "permanent": {
     "required": [
@@ -62,7 +62,7 @@
       "label": "实现阶段",
       "required": [
         {
-          "path": "15_代码与实验规范.md",
+          "path": "knowledge/foundations/15_代码与实验规范.md",
           "reason": "编码、复现或运行实验时执行环境、随机性、日志、配置、输出和公式—代码一致性规范。"
         }
       ],
@@ -73,7 +73,7 @@
       "label": "验证审计阶段",
       "required": [
         {
-          "path": "11_验证敏感性与不确定性.md",
+          "path": "knowledge/foundations/11_验证敏感性与不确定性.md",
           "reason": "在首次正式比较结果、形成结论或交付前审查训练外证据、残差、敏感性、压力测试和不确定性。"
         }
       ],
@@ -84,17 +84,17 @@
       "label": "论文与报告交付阶段",
       "required": [
         {
-          "path": "12_论文写作与可视化.md",
+          "path": "knowledge/foundations/12_论文写作与可视化.md",
           "reason": "正式论文或报告交付时检查结构、图表、措辞和数字可追溯性。"
         },
         {
-          "path": "13_竞赛工作流与检查清单.md",
+          "path": "knowledge/foundations/13_竞赛工作流与检查清单.md",
           "reason": "竞赛或正式交付前检查题目覆盖、提交物、格式和最终一致性。"
         }
       ],
       "optional": [
         {
-          "path": "15_代码与实验规范.md",
+          "path": "knowledge/foundations/15_代码与实验规范.md",
           "reason": "若交付包含代码、支撑材料或可复现实验，则升级为必读；纯文字交付可保持可选。"
         }
       ]
@@ -104,15 +104,15 @@
       "label": "含代码的正式交付阶段",
       "required": [
         {
-          "path": "12_论文写作与可视化.md",
+          "path": "knowledge/foundations/12_论文写作与可视化.md",
           "reason": "正式论文或报告交付时检查结构、图表、措辞和数字可追溯性。"
         },
         {
-          "path": "13_竞赛工作流与检查清单.md",
+          "path": "knowledge/foundations/13_竞赛工作流与检查清单.md",
           "reason": "竞赛或正式交付前检查题目覆盖、提交物、格式和最终一致性。"
         },
         {
-          "path": "15_代码与实验规范.md",
+          "path": "knowledge/foundations/15_代码与实验规范.md",
           "reason": "交付包含代码、支撑材料或可复现实验，必须核对环境、配置、随机性和正文数字。"
         }
       ],
@@ -121,15 +121,15 @@
   ],
   "default_forbidden": [
     {
-      "path": "20_国赛优秀论文方法论.md",
+      "path": "knowledge/competition/20_国赛优秀论文方法论.md",
       "reason": "案例资料仅在明确进行国赛案例对照时读取，不作为默认方法或公式证据。"
     },
     {
-      "path": "21_美赛特等奖论文方法论.md",
+      "path": "knowledge/competition/21_美赛特等奖论文方法论.md",
       "reason": "案例资料仅在明确进行美赛案例对照时读取，不作为默认方法或公式证据。"
     },
     {
-      "path": "30_Expectorpatro全站知识映射与使用边界.md",
+      "path": "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
       "reason": "仅在使用或审计 Expectorpatro 网站线索时读取。"
     },
     {
@@ -156,7 +156,7 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "01_问题识别与模型选择.md",
+          "path": "knowledge/foundations/01_问题识别与模型选择.md",
           "reason": "把题目语言映射到评价、预测、优化、分类、机理、网络或仿真等模型族。"
         }
       ],
@@ -182,13 +182,13 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "02_数据处理与探索.md",
+          "path": "knowledge/foundations/02_数据处理与探索.md",
           "reason": "提供数据审计、缺失、异常、变换、EDA、特征工程和划分的基础流程。"
         }
       ],
       "optional": [
         {
-          "path": "22_数据分析与数据挖掘进阶.md",
+          "path": "knowledge/advanced/22_数据分析与数据挖掘进阶.md",
           "reason": "需要高级数据审计、成分数据、关联规则、降维或训练外挖掘证据时追加。"
         }
       ],
@@ -213,11 +213,11 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "02_数据处理与探索.md",
+          "path": "knowledge/foundations/02_数据处理与探索.md",
           "reason": "先建立数据审计和无泄漏处理基础。"
         },
         {
-          "path": "22_数据分析与数据挖掘进阶.md",
+          "path": "knowledge/advanced/22_数据分析与数据挖掘进阶.md",
           "reason": "建立统计发现、关联规则、降维、聚类和综合指标的证据链。"
         }
       ],
@@ -243,21 +243,21 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "03_评价与决策模型.md",
+          "path": "knowledge/foundations/03_评价与决策模型.md",
           "reason": "提供评价指标、赋权、排序和决策模型的基础边界。"
         }
       ],
       "optional": [
         {
-          "path": "27_主成分分析严谨方法卡.md",
+          "path": "knowledge/advanced/27_主成分分析严谨方法卡.md",
           "reason": "使用 PCA 构造综合指标时追加。"
         },
         {
-          "path": "28_多元统计扩展严谨方法卡.md",
+          "path": "knowledge/advanced/28_多元统计扩展严谨方法卡.md",
           "reason": "使用因子分析等多元统计方法时追加。"
         },
         {
-          "path": "25_优化建模进阶.md",
+          "path": "knowledge/advanced/25_优化建模进阶.md",
           "reason": "排序结果进入稳健或多目标决策时追加。"
         }
       ],
@@ -282,37 +282,37 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "35_回归模型选择与方法总览.md",
+          "path": "knowledge/advanced/35_回归模型选择与方法总览.md",
           "reason": "先按目标、响应支持集和时间/空间/分组依赖筛选二至五个候选。"
         }
       ],
       "optional": [
         {
-          "path": "35A_回归模型完整方法索引.md",
+          "path": "knowledge/advanced/35A_回归模型完整方法索引.md",
           "reason": "需要查看完整公式、优缺点、评分或跨分支候选时追加；轻量 35 只负责硬门禁与初筛。"
         },
         {
-          "path": "29_线性模型与广义线性模型严谨方法卡.md",
+          "path": "knowledge/advanced/29_线性模型与广义线性模型严谨方法卡.md",
           "reason": "候选涉及经典线性模型、GLM、诊断或正则化时追加。"
         },
         {
-          "path": "23_预测建模进阶.md",
+          "path": "knowledge/advanced/23_预测建模进阶.md",
           "reason": "目标是样本外预测时追加。"
         },
         {
-          "path": "31_树模型与集成学习严谨方法卡.md",
+          "path": "knowledge/advanced/31_树模型与集成学习严谨方法卡.md",
           "reason": "候选涉及树与集成学习时追加。"
         },
         {
-          "path": "32_神经网络严谨方法卡.md",
+          "path": "knowledge/advanced/32_神经网络严谨方法卡.md",
           "reason": "候选涉及神经网络时追加。"
         },
         {
-          "path": "17_因果推断与实验设计.md",
+          "path": "knowledge/foundations/17_因果推断与实验设计.md",
           "reason": "目标是干预效应而非条件关联时追加。"
         },
         {
-          "path": "09_图论网络与空间模型.md",
+          "path": "knowledge/foundations/09_图论网络与空间模型.md",
           "reason": "数据存在空间依赖时追加。"
         }
       ],
@@ -337,25 +337,25 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "35_回归模型选择与方法总览.md",
+          "path": "knowledge/advanced/35_回归模型选择与方法总览.md",
           "reason": "检查计数支持集、过度离散、零机制及面板/层级依赖。"
         },
         {
-          "path": "35A_回归模型完整方法索引.md",
+          "path": "knowledge/advanced/35A_回归模型完整方法索引.md",
           "reason": "现有独立专题尚未完整覆盖计数面板、层级和动态面板方法，必须读取完整方法索引。"
         },
         {
-          "path": "29_线性模型与广义线性模型严谨方法卡.md",
+          "path": "knowledge/advanced/29_线性模型与广义线性模型严谨方法卡.md",
           "reason": "核验 Poisson、离散、链接函数、标准误与 GLM 诊断。"
         }
       ],
       "optional": [
         {
-          "path": "07_概率统计与随机模型.md",
+          "path": "knowledge/foundations/07_概率统计与随机模型.md",
           "reason": "需要计数分布、随机效应或推断理论补充时追加。"
         },
         {
-          "path": "17_因果推断与实验设计.md",
+          "path": "knowledge/foundations/17_因果推断与实验设计.md",
           "reason": "面板回归承担因果识别时追加。"
         }
       ],
@@ -380,29 +380,29 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "35_回归模型选择与方法总览.md",
+          "path": "knowledge/advanced/35_回归模型选择与方法总览.md",
           "reason": "先识别响应支持集、组内依赖、固定/随机效应目标及新主体或新时间的泛化对象。"
         },
         {
-          "path": "35A_回归模型完整方法索引.md",
+          "path": "knowledge/advanced/35A_回归模型完整方法索引.md",
           "reason": "现有独立专题尚未完整覆盖 FE/RE、混合效应、GEE 和动态面板，必须读取完整方法索引。"
         }
       ],
       "optional": [
         {
-          "path": "29_线性模型与广义线性模型严谨方法卡.md",
+          "path": "knowledge/advanced/29_线性模型与广义线性模型严谨方法卡.md",
           "reason": "使用线性、Logistic、Poisson 或其他 GLM 条件模型时追加。"
         },
         {
-          "path": "07_概率统计与随机模型.md",
+          "path": "knowledge/foundations/07_概率统计与随机模型.md",
           "reason": "需要随机效应、相关结构或推断理论补充时追加。"
         },
         {
-          "path": "17_因果推断与实验设计.md",
+          "path": "knowledge/foundations/17_因果推断与实验设计.md",
           "reason": "面板模型承担因果识别时追加。"
         },
         {
-          "path": "23_预测建模进阶.md",
+          "path": "knowledge/advanced/23_预测建模进阶.md",
           "reason": "目标是新主体或未来时间预测时追加。"
         }
       ],
@@ -427,21 +427,21 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "35_回归模型选择与方法总览.md",
+          "path": "knowledge/advanced/35_回归模型选择与方法总览.md",
           "reason": "区分删失、截断、样本选择和时间到事件，并筛选对应模型。"
         },
         {
-          "path": "35A_回归模型完整方法索引.md",
+          "path": "knowledge/advanced/35A_回归模型完整方法索引.md",
           "reason": "现有独立专题尚未完整覆盖 Cox、AFT、竞争风险、删失和截断方法，必须读取完整方法索引。"
         },
         {
-          "path": "07_概率统计与随机模型.md",
+          "path": "knowledge/foundations/07_概率统计与随机模型.md",
           "reason": "补充事件时间、删失假设、分布和统计推断基础。"
         }
       ],
       "optional": [
         {
-          "path": "17_因果推断与实验设计.md",
+          "path": "knowledge/foundations/17_因果推断与实验设计.md",
           "reason": "生存结局需要因果解释时追加。"
         }
       ],
@@ -466,29 +466,29 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "04_预测与时间序列.md",
+          "path": "knowledge/foundations/04_预测与时间序列.md",
           "reason": "提供预测定义、基线、统计时序、指标和基本回测。"
         },
         {
-          "path": "23_预测建模进阶.md",
+          "path": "knowledge/advanced/23_预测建模进阶.md",
           "reason": "锁定滚动回测、概率预测、特殊序列和预测进入优化的严格边界。"
         }
       ],
       "optional": [
         {
-          "path": "24_机器学习评审标准.md",
+          "path": "knowledge/advanced/24_机器学习评审标准.md",
           "reason": "使用机器学习预测时追加。"
         },
         {
-          "path": "31_树模型与集成学习严谨方法卡.md",
+          "path": "knowledge/advanced/31_树模型与集成学习严谨方法卡.md",
           "reason": "候选使用树集成时追加。"
         },
         {
-          "path": "32_神经网络严谨方法卡.md",
+          "path": "knowledge/advanced/32_神经网络严谨方法卡.md",
           "reason": "候选使用深度时序模型时追加。"
         },
         {
-          "path": "35_回归模型选择与方法总览.md",
+          "path": "knowledge/advanced/35_回归模型选择与方法总览.md",
           "reason": "候选使用动态回归或回归预测时追加。"
         }
       ],
@@ -513,25 +513,25 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "05_优化模型.md",
+          "path": "knowledge/foundations/05_优化模型.md",
           "reason": "建立变量、目标、约束和基本求解模型。"
         },
         {
-          "path": "25_优化建模进阶.md",
+          "path": "knowledge/advanced/25_优化建模进阶.md",
           "reason": "审查凸性、精确性证据、gap、风险、随机/鲁棒和元启发式边界。"
         }
       ],
       "optional": [
         {
-          "path": "16_插值拟合与数值计算.md",
+          "path": "knowledge/foundations/16_插值拟合与数值计算.md",
           "reason": "涉及连续数值求解、插值或非线性算法时追加。"
         },
         {
-          "path": "10_仿真模型.md",
+          "path": "knowledge/foundations/10_仿真模型.md",
           "reason": "涉及仿真优化时追加。"
         },
         {
-          "path": "23_预测建模进阶.md",
+          "path": "knowledge/advanced/23_预测建模进阶.md",
           "reason": "优化输入来自预测时追加。"
         }
       ],
@@ -556,37 +556,37 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "02_数据处理与探索.md",
+          "path": "knowledge/foundations/02_数据处理与探索.md",
           "reason": "核验上游数据口径与特征可得性。"
         },
         {
-          "path": "04_预测与时间序列.md",
+          "path": "knowledge/foundations/04_预测与时间序列.md",
           "reason": "建立预测基线和时序模型候选。"
         },
         {
-          "path": "23_预测建模进阶.md",
+          "path": "knowledge/advanced/23_预测建模进阶.md",
           "reason": "设计严格回测并传播预测不确定性。"
         },
         {
-          "path": "05_优化模型.md",
+          "path": "knowledge/foundations/05_优化模型.md",
           "reason": "建立下游变量、目标和约束。"
         },
         {
-          "path": "25_优化建模进阶.md",
+          "path": "knowledge/advanced/25_优化建模进阶.md",
           "reason": "审查预测—优化耦合、情景、风险、可行性与最优性证据。"
         }
       ],
       "optional": [
         {
-          "path": "24_机器学习评审标准.md",
+          "path": "knowledge/advanced/24_机器学习评审标准.md",
           "reason": "预测器为机器学习时追加。"
         },
         {
-          "path": "31_树模型与集成学习严谨方法卡.md",
+          "path": "knowledge/advanced/31_树模型与集成学习严谨方法卡.md",
           "reason": "预测器为树集成时追加。"
         },
         {
-          "path": "34_国赛C题数据驱动建模方法卡.md",
+          "path": "knowledge/advanced/34_国赛C题数据驱动建模方法卡.md",
           "reason": "任务属于国赛 C 题式附件数据组合题时追加。"
         }
       ],
@@ -611,29 +611,29 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "06_分类聚类与机器学习.md",
+          "path": "knowledge/foundations/06_分类聚类与机器学习.md",
           "reason": "提供分类模型、指标、阈值和监督学习基本流程。"
         },
         {
-          "path": "24_机器学习评审标准.md",
+          "path": "knowledge/advanced/24_机器学习评审标准.md",
           "reason": "审查泄漏、嵌套验证、校准、解释、公平和可复现性。"
         }
       ],
       "optional": [
         {
-          "path": "28_多元统计扩展严谨方法卡.md",
+          "path": "knowledge/advanced/28_多元统计扩展严谨方法卡.md",
           "reason": "使用 LDA/QDA/Fisher 判别时追加。"
         },
         {
-          "path": "29_线性模型与广义线性模型严谨方法卡.md",
+          "path": "knowledge/advanced/29_线性模型与广义线性模型严谨方法卡.md",
           "reason": "使用 Logistic 或其他 GLM 分类模型时追加。"
         },
         {
-          "path": "31_树模型与集成学习严谨方法卡.md",
+          "path": "knowledge/advanced/31_树模型与集成学习严谨方法卡.md",
           "reason": "使用树集成时追加。"
         },
         {
-          "path": "32_神经网络严谨方法卡.md",
+          "path": "knowledge/advanced/32_神经网络严谨方法卡.md",
           "reason": "使用神经网络时追加。"
         }
       ],
@@ -658,21 +658,21 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "06_分类聚类与机器学习.md",
+          "path": "knowledge/foundations/06_分类聚类与机器学习.md",
           "reason": "提供聚类模型族和基础流程。"
         },
         {
-          "path": "22_数据分析与数据挖掘进阶.md",
+          "path": "knowledge/advanced/22_数据分析与数据挖掘进阶.md",
           "reason": "建立聚类证据链和训练外稳定性边界。"
         },
         {
-          "path": "26_聚类分析严谨方法卡.md",
+          "path": "knowledge/advanced/26_聚类分析严谨方法卡.md",
           "reason": "核验距离、算法条件、簇数指标、稳定性和外部验证。"
         }
       ],
       "optional": [
         {
-          "path": "27_主成分分析严谨方法卡.md",
+          "path": "knowledge/advanced/27_主成分分析严谨方法卡.md",
           "reason": "确需用 PCA 预处理或可视化时追加。"
         }
       ],
@@ -697,21 +697,21 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "27_主成分分析严谨方法卡.md",
+          "path": "knowledge/advanced/27_主成分分析严谨方法卡.md",
           "reason": "核验中心化/标准化、SVD、载荷、维数选择、PCR 和综合评价边界。"
         }
       ],
       "optional": [
         {
-          "path": "02_数据处理与探索.md",
+          "path": "knowledge/foundations/02_数据处理与探索.md",
           "reason": "需要完整数据审计和预处理时追加。"
         },
         {
-          "path": "22_数据分析与数据挖掘进阶.md",
+          "path": "knowledge/advanced/22_数据分析与数据挖掘进阶.md",
           "reason": "PCA 属于数据挖掘链或需训练外验证时追加。"
         },
         {
-          "path": "29_线性模型与广义线性模型严谨方法卡.md",
+          "path": "knowledge/advanced/29_线性模型与广义线性模型严谨方法卡.md",
           "reason": "使用 PCR 作回归时追加。"
         }
       ],
@@ -736,21 +736,21 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "28_多元统计扩展严谨方法卡.md",
+          "path": "knowledge/advanced/28_多元统计扩展严谨方法卡.md",
           "reason": "核验各多元统计方法的目标、识别、旋转、正则化和验证边界。"
         }
       ],
       "optional": [
         {
-          "path": "02_数据处理与探索.md",
+          "path": "knowledge/foundations/02_数据处理与探索.md",
           "reason": "需要完整数据审计时追加。"
         },
         {
-          "path": "22_数据分析与数据挖掘进阶.md",
+          "path": "knowledge/advanced/22_数据分析与数据挖掘进阶.md",
           "reason": "方法进入数据挖掘流程时追加。"
         },
         {
-          "path": "27_主成分分析严谨方法卡.md",
+          "path": "knowledge/advanced/27_主成分分析严谨方法卡.md",
           "reason": "需要与 PCA 区分或对照时追加。"
         }
       ],
@@ -775,21 +775,21 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "35_回归模型选择与方法总览.md",
+          "path": "knowledge/advanced/35_回归模型选择与方法总览.md",
           "reason": "先通过响应支持集和依赖结构门禁。"
         },
         {
-          "path": "29_线性模型与广义线性模型严谨方法卡.md",
+          "path": "knowledge/advanced/29_线性模型与广义线性模型严谨方法卡.md",
           "reason": "核验线性/GLM 定义、估计、诊断、推断和正则化边界。"
         }
       ],
       "optional": [
         {
-          "path": "23_预测建模进阶.md",
+          "path": "knowledge/advanced/23_预测建模进阶.md",
           "reason": "目标是预测时追加严格训练外验证。"
         },
         {
-          "path": "17_因果推断与实验设计.md",
+          "path": "knowledge/foundations/17_因果推断与实验设计.md",
           "reason": "系数需要因果解释时追加。"
         }
       ],
@@ -814,17 +814,17 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "31_树模型与集成学习严谨方法卡.md",
+          "path": "knowledge/advanced/31_树模型与集成学习严谨方法卡.md",
           "reason": "核验树分裂、集成机制、OOB 边界、重要性、调参和外推。"
         },
         {
-          "path": "24_机器学习评审标准.md",
+          "path": "knowledge/advanced/24_机器学习评审标准.md",
           "reason": "执行泄漏、嵌套验证、校准、解释和可复现性审查。"
         }
       ],
       "optional": [
         {
-          "path": "23_预测建模进阶.md",
+          "path": "knowledge/advanced/23_预测建模进阶.md",
           "reason": "用于时间或一般预测时追加。"
         }
       ],
@@ -849,25 +849,25 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "32_神经网络严谨方法卡.md",
+          "path": "knowledge/advanced/32_神经网络严谨方法卡.md",
           "reason": "核验输出—损失契约、反向传播、序列网络、张量形状和训练风险。"
         },
         {
-          "path": "24_机器学习评审标准.md",
+          "path": "knowledge/advanced/24_机器学习评审标准.md",
           "reason": "执行泄漏、验证、校准、解释和可复现性审查。"
         }
       ],
       "optional": [
         {
-          "path": "06_分类聚类与机器学习.md",
+          "path": "knowledge/foundations/06_分类聚类与机器学习.md",
           "reason": "需要监督学习流程或分类指标基础时追加。"
         },
         {
-          "path": "04_预测与时间序列.md",
+          "path": "knowledge/foundations/04_预测与时间序列.md",
           "reason": "序列预测任务追加。"
         },
         {
-          "path": "23_预测建模进阶.md",
+          "path": "knowledge/advanced/23_预测建模进阶.md",
           "reason": "需要严格时序回测或概率预测时追加。"
         }
       ],
@@ -892,25 +892,25 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "33_EM算法与潜变量模型严谨方法卡.md",
+          "path": "knowledge/advanced/33_EM算法与潜变量模型严谨方法卡.md",
           "reason": "核验 ELBO/KL、E/M 步、单调性、退化、初始化、停止和验证。"
         }
       ],
       "optional": [
         {
-          "path": "07_概率统计与随机模型.md",
+          "path": "knowledge/foundations/07_概率统计与随机模型.md",
           "reason": "需要概率与似然基础时追加。"
         },
         {
-          "path": "19_数学基础与统计理论补充.md",
+          "path": "knowledge/foundations/19_数学基础与统计理论补充.md",
           "reason": "需要可识别性、矩阵或渐近理论时追加。"
         },
         {
-          "path": "06_分类聚类与机器学习.md",
+          "path": "knowledge/foundations/06_分类聚类与机器学习.md",
           "reason": "GMM 用作聚类时追加。"
         },
         {
-          "path": "26_聚类分析严谨方法卡.md",
+          "path": "knowledge/advanced/26_聚类分析严谨方法卡.md",
           "reason": "GMM 聚类需要簇数和稳定性审查时追加。"
         }
       ],
@@ -935,41 +935,41 @@
       "deferred_stages": ["implementation", "validation_audit", "code_delivery"],
       "required": [
         {
-          "path": "34_国赛C题数据驱动建模方法卡.md",
+          "path": "knowledge/advanced/34_国赛C题数据驱动建模方法卡.md",
           "reason": "建立 C 题数据粒度、模型链、预测—优化、不确定性传播和专用检查。"
         },
         {
-          "path": "02_数据处理与探索.md",
+          "path": "knowledge/foundations/02_数据处理与探索.md",
           "reason": "先完成附件数据审计。"
         },
         {
-          "path": "22_数据分析与数据挖掘进阶.md",
+          "path": "knowledge/advanced/22_数据分析与数据挖掘进阶.md",
           "reason": "建立数据分析和挖掘证据链。"
         }
       ],
       "optional": [
         {
-          "path": "03_评价与决策模型.md",
+          "path": "knowledge/foundations/03_评价与决策模型.md",
           "reason": "题目含评价排序时追加。"
         },
         {
-          "path": "04_预测与时间序列.md",
+          "path": "knowledge/foundations/04_预测与时间序列.md",
           "reason": "题目含时间预测时追加。"
         },
         {
-          "path": "23_预测建模进阶.md",
+          "path": "knowledge/advanced/23_预测建模进阶.md",
           "reason": "题目含严格回测或概率预测时追加。"
         },
         {
-          "path": "24_机器学习评审标准.md",
+          "path": "knowledge/advanced/24_机器学习评审标准.md",
           "reason": "题目使用机器学习时追加。"
         },
         {
-          "path": "05_优化模型.md",
+          "path": "knowledge/foundations/05_优化模型.md",
           "reason": "题目含优化决策时追加。"
         },
         {
-          "path": "25_优化建模进阶.md",
+          "path": "knowledge/advanced/25_优化建模进阶.md",
           "reason": "题目含鲁棒、多目标或预测—优化时追加。"
         }
       ],
@@ -994,17 +994,17 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "07_概率统计与随机模型.md",
+          "path": "knowledge/foundations/07_概率统计与随机模型.md",
           "reason": "提供分布、估计、检验、贝叶斯、随机过程和可靠性基础。"
         }
       ],
       "optional": [
         {
-          "path": "19_数学基础与统计理论补充.md",
+          "path": "knowledge/foundations/19_数学基础与统计理论补充.md",
           "reason": "需要估计理论、渐近、矩阵和多元统计补充时追加。"
         },
         {
-          "path": "10_仿真模型.md",
+          "path": "knowledge/foundations/10_仿真模型.md",
           "reason": "需要蒙特卡洛验证或随机仿真时追加。"
         }
       ],
@@ -1029,17 +1029,17 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "08_微分方程与机理模型.md",
+          "path": "knowledge/foundations/08_微分方程与机理模型.md",
           "reason": "建立机理结构、守恒、边界条件、参数估计和量纲分析。"
         }
       ],
       "optional": [
         {
-          "path": "16_插值拟合与数值计算.md",
+          "path": "knowledge/foundations/16_插值拟合与数值计算.md",
           "reason": "需要数值积分、求解、拟合和稳定性时追加。"
         },
         {
-          "path": "07_概率统计与随机模型.md",
+          "path": "knowledge/foundations/07_概率统计与随机模型.md",
           "reason": "参数或过程具有随机性时追加。"
         }
       ],
@@ -1064,25 +1064,25 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "09_图论网络与空间模型.md",
+          "path": "knowledge/foundations/09_图论网络与空间模型.md",
           "reason": "提供图网络模型、空间依赖、权重矩阵和空间验证基础。"
         }
       ],
       "optional": [
         {
-          "path": "05_优化模型.md",
+          "path": "knowledge/foundations/05_优化模型.md",
           "reason": "路径、流、匹配或选址进入优化时追加。"
         },
         {
-          "path": "25_优化建模进阶.md",
+          "path": "knowledge/advanced/25_优化建模进阶.md",
           "reason": "需要严谨优化证据时追加。"
         },
         {
-          "path": "08_微分方程与机理模型.md",
+          "path": "knowledge/foundations/08_微分方程与机理模型.md",
           "reason": "网络传播具有机理动力学时追加。"
         },
         {
-          "path": "35_回归模型选择与方法总览.md",
+          "path": "knowledge/advanced/35_回归模型选择与方法总览.md",
           "reason": "任务是空间回归时追加。"
         }
       ],
@@ -1107,21 +1107,21 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "10_仿真模型.md",
+          "path": "knowledge/foundations/10_仿真模型.md",
           "reason": "建立仿真对象、事件、状态、随机输入、验证和实验设计。"
         }
       ],
       "optional": [
         {
-          "path": "07_概率统计与随机模型.md",
+          "path": "knowledge/foundations/07_概率统计与随机模型.md",
           "reason": "需要随机过程或输入分布时追加。"
         },
         {
-          "path": "25_优化建模进阶.md",
+          "path": "knowledge/advanced/25_优化建模进阶.md",
           "reason": "涉及仿真优化时追加。"
         },
         {
-          "path": "15_代码与实验规范.md",
+          "path": "knowledge/foundations/15_代码与实验规范.md",
           "reason": "进入实现阶段时由阶段门禁升级为必读。"
         }
       ],
@@ -1146,21 +1146,21 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "17_因果推断与实验设计.md",
+          "path": "knowledge/foundations/17_因果推断与实验设计.md",
           "reason": "先定义 estimand、识别假设、设计和反事实，再选择估计器。"
         }
       ],
       "optional": [
         {
-          "path": "35_回归模型选择与方法总览.md",
+          "path": "knowledge/advanced/35_回归模型选择与方法总览.md",
           "reason": "使用回归估计器时追加。"
         },
         {
-          "path": "29_线性模型与广义线性模型严谨方法卡.md",
+          "path": "knowledge/advanced/29_线性模型与广义线性模型严谨方法卡.md",
           "reason": "使用线性/GLM 估计因果效应时追加。"
         },
         {
-          "path": "07_概率统计与随机模型.md",
+          "path": "knowledge/foundations/07_概率统计与随机模型.md",
           "reason": "需要统计推断理论时追加。"
         }
       ],
@@ -1185,21 +1185,21 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "18_博弈论与行为决策.md",
+          "path": "knowledge/foundations/18_博弈论与行为决策.md",
           "reason": "建立参与者、策略、信息、收益、均衡和行为假设。"
         }
       ],
       "optional": [
         {
-          "path": "05_优化模型.md",
+          "path": "knowledge/foundations/05_优化模型.md",
           "reason": "均衡或机制需要优化求解时追加。"
         },
         {
-          "path": "25_优化建模进阶.md",
+          "path": "knowledge/advanced/25_优化建模进阶.md",
           "reason": "需要多目标、风险或算法审计时追加。"
         },
         {
-          "path": "10_仿真模型.md",
+          "path": "knowledge/foundations/10_仿真模型.md",
           "reason": "需要演化或 Agent 仿真时追加。"
         }
       ],
@@ -1224,13 +1224,13 @@
       "deferred_stages": ["implementation", "validation_audit", "delivery"],
       "required": [
         {
-          "path": "16_插值拟合与数值计算.md",
+          "path": "knowledge/foundations/16_插值拟合与数值计算.md",
           "reason": "核验数值方法、误差、稳定性、收敛和边界。"
         }
       ],
       "optional": [
         {
-          "path": "19_数学基础与统计理论补充.md",
+          "path": "knowledge/foundations/19_数学基础与统计理论补充.md",
           "reason": "需要矩阵病态、凸性或理论条件时追加。"
         }
       ],
@@ -1318,11 +1318,11 @@
           "reason": "竞赛论文与奖项案例必须先执行身份、全文真实性、方法正确性、代码和冲突门禁。"
         },
         {
-          "path": "20_国赛优秀论文方法论.md",
+          "path": "knowledge/competition/20_国赛优秀论文方法论.md",
           "reason": "明确请求国赛优秀论文案例对照。"
         },
         {
-          "path": "21_美赛特等奖论文方法论.md",
+          "path": "knowledge/competition/21_美赛特等奖论文方法论.md",
           "reason": "明确请求美赛特等奖案例对照。"
         }
       ],
@@ -1352,7 +1352,7 @@
           "reason": "第三方网站内容只能作为线索，进入知识库前必须执行来源等级、公式和冲突门禁。"
         },
         {
-          "path": "30_Expectorpatro全站知识映射与使用边界.md",
+          "path": "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
           "reason": "明确使用或审计该网站线索，需要读取其版本、错误和适用边界。"
         }
       ],
@@ -1406,11 +1406,11 @@
       "default_stages": ["model_selection","validation_design"],
       "deferred_stages": ["implementation","validation_audit","delivery"],
       "required": [
-        {"path":"36_AB题机理建模与仿真方法卡.md","reason":"执行 A/B 题机理链、校准—验证分离和数值收敛门禁。"},
-        {"path":"08_微分方程与机理模型.md","reason":"核对状态方程、初边值、量纲、参数估计和稳定性。"},
-        {"path":"10_仿真模型.md","reason":"随机、离散事件或多主体机制出现时核对仿真验证和重复实验。"}
+        {"path":"knowledge/advanced/36_AB题机理建模与仿真方法卡.md","reason":"执行 A/B 题机理链、校准—验证分离和数值收敛门禁。"},
+        {"path":"knowledge/foundations/08_微分方程与机理模型.md","reason":"核对状态方程、初边值、量纲、参数估计和稳定性。"},
+        {"path":"knowledge/foundations/10_仿真模型.md","reason":"随机、离散事件或多主体机制出现时核对仿真验证和重复实验。"}
       ],
-      "optional": [{"path":"16_插值拟合与数值计算.md","reason":"需要插值、非线性拟合、数值积分或根求解时追加。"}],
+      "optional": [{"path":"knowledge/foundations/16_插值拟合与数值计算.md","reason":"需要插值、非线性拟合、数值积分或根求解时追加。"}],
       "deferred": [],
       "forbidden": []
     },
@@ -1425,9 +1425,9 @@
       "default_stages": ["data","model_selection","validation_design"],
       "deferred_stages": ["implementation","validation_audit","delivery"],
       "required": [
-        {"path":"37_文本数据建模方法卡.md","reason":"定义文本样本单位、语料切分、表示基线和语域外验证。"},
-        {"path":"02_数据处理与探索.md","reason":"审查来源、缺失、重复、标签与泄漏。"},
-        {"path":"24_机器学习评审标准.md","reason":"分类或学习模型必须执行公平比较、校准和训练外评审。"}
+        {"path":"knowledge/advanced/37_文本数据建模方法卡.md","reason":"定义文本样本单位、语料切分、表示基线和语域外验证。"},
+        {"path":"knowledge/foundations/02_数据处理与探索.md","reason":"审查来源、缺失、重复、标签与泄漏。"},
+        {"path":"knowledge/advanced/24_机器学习评审标准.md","reason":"分类或学习模型必须执行公平比较、校准和训练外评审。"}
       ],
       "optional": [],
       "deferred": [],
@@ -1444,10 +1444,10 @@
       "default_stages": ["data","model_selection","validation_design"],
       "deferred_stages": ["implementation","validation_audit","delivery"],
       "required": [
-        {"path":"38_信号处理与频谱建模方法卡.md","reason":"核对采样、频率单位、窗口、频谱缩放和窗口泄漏。"},
-        {"path":"04_预测与时间序列.md","reason":"需要时序预测或滚动验证时执行时间顺序门禁。"}
+        {"path":"knowledge/advanced/38_信号处理与频谱建模方法卡.md","reason":"核对采样、频率单位、窗口、频谱缩放和窗口泄漏。"},
+        {"path":"knowledge/foundations/04_预测与时间序列.md","reason":"需要时序预测或滚动验证时执行时间顺序门禁。"}
       ],
-      "optional": [{"path":"24_机器学习评审标准.md","reason":"信号进入分类或深度学习时追加。"}],
+      "optional": [{"path":"knowledge/advanced/24_机器学习评审标准.md","reason":"信号进入分类或深度学习时追加。"}],
       "deferred": [],
       "forbidden": []
     },
@@ -1462,10 +1462,10 @@
       "default_stages": ["data","model_selection","validation_design"],
       "deferred_stages": ["implementation","validation_audit","delivery"],
       "required": [
-        {"path":"39_图像数据建模方法卡.md","reason":"定义图像实体切分、预处理、任务指标、压力测试和许可边界。"},
-        {"path":"24_机器学习评审标准.md","reason":"学习模型必须执行公平比较、类别评估和训练外验证。"}
+        {"path":"knowledge/advanced/39_图像数据建模方法卡.md","reason":"定义图像实体切分、预处理、任务指标、压力测试和许可边界。"},
+        {"path":"knowledge/advanced/24_机器学习评审标准.md","reason":"学习模型必须执行公平比较、类别评估和训练外验证。"}
       ],
-      "optional": [{"path":"02_数据处理与探索.md","reason":"存在表格元数据、标签联结或批次口径时追加。"}],
+      "optional": [{"path":"knowledge/foundations/02_数据处理与探索.md","reason":"存在表格元数据、标签联结或批次口径时追加。"}],
       "deferred": [],
       "forbidden": []
     },
@@ -1487,17 +1487,17 @@
       "deferred_stages": ["delivery"],
       "required": [
         {
-          "path": "40_敏感性分析与稳定性诊断方法卡.md",
+          "path": "knowledge/advanced/40_敏感性分析与稳定性诊断方法卡.md",
           "reason": "定义扰动对象、联合输入空间、依赖保持重采样、完整流水线复跑、结论翻转指标及停止边界。"
         }
       ],
       "optional": [
         {
-          "path": "26_聚类分析严谨方法卡.md",
+          "path": "knowledge/advanced/26_聚类分析严谨方法卡.md",
           "reason": "任务涉及聚类稳定性时追加，核对样本单位、距离、簇数和外部有效性。"
         },
         {
-          "path": "24_机器学习评审标准.md",
+          "path": "knowledge/advanced/24_机器学习评审标准.md",
           "reason": "任务涉及学习算法稳定性、训练外比较或调参时追加。"
         }
       ],

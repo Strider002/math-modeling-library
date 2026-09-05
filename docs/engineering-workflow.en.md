@@ -29,7 +29,7 @@ The manifest records relative paths, byte counts, SHA-256 hashes, timestamps, an
 
 Keep the private denylist outside the public repository. If AI was used, replace `-CumcmAiUse NotUsed` with
 `-CumcmAiUse Used -AiDetailsPath D:\work\case01\AI工具使用详情.pdf` and prepare the report from the
-[AI-use details template](../AI工具使用详情模板.md). The validator checks the declared state, exact details
+[AI-use details template](../templates/AI工具使用详情模板.md). The validator checks the declared state, exact details
 filename, and PDF header; it cannot prove the declaration truthful or the human verification adequate. Text extraction
 requires `pdftotext`; page counting uses `pdfinfo`. The generated ZIP is a local review bundle, not a claim about the
 official upload format.

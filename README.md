@@ -66,6 +66,23 @@ route_knowledge.ps1 解析任务类型与阶段
 
 机器调用不以 README 作为路由事实源。详细架构见[调用架构](docs/architecture.zh-CN.md)，完整文件导航见[知识库索引](docs/INDEX.zh-CN.md)。
 
+## 目录结构
+
+```text
+knowledge/
+├─ foundations/   01—19 基础方法与竞赛工作流
+├─ advanced/      22—40 进阶标准与严谨方法卡
+└─ competition/   国赛与美赛优秀论文案例方法论
+templates/        可复用的消化、复盘与 AI 使用模板
+retrospectives/   按日期保存的任务级复盘
+docs/             安装、架构、维护和中英文工作流
+evidence/         已迁移高风险主张的结构化证据绑定
+sources/          来源台账与本地证据区
+tools/ + tests/   路由、验证、交付工具及回归测试
+```
+
+根目录只保留 Skill 入口、路由与质量门禁、项目说明、许可证和协作文件。
+
 ## 最小质量协议
 
 1. 不编造数据、来源、参数、公式、实验结果、规则或奖项。

@@ -1,4 +1,4 @@
-"""Deterministic checks for 32_神经网络严谨方法卡.md.
+"""Deterministic checks for knowledge/advanced/32_神经网络严谨方法卡.md.
 
 This script uses only NumPy. It verifies mathematical identities and code/formula
 consistency; it does not make any empirical performance claim.

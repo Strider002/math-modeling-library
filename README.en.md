@@ -64,6 +64,23 @@ Baseline, out-of-training validation, sensitivity, and delivery audit
 
 The README is not a routing source. Chinese remains the canonical language for the maintained method cards. See the [architecture guide](docs/architecture.zh-CN.md) and [Chinese knowledge index](docs/INDEX.zh-CN.md) for the full structure.
 
+## Repository layout
+
+```text
+knowledge/
+├─ foundations/   Core methods 01–19 and competition workflow
+├─ advanced/      Advanced standards and method cards 22–40
+└─ competition/   CUMCM and MCM/ICM award-paper case methodology
+templates/        Reusable digestion, retrospective, and AI-use templates
+retrospectives/   Dated task-specific retrospectives
+docs/             Installation, architecture, maintenance, and workflows
+evidence/         Structured bindings for migrated high-risk claims
+sources/          Source ledger and local evidence area
+tools/ + tests/   Routing, validation, delivery tools, and regression tests
+```
+
+The repository root is reserved for the Skill entry point, routing and quality gates, project metadata, licenses, and collaboration files.
+
 ## Minimum quality contract
 
 1. Never invent data, sources, parameters, formulas, results, rules, or awards.

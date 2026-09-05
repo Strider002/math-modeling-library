@@ -15,8 +15,8 @@
       "must": [],
       "must_not": [
         "00Q_永久质量核心.md",
-        "02_数据处理与探索.md",
-        "35_回归模型选择与方法总览.md"
+        "knowledge/foundations/02_数据处理与探索.md",
+        "knowledge/advanced/35_回归模型选择与方法总览.md"
       ],
       "required_gates": []
     },
@@ -26,11 +26,11 @@
       "trigger": true,
       "route_ids": ["data_eda"],
       "stages": ["data"],
-      "must": ["02_数据处理与探索.md"],
+      "must": ["knowledge/foundations/02_数据处理与探索.md"],
       "must_not": [
-        "20_国赛优秀论文方法论.md",
-        "21_美赛特等奖论文方法论.md",
-        "30_Expectorpatro全站知识映射与使用边界.md",
+        "knowledge/competition/20_国赛优秀论文方法论.md",
+        "knowledge/competition/21_美赛特等奖论文方法论.md",
+        "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
         "sources/"
       ],
       "required_gates": [
@@ -44,11 +44,11 @@
       "trigger": true,
       "route_ids": ["evaluation_decision"],
       "stages": ["data", "model_selection", "validation_design"],
-      "must": ["03_评价与决策模型.md"],
+      "must": ["knowledge/foundations/03_评价与决策模型.md"],
       "must_not": [
-        "20_国赛优秀论文方法论.md",
-        "21_美赛特等奖论文方法论.md",
-        "30_Expectorpatro全站知识映射与使用边界.md",
+        "knowledge/competition/20_国赛优秀论文方法论.md",
+        "knowledge/competition/21_美赛特等奖论文方法论.md",
+        "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
         "sources/"
       ],
       "required_gates": [
@@ -63,11 +63,11 @@
       "trigger": true,
       "route_ids": ["regression_general"],
       "stages": ["data", "model_selection", "validation_design"],
-      "must": ["35_回归模型选择与方法总览.md"],
+      "must": ["knowledge/advanced/35_回归模型选择与方法总览.md"],
       "must_not": [
-        "20_国赛优秀论文方法论.md",
-        "21_美赛特等奖论文方法论.md",
-        "30_Expectorpatro全站知识映射与使用边界.md",
+        "knowledge/competition/20_国赛优秀论文方法论.md",
+        "knowledge/competition/21_美赛特等奖论文方法论.md",
+        "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
         "sources/"
       ],
       "required_gates": [
@@ -83,14 +83,14 @@
       "route_ids": ["regression_count_panel"],
       "stages": ["data", "model_selection", "validation_design"],
       "must": [
-        "35_回归模型选择与方法总览.md",
-        "35A_回归模型完整方法索引.md",
-        "29_线性模型与广义线性模型严谨方法卡.md"
+        "knowledge/advanced/35_回归模型选择与方法总览.md",
+        "knowledge/advanced/35A_回归模型完整方法索引.md",
+        "knowledge/advanced/29_线性模型与广义线性模型严谨方法卡.md"
       ],
       "must_not": [
-        "20_国赛优秀论文方法论.md",
-        "21_美赛特等奖论文方法论.md",
-        "30_Expectorpatro全站知识映射与使用边界.md",
+        "knowledge/competition/20_国赛优秀论文方法论.md",
+        "knowledge/competition/21_美赛特等奖论文方法论.md",
+        "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
         "sources/"
       ],
       "required_gates": [
@@ -106,13 +106,13 @@
       "route_ids": ["time_forecasting"],
       "stages": ["data", "model_selection", "validation_design"],
       "must": [
-        "04_预测与时间序列.md",
-        "23_预测建模进阶.md"
+        "knowledge/foundations/04_预测与时间序列.md",
+        "knowledge/advanced/23_预测建模进阶.md"
       ],
       "must_not": [
-        "20_国赛优秀论文方法论.md",
-        "21_美赛特等奖论文方法论.md",
-        "30_Expectorpatro全站知识映射与使用边界.md",
+        "knowledge/competition/20_国赛优秀论文方法论.md",
+        "knowledge/competition/21_美赛特等奖论文方法论.md",
+        "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
         "sources/"
       ],
       "required_gates": [
@@ -128,23 +128,23 @@
       "route_ids": ["prediction_optimization"],
       "stages": ["data", "model_selection", "validation_design", "validation_audit"],
       "must": [
-        "02_数据处理与探索.md",
-        "04_预测与时间序列.md",
-        "23_预测建模进阶.md",
-        "05_优化模型.md",
-        "25_优化建模进阶.md"
+        "knowledge/foundations/02_数据处理与探索.md",
+        "knowledge/foundations/04_预测与时间序列.md",
+        "knowledge/advanced/23_预测建模进阶.md",
+        "knowledge/foundations/05_优化模型.md",
+        "knowledge/advanced/25_优化建模进阶.md"
       ],
       "must_not": [
-        "20_国赛优秀论文方法论.md",
-        "21_美赛特等奖论文方法论.md",
-        "30_Expectorpatro全站知识映射与使用边界.md",
+        "knowledge/competition/20_国赛优秀论文方法论.md",
+        "knowledge/competition/21_美赛特等奖论文方法论.md",
+        "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
         "sources/"
       ],
       "required_gates": [
         "00Q_永久质量核心.md",
         "00D_数据阶段门禁.md",
         "00E_选模与验证设计门禁.md",
-        "11_验证敏感性与不确定性.md"
+        "knowledge/foundations/11_验证敏感性与不确定性.md"
       ]
     },
     {
@@ -154,14 +154,14 @@
       "route_ids": ["clustering"],
       "stages": ["data", "model_selection", "validation_design"],
       "must": [
-        "06_分类聚类与机器学习.md",
-        "22_数据分析与数据挖掘进阶.md",
-        "26_聚类分析严谨方法卡.md"
+        "knowledge/foundations/06_分类聚类与机器学习.md",
+        "knowledge/advanced/22_数据分析与数据挖掘进阶.md",
+        "knowledge/advanced/26_聚类分析严谨方法卡.md"
       ],
       "must_not": [
-        "20_国赛优秀论文方法论.md",
-        "21_美赛特等奖论文方法论.md",
-        "30_Expectorpatro全站知识映射与使用边界.md",
+        "knowledge/competition/20_国赛优秀论文方法论.md",
+        "knowledge/competition/21_美赛特等奖论文方法论.md",
+        "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
         "sources/"
       ],
       "required_gates": [
@@ -176,11 +176,11 @@
       "trigger": true,
       "route_ids": ["pca"],
       "stages": ["data", "model_selection", "validation_design"],
-      "must": ["27_主成分分析严谨方法卡.md"],
+      "must": ["knowledge/advanced/27_主成分分析严谨方法卡.md"],
       "must_not": [
-        "20_国赛优秀论文方法论.md",
-        "21_美赛特等奖论文方法论.md",
-        "30_Expectorpatro全站知识映射与使用边界.md",
+        "knowledge/competition/20_国赛优秀论文方法论.md",
+        "knowledge/competition/21_美赛特等奖论文方法论.md",
+        "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
         "sources/"
       ],
       "required_gates": [
@@ -196,21 +196,21 @@
       "route_ids": ["tree_ensemble"],
       "stages": ["data", "model_selection", "validation_design", "implementation", "validation_audit"],
       "must": [
-        "31_树模型与集成学习严谨方法卡.md",
-        "24_机器学习评审标准.md"
+        "knowledge/advanced/31_树模型与集成学习严谨方法卡.md",
+        "knowledge/advanced/24_机器学习评审标准.md"
       ],
       "must_not": [
-        "20_国赛优秀论文方法论.md",
-        "21_美赛特等奖论文方法论.md",
-        "30_Expectorpatro全站知识映射与使用边界.md",
+        "knowledge/competition/20_国赛优秀论文方法论.md",
+        "knowledge/competition/21_美赛特等奖论文方法论.md",
+        "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
         "sources/"
       ],
       "required_gates": [
         "00Q_永久质量核心.md",
         "00D_数据阶段门禁.md",
         "00E_选模与验证设计门禁.md",
-        "15_代码与实验规范.md",
-        "11_验证敏感性与不确定性.md"
+        "knowledge/foundations/15_代码与实验规范.md",
+        "knowledge/foundations/11_验证敏感性与不确定性.md"
       ]
     },
     {
@@ -220,21 +220,21 @@
       "route_ids": ["neural_network"],
       "stages": ["data", "model_selection", "validation_design", "implementation", "validation_audit"],
       "must": [
-        "32_神经网络严谨方法卡.md",
-        "24_机器学习评审标准.md"
+        "knowledge/advanced/32_神经网络严谨方法卡.md",
+        "knowledge/advanced/24_机器学习评审标准.md"
       ],
       "must_not": [
-        "20_国赛优秀论文方法论.md",
-        "21_美赛特等奖论文方法论.md",
-        "30_Expectorpatro全站知识映射与使用边界.md",
+        "knowledge/competition/20_国赛优秀论文方法论.md",
+        "knowledge/competition/21_美赛特等奖论文方法论.md",
+        "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
         "sources/"
       ],
       "required_gates": [
         "00Q_永久质量核心.md",
         "00D_数据阶段门禁.md",
         "00E_选模与验证设计门禁.md",
-        "15_代码与实验规范.md",
-        "11_验证敏感性与不确定性.md"
+        "knowledge/foundations/15_代码与实验规范.md",
+        "knowledge/foundations/11_验证敏感性与不确定性.md"
       ]
     },
     {
@@ -243,11 +243,11 @@
       "trigger": true,
       "route_ids": ["em_latent"],
       "stages": ["model_selection", "validation_design"],
-      "must": ["33_EM算法与潜变量模型严谨方法卡.md"],
+      "must": ["knowledge/advanced/33_EM算法与潜变量模型严谨方法卡.md"],
       "must_not": [
-        "20_国赛优秀论文方法论.md",
-        "21_美赛特等奖论文方法论.md",
-        "30_Expectorpatro全站知识映射与使用边界.md",
+        "knowledge/competition/20_国赛优秀论文方法论.md",
+        "knowledge/competition/21_美赛特等奖论文方法论.md",
+        "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
         "sources/"
       ],
       "required_gates": [
@@ -262,24 +262,24 @@
       "route_ids": ["cumcm_c_pipeline"],
       "stages": ["data", "model_selection", "validation_design", "validation_audit", "code_delivery"],
       "must": [
-        "34_国赛C题数据驱动建模方法卡.md",
-        "02_数据处理与探索.md",
-        "22_数据分析与数据挖掘进阶.md"
+        "knowledge/advanced/34_国赛C题数据驱动建模方法卡.md",
+        "knowledge/foundations/02_数据处理与探索.md",
+        "knowledge/advanced/22_数据分析与数据挖掘进阶.md"
       ],
       "must_not": [
-        "20_国赛优秀论文方法论.md",
-        "21_美赛特等奖论文方法论.md",
-        "30_Expectorpatro全站知识映射与使用边界.md",
+        "knowledge/competition/20_国赛优秀论文方法论.md",
+        "knowledge/competition/21_美赛特等奖论文方法论.md",
+        "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
         "sources/"
       ],
       "required_gates": [
         "00Q_永久质量核心.md",
         "00D_数据阶段门禁.md",
         "00E_选模与验证设计门禁.md",
-        "11_验证敏感性与不确定性.md",
-        "12_论文写作与可视化.md",
-        "13_竞赛工作流与检查清单.md",
-        "15_代码与实验规范.md"
+        "knowledge/foundations/11_验证敏感性与不确定性.md",
+        "knowledge/foundations/12_论文写作与可视化.md",
+        "knowledge/foundations/13_竞赛工作流与检查清单.md",
+        "knowledge/foundations/15_代码与实验规范.md"
       ]
     },
     {
@@ -289,13 +289,13 @@
       "route_ids": ["regression_general", "network_spatial"],
       "stages": ["data", "model_selection", "validation_design"],
       "must": [
-        "35_回归模型选择与方法总览.md",
-        "09_图论网络与空间模型.md"
+        "knowledge/advanced/35_回归模型选择与方法总览.md",
+        "knowledge/foundations/09_图论网络与空间模型.md"
       ],
       "must_not": [
-        "20_国赛优秀论文方法论.md",
-        "21_美赛特等奖论文方法论.md",
-        "30_Expectorpatro全站知识映射与使用边界.md",
+        "knowledge/competition/20_国赛优秀论文方法论.md",
+        "knowledge/competition/21_美赛特等奖论文方法论.md",
+        "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
         "sources/"
       ],
       "required_gates": [
@@ -311,14 +311,14 @@
       "route_ids": ["regression_survival_censoring"],
       "stages": ["data", "model_selection", "validation_design"],
       "must": [
-        "35_回归模型选择与方法总览.md",
-        "35A_回归模型完整方法索引.md",
-        "07_概率统计与随机模型.md"
+        "knowledge/advanced/35_回归模型选择与方法总览.md",
+        "knowledge/advanced/35A_回归模型完整方法索引.md",
+        "knowledge/foundations/07_概率统计与随机模型.md"
       ],
       "must_not": [
-        "20_国赛优秀论文方法论.md",
-        "21_美赛特等奖论文方法论.md",
-        "30_Expectorpatro全站知识映射与使用边界.md",
+        "knowledge/competition/20_国赛优秀论文方法论.md",
+        "knowledge/competition/21_美赛特等奖论文方法论.md",
+        "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
         "sources/"
       ],
       "required_gates": [
@@ -334,19 +334,19 @@
       "route_ids": ["paper_delivery"],
       "stages": ["delivery"],
       "must": [
-        "12_论文写作与可视化.md",
-        "13_竞赛工作流与检查清单.md"
+        "knowledge/foundations/12_论文写作与可视化.md",
+        "knowledge/foundations/13_竞赛工作流与检查清单.md"
       ],
       "must_not": [
-        "20_国赛优秀论文方法论.md",
-        "21_美赛特等奖论文方法论.md",
-        "30_Expectorpatro全站知识映射与使用边界.md",
+        "knowledge/competition/20_国赛优秀论文方法论.md",
+        "knowledge/competition/21_美赛特等奖论文方法论.md",
+        "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
         "sources/"
       ],
       "required_gates": [
         "00Q_永久质量核心.md",
-        "12_论文写作与可视化.md",
-        "13_竞赛工作流与检查清单.md"
+        "knowledge/foundations/12_论文写作与可视化.md",
+        "knowledge/foundations/13_竞赛工作流与检查清单.md"
       ]
     },
     {
@@ -362,9 +362,9 @@
         "tools/validate_library.ps1"
       ],
       "must_not": [
-        "20_国赛优秀论文方法论.md",
-        "21_美赛特等奖论文方法论.md",
-        "30_Expectorpatro全站知识映射与使用边界.md",
+        "knowledge/competition/20_国赛优秀论文方法论.md",
+        "knowledge/competition/21_美赛特等奖论文方法论.md",
+        "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
         "sources/"
       ],
       "required_gates": ["00Q_永久质量核心.md"]
@@ -377,11 +377,11 @@
       "stages": ["data"],
       "must": [],
       "must_not": [
-        "35_回归模型选择与方法总览.md",
-        "35A_回归模型完整方法索引.md",
-        "20_国赛优秀论文方法论.md",
-        "21_美赛特等奖论文方法论.md",
-        "30_Expectorpatro全站知识映射与使用边界.md",
+        "knowledge/advanced/35_回归模型选择与方法总览.md",
+        "knowledge/advanced/35A_回归模型完整方法索引.md",
+        "knowledge/competition/20_国赛优秀论文方法论.md",
+        "knowledge/competition/21_美赛特等奖论文方法论.md",
+        "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
         "sources/"
       ],
       "required_gates": [
@@ -396,21 +396,21 @@
       "route_ids": ["regression_general"],
       "stages": ["delivery"],
       "must": [
-        "12_论文写作与可视化.md",
-        "13_竞赛工作流与检查清单.md"
+        "knowledge/foundations/12_论文写作与可视化.md",
+        "knowledge/foundations/13_竞赛工作流与检查清单.md"
       ],
       "must_not": [
-        "35_回归模型选择与方法总览.md",
-        "35A_回归模型完整方法索引.md",
-        "20_国赛优秀论文方法论.md",
-        "21_美赛特等奖论文方法论.md",
-        "30_Expectorpatro全站知识映射与使用边界.md",
+        "knowledge/advanced/35_回归模型选择与方法总览.md",
+        "knowledge/advanced/35A_回归模型完整方法索引.md",
+        "knowledge/competition/20_国赛优秀论文方法论.md",
+        "knowledge/competition/21_美赛特等奖论文方法论.md",
+        "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
         "sources/"
       ],
       "required_gates": [
         "00Q_永久质量核心.md",
-        "12_论文写作与可视化.md",
-        "13_竞赛工作流与检查清单.md"
+        "knowledge/foundations/12_论文写作与可视化.md",
+        "knowledge/foundations/13_竞赛工作流与检查清单.md"
       ]
     },
     {
@@ -420,14 +420,14 @@
       "route_ids": ["regression_general", "tree_ensemble"],
       "stages": ["model_selection", "validation_design"],
       "must": [
-        "35_回归模型选择与方法总览.md",
-        "31_树模型与集成学习严谨方法卡.md",
-        "24_机器学习评审标准.md"
+        "knowledge/advanced/35_回归模型选择与方法总览.md",
+        "knowledge/advanced/31_树模型与集成学习严谨方法卡.md",
+        "knowledge/advanced/24_机器学习评审标准.md"
       ],
       "must_not": [
-        "20_国赛优秀论文方法论.md",
-        "21_美赛特等奖论文方法论.md",
-        "30_Expectorpatro全站知识映射与使用边界.md",
+        "knowledge/competition/20_国赛优秀论文方法论.md",
+        "knowledge/competition/21_美赛特等奖论文方法论.md",
+        "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
         "sources/"
       ],
       "required_gates": [
@@ -442,14 +442,14 @@
       "route_ids": ["regression_general", "neural_network"],
       "stages": ["model_selection", "validation_design"],
       "must": [
-        "35_回归模型选择与方法总览.md",
-        "32_神经网络严谨方法卡.md",
-        "24_机器学习评审标准.md"
+        "knowledge/advanced/35_回归模型选择与方法总览.md",
+        "knowledge/advanced/32_神经网络严谨方法卡.md",
+        "knowledge/advanced/24_机器学习评审标准.md"
       ],
       "must_not": [
-        "20_国赛优秀论文方法论.md",
-        "21_美赛特等奖论文方法论.md",
-        "30_Expectorpatro全站知识映射与使用边界.md",
+        "knowledge/competition/20_国赛优秀论文方法论.md",
+        "knowledge/competition/21_美赛特等奖论文方法论.md",
+        "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
         "sources/"
       ],
       "required_gates": [
@@ -464,13 +464,13 @@
       "route_ids": ["causal_inference", "regression_general"],
       "stages": ["model_selection", "validation_design"],
       "must": [
-        "17_因果推断与实验设计.md",
-        "35_回归模型选择与方法总览.md"
+        "knowledge/foundations/17_因果推断与实验设计.md",
+        "knowledge/advanced/35_回归模型选择与方法总览.md"
       ],
       "must_not": [
-        "20_国赛优秀论文方法论.md",
-        "21_美赛特等奖论文方法论.md",
-        "30_Expectorpatro全站知识映射与使用边界.md",
+        "knowledge/competition/20_国赛优秀论文方法论.md",
+        "knowledge/competition/21_美赛特等奖论文方法论.md",
+        "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
         "sources/"
       ],
       "required_gates": [
@@ -485,14 +485,14 @@
       "route_ids": ["regression_general", "time_forecasting"],
       "stages": ["model_selection", "validation_design"],
       "must": [
-        "35_回归模型选择与方法总览.md",
-        "04_预测与时间序列.md",
-        "23_预测建模进阶.md"
+        "knowledge/advanced/35_回归模型选择与方法总览.md",
+        "knowledge/foundations/04_预测与时间序列.md",
+        "knowledge/advanced/23_预测建模进阶.md"
       ],
       "must_not": [
-        "20_国赛优秀论文方法论.md",
-        "21_美赛特等奖论文方法论.md",
-        "30_Expectorpatro全站知识映射与使用边界.md",
+        "knowledge/competition/20_国赛优秀论文方法论.md",
+        "knowledge/competition/21_美赛特等奖论文方法论.md",
+        "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
         "sources/"
       ],
       "required_gates": [
@@ -507,13 +507,13 @@
       "route_ids": ["regression_panel_hierarchical"],
       "stages": ["model_selection", "validation_design"],
       "must": [
-        "35_回归模型选择与方法总览.md",
-        "35A_回归模型完整方法索引.md"
+        "knowledge/advanced/35_回归模型选择与方法总览.md",
+        "knowledge/advanced/35A_回归模型完整方法索引.md"
       ],
       "must_not": [
-        "20_国赛优秀论文方法论.md",
-        "21_美赛特等奖论文方法论.md",
-        "30_Expectorpatro全站知识映射与使用边界.md",
+        "knowledge/competition/20_国赛优秀论文方法论.md",
+        "knowledge/competition/21_美赛特等奖论文方法论.md",
+        "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
         "sources/"
       ],
       "required_gates": [
@@ -527,11 +527,11 @@
       "trigger": true,
       "route_ids": ["causal_inference"],
       "stages": ["data", "model_selection", "validation_design"],
-      "must": ["17_因果推断与实验设计.md"],
+      "must": ["knowledge/foundations/17_因果推断与实验设计.md"],
       "must_not": [
-        "20_国赛优秀论文方法论.md",
-        "21_美赛特等奖论文方法论.md",
-        "30_Expectorpatro全站知识映射与使用边界.md",
+        "knowledge/competition/20_国赛优秀论文方法论.md",
+        "knowledge/competition/21_美赛特等奖论文方法论.md",
+        "knowledge/advanced/30_Expectorpatro全站知识映射与使用边界.md",
         "sources/"
       ],
       "required_gates": [
@@ -546,8 +546,8 @@
       "trigger": true,
       "route_ids": ["mechanistic_ab"],
       "stages": ["model_selection", "validation_design"],
-      "must": ["36_AB题机理建模与仿真方法卡.md", "08_微分方程与机理模型.md", "10_仿真模型.md"],
-      "must_not": ["20_国赛优秀论文方法论.md", "21_美赛特等奖论文方法论.md", "sources/"],
+      "must": ["knowledge/advanced/36_AB题机理建模与仿真方法卡.md", "knowledge/foundations/08_微分方程与机理模型.md", "knowledge/foundations/10_仿真模型.md"],
+      "must_not": ["knowledge/competition/20_国赛优秀论文方法论.md", "knowledge/competition/21_美赛特等奖论文方法论.md", "sources/"],
       "required_gates": ["00Q_永久质量核心.md", "00E_选模与验证设计门禁.md"]
     },
     {
@@ -556,8 +556,8 @@
       "trigger": true,
       "route_ids": ["text_modeling"],
       "stages": ["data", "model_selection", "validation_design"],
-      "must": ["37_文本数据建模方法卡.md", "02_数据处理与探索.md", "24_机器学习评审标准.md"],
-      "must_not": ["20_国赛优秀论文方法论.md", "21_美赛特等奖论文方法论.md", "sources/"],
+      "must": ["knowledge/advanced/37_文本数据建模方法卡.md", "knowledge/foundations/02_数据处理与探索.md", "knowledge/advanced/24_机器学习评审标准.md"],
+      "must_not": ["knowledge/competition/20_国赛优秀论文方法论.md", "knowledge/competition/21_美赛特等奖论文方法论.md", "sources/"],
       "required_gates": ["00Q_永久质量核心.md", "00D_数据阶段门禁.md", "00E_选模与验证设计门禁.md"]
     },
     {
@@ -566,8 +566,8 @@
       "trigger": true,
       "route_ids": ["signal_modeling"],
       "stages": ["data", "model_selection", "validation_design"],
-      "must": ["38_信号处理与频谱建模方法卡.md", "04_预测与时间序列.md"],
-      "must_not": ["20_国赛优秀论文方法论.md", "21_美赛特等奖论文方法论.md", "sources/"],
+      "must": ["knowledge/advanced/38_信号处理与频谱建模方法卡.md", "knowledge/foundations/04_预测与时间序列.md"],
+      "must_not": ["knowledge/competition/20_国赛优秀论文方法论.md", "knowledge/competition/21_美赛特等奖论文方法论.md", "sources/"],
       "required_gates": ["00Q_永久质量核心.md", "00D_数据阶段门禁.md", "00E_选模与验证设计门禁.md"]
     },
     {
@@ -576,8 +576,8 @@
       "trigger": true,
       "route_ids": ["image_modeling"],
       "stages": ["data", "model_selection", "validation_design"],
-      "must": ["39_图像数据建模方法卡.md", "24_机器学习评审标准.md"],
-      "must_not": ["20_国赛优秀论文方法论.md", "21_美赛特等奖论文方法论.md", "sources/"],
+      "must": ["knowledge/advanced/39_图像数据建模方法卡.md", "knowledge/advanced/24_机器学习评审标准.md"],
+      "must_not": ["knowledge/competition/20_国赛优秀论文方法论.md", "knowledge/competition/21_美赛特等奖论文方法论.md", "sources/"],
       "required_gates": ["00Q_永久质量核心.md", "00D_数据阶段门禁.md", "00E_选模与验证设计门禁.md"]
     },
     {
@@ -586,9 +586,9 @@
       "trigger": true,
       "route_ids": ["sensitivity_analysis"],
       "stages": ["validation_audit"],
-      "must": ["40_敏感性分析与稳定性诊断方法卡.md", "11_验证敏感性与不确定性.md"],
-      "must_not": ["20_国赛优秀论文方法论.md", "21_美赛特等奖论文方法论.md", "sources/"],
-      "required_gates": ["00Q_永久质量核心.md", "11_验证敏感性与不确定性.md"]
+      "must": ["knowledge/advanced/40_敏感性分析与稳定性诊断方法卡.md", "knowledge/foundations/11_验证敏感性与不确定性.md"],
+      "must_not": ["knowledge/competition/20_国赛优秀论文方法论.md", "knowledge/competition/21_美赛特等奖论文方法论.md", "sources/"],
+      "required_gates": ["00Q_永久质量核心.md", "knowledge/foundations/11_验证敏感性与不确定性.md"]
     }
   ]
 }

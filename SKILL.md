@@ -54,9 +54,9 @@ Use `benchmarks\manifest.json` only as a fixed evaluation specification. Its cur
 
 ### Apply the CUMCM AI-use delivery gate
 
-For a CUMCM paper or support-material delivery, recheck the current official AI-use rule before packaging and read the CUMCM sections in `12_论文写作与可视化.md` and `13_竞赛工作流与检查清单.md`. Determine `NotUsed` or `Used` from the team's actual process; do not infer, conceal, or reconstruct a false history.
+For a CUMCM paper or support-material delivery, recheck the current official AI-use rule before packaging and read the CUMCM sections in `knowledge/foundations/12_论文写作与可视化.md` and `knowledge/foundations/13_竞赛工作流与检查清单.md`. Determine `NotUsed` or `Used` from the team's actual process; do not infer, conceal, or reconstruct a false history.
 
-For the 2026 trial rule, place the applicable official declaration before the references. If AI was used, require a support PDF named exactly `AI工具使用详情.pdf`, use `AI工具使用详情模板.md` as a truthful drafting aid, and keep the team's manual review and verification evidence. Call `tools\validate_submission.ps1` with `-CumcmAiUse NotUsed`, or with `-CumcmAiUse Used -AiDetailsPath <path>` as applicable. The mechanical check does not prove the declaration is truthful or the human verification adequate.
+For the 2026 trial rule, place the applicable official declaration before the references. If AI was used, require a support PDF named exactly `AI工具使用详情.pdf`, use `templates/AI工具使用详情模板.md` as a truthful drafting aid, and keep the team's manual review and verification evidence. Call `tools\validate_submission.ps1` with `-CumcmAiUse NotUsed`, or with `-CumcmAiUse Used -AiDetailsPath <path>` as applicable. The mechanical check does not prove the declaration is truthful or the human verification adequate.
 
 ## Maintain the knowledge base
 
@@ -70,7 +70,7 @@ For claims already migrated into `evidence\claims_registry.json`, preserve the c
 
 When the user explicitly asks to preserve a modeling retrospective, separate three layers:
 
-1. Put task-specific numbers, artifacts, failures, and unresolved issues in one dated retrospective based on `建模复盘模板.md`.
+1. Put task-specific numbers, artifacts, failures, and unresolved issues in one dated retrospective based on `templates/建模复盘模板.md`.
 2. Promote only cross-task workflow lessons into the relevant library topic; do not turn one dataset's thresholds, model choice, or metric differences into universal guidance.
 3. Change this launcher only when invocation, routing, maintenance, or stopping behavior should change; do not copy the retrospective or method content into the skill.
 

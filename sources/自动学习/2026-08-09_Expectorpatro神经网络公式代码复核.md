@@ -19,7 +19,7 @@
 
 结论：该网页可以作为结构线索，但不能原样进入主知识。定义层数、批下标、梯度裁剪、GRU、卷积术语
 等处存在确定错误或过强表述；损失函数、一般反向传播、输出—损失契约、正则化和可复现训练等关键
-内容缺失。已将独立核验后的可复用知识写入 `32_神经网络严谨方法卡.md`。
+内容缺失。已将独立核验后的可复用知识写入 `knowledge/advanced/32_神经网络严谨方法卡.md`。
 
 ## 2. 完整内容清单
 
@@ -147,6 +147,6 @@ python D:\数学建模\library\sources\自动学习\verify_neural_networks.py
 - 网页保留为 D 级结构线索，来源 ID 为 `EXPECTOR-NN`。
 - 确定错误不写入主方法；GRU Algorithm 17.8 标记“已隔离网页算法”。
 - 可复用公式、条件、实现边界、验证协议与 NumPy 核验入口写入
-  `32_神经网络严谨方法卡.md`。
+  `knowledge/advanced/32_神经网络严谨方法卡.md`。
 - 以后实际使用 PyTorch、TensorFlow/JAX 或 scikit-learn 时，按任务所用版本重新核对张量布局、
   loss reduction、门顺序、padding、随机性和优化器语义。

@@ -36,7 +36,7 @@
 
 ## 对知识库的实际补充
 
-新增 `19_数学基础与统计理论补充.md`，重点写入：
+新增 `knowledge/foundations/19_数学基础与统计理论补充.md`，重点写入：
 
 1. 秩、子空间和参数可识别性的联系；
 2. 广义逆、投影和矩阵分解的应用选择；
@@ -50,11 +50,11 @@
 
 同时更新了：
 
-- `04_预测与时间序列.md`
-- `05_优化模型.md`
-- `06_分类聚类与机器学习.md`
-- `07_概率统计与随机模型.md`
-- `16_插值拟合与数值计算.md`
+- `knowledge/foundations/04_预测与时间序列.md`
+- `knowledge/foundations/05_优化模型.md`
+- `knowledge/foundations/06_分类聚类与机器学习.md`
+- `knowledge/foundations/07_概率统计与随机模型.md`
+- `knowledge/foundations/16_插值拟合与数值计算.md`
 
 ## 最值得复用的思想
 
@@ -74,7 +74,7 @@
   https://expectorpatro.github.io/math/chapters/multivariate-statistics.html#id--519e638a
 - 阅读范围：聚类定位、WCSS、CH、轮廓系数、RI/ARI/FMI、K-means、K-modes、
   K-prototypes、凝聚层次聚类、DBSCAN 与 OPTICS。
-- 沉淀位置：`26_聚类分析严谨方法卡.md`。
+- 沉淀位置：`knowledge/advanced/26_聚类分析严谨方法卡.md`。
 
 经原始论文与软件文档交叉核对后，保留了该页的结构、定义和主要算法思想，但作出以下限制：
 
@@ -94,7 +94,7 @@ Rousseeuw、Hubert–Arabie、DBSCAN、OPTICS、Huang 的原始文献及所用�
 - 页面：
   https://expectorpatro.github.io/math/chapters/multivariate-statistics.html#id--60d3545d
 - 实际阅读范围：15.1 全节，包括总体主成分、样本主成分、注意事项和主成分回归。
-- 沉淀位置：`27_主成分分析严谨方法卡.md`。
+- 沉淀位置：`knowledge/advanced/27_主成分分析严谨方法卡.md`。
 
 保留并强化的内容：
 
@@ -128,7 +128,7 @@ Jolliffe–Cadima、Bro–Smilde、Horn 及所用软件版本文档。
 - 当前 `tree.tex` SHA-256：
   `7A6B57872BF83CEB069C88C09955CD9076DCE005B4286162E1DA0641ED4AA01B`；
 - 阅读范围：熵/Gini、CART、Bagging、随机森林/OOB、GBDT、XGBoost 与工程优化；
-- 沉淀位置：`31_树模型与集成学习严谨方法卡.md`。
+- 沉淀位置：`knowledge/advanced/31_树模型与集成学习严谨方法卡.md`。
 
 保留并重写为可调用知识的内容：
 

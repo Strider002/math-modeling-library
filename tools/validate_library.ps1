@@ -34,7 +34,7 @@ function Get-PropertyArray {
 
 function Get-RelativeLibraryPath {
     param([Parameter(Mandatory = $true)][string]$FullName)
-    return $FullName.Substring($root.Length + 1)
+    return $FullName.Substring($root.Length + 1).Replace('\', '/')
 }
 
 function Resolve-ManifestResource {
