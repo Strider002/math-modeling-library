@@ -1,0 +1,6 @@
+interface:
+  display_name: "数学建模方法库"
+  short_description: "面向国赛与美赛的问题拆解、模型选择、实现验证和可追溯交付"
+  default_prompt: "请使用 $math-modeling-library，按当前题目和阶段选择方法、基线与验证方案。"
+policy:
+  allow_implicit_invocation: true

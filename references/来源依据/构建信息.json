@@ -1,0 +1,463 @@
+{
+  "schema_version": "1.0.0",
+  "package": "math-modeling-library",
+  "prepared_at": "2026-09-20",
+  "source_repository": "https://github.com/Strider002/math-modeling-library",
+  "source_commit": "cbdb69c014ba7761dc3a3f468001719c81be65f8",
+  "source_policy": "Pinned repository baseline selected for redistribution; no private worktrees, raw attachments, repository history, or restricted project derivatives are bundled.",
+  "copied_method_documents": 41,
+  "copied_case_documents": 11,
+  "evaluation": "Package and engineering validation only; no award or end-to-end performance claim.",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "EA27E028EF2AC7F924C89D4BCDEDB5604A6082B152C95780CDD3AB3DC5D9F4D0",
+      "bytes": 1059
+    },
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "B5DE5C9EA5643D6D5B5E665A07A1ACCB7505DFCBEA2F254D54A22469F4B0F391",
+      "bytes": 320
+    },
+    {
+      "path": "assets/模板/建模复盘模板.md",
+      "sha256": "7F0D01C54E8B3BDCCF1423C2157A8F30D0E3770EDAB8515F06F5AA3C0B23B980",
+      "bytes": 1332
+    },
+    {
+      "path": "assets/模板/资料消化模板.md",
+      "sha256": "192306861DC34AF53817549883946AB15D57A8626CE863499BB6B5FFA6B48849",
+      "bytes": 1807
+    },
+    {
+      "path": "assets/模板/AI工具使用详情模板.md",
+      "sha256": "30C301E36DF7F144FD6C9899FE105215F3AEE6BCE79FE665C55E7E5430D40D3B",
+      "bytes": 2974
+    },
+    {
+      "path": "assets/schemas/project-state.schema.json",
+      "sha256": "B8DBD4509B24D5F88C94DC1222D3F3DEC0FB70EFB7372FED10E3778503E6626E",
+      "bytes": 1354
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "CFF3D331A2860269B21ED4137CD2111D951651F7C88CF92A46E1A7373E49B4B9",
+      "bytes": 1067
+    },
+    {
+      "path": "LICENSE-DOCS",
+      "sha256": "17F9BD0674246DA3901EA78E4DB7104528A499C7A7EA3F0F31B16AF30D49C2DB",
+      "bytes": 737
+    },
+    {
+      "path": "LICENSES.md",
+      "sha256": "954982E668EE48ADAFFF8E6A435E49FA70EC2DEFAC0FC354FEC5B4316EE5A6E3",
+      "bytes": 2956
+    },
+    {
+      "path": "references/工程工具说明.md",
+      "sha256": "4B84BF23310800F049CD98F7FDB08D69C5822CA00D3BDD6B3D3E39CEFE16FAF6",
+      "bytes": 2541
+    },
+    {
+      "path": "references/公开版维护说明.md",
+      "sha256": "FA7C94FC24CB8F3D43EF4C3422DDC70B54A1A85CDE8AE7363F9CDE424CE7EAF4",
+      "bytes": 1303
+    },
+    {
+      "path": "references/规范/00_建模前必读.md",
+      "sha256": "C034F52F31A165D0358D0D0AD3DD32FF102C3ACD1653D86C7FC884186D83F3C6",
+      "bytes": 5756
+    },
+    {
+      "path": "references/规范/00A_证据与质量门禁.md",
+      "sha256": "855C398FC97DBA8812C61C9BD2BA4E01580FF7C7B91CFC339BA418A54EA0700D",
+      "bytes": 7948
+    },
+    {
+      "path": "references/规范/00C_知识条目与证据维护规范.md",
+      "sha256": "E8CCC3A03F471666B586F59DD84DB3EBD73D13A22F278CECF56787288A17DF5B",
+      "bytes": 1803
+    },
+    {
+      "path": "references/规范/00D_数据阶段门禁.md",
+      "sha256": "09EA8339EE8BCFFFAA49F24E011D3C7CF1CD3DA0A330988533C3F1735546009B",
+      "bytes": 7292
+    },
+    {
+      "path": "references/规范/00E_选模与验证设计门禁.md",
+      "sha256": "9024264B1A22F890AEDE99841F0C73669F326B19A7CB2B21ED5FF2EACD5BB6E0",
+      "bytes": 7619
+    },
+    {
+      "path": "references/规范/00Q_永久质量核心.md",
+      "sha256": "E3C2493EC8939AAFDFC4772CD204EFBB28E1D92D9D0DCAFC9313C38C7C40C5C3",
+      "bytes": 5509
+    },
+    {
+      "path": "references/竞赛规则核对.md",
+      "sha256": "561C2DD789AFA534B6C06AEEE4CE689D3009A5474E660A56ED79029C9960C635",
+      "bytes": 1671
+    },
+    {
+      "path": "references/来源依据/来源索引.md",
+      "sha256": "14E70D2C98201BAC58273350D2506D76304FD9A13426850046859C3754C62BCB",
+      "bytes": 51517
+    },
+    {
+      "path": "references/来源依据/证据注册/claims_registry.json",
+      "sha256": "F535D484732A7F976862B1EA8FAECE5D70780A197D77592EAC96656A00F3F5C5",
+      "bytes": 9617
+    },
+    {
+      "path": "references/来源依据/证据注册/source_registry.json",
+      "sha256": "DF34A645AEA7B7C4CFEFDA1DC83A9FF683FFDF1C52657A8372E003723756EEDD",
+      "bytes": 6487
+    },
+    {
+      "path": "references/项目经验/复盘记录/复盘_2026-07-25_高考志愿概率与数据映射.md",
+      "sha256": "72AFD2EB36B522D13BC08F33A3955F6EFA74BD6710915283CBE21270F4A9DD88",
+      "bytes": 3746
+    },
+    {
+      "path": "references/项目经验/复盘记录/复盘_2026-07-28_Iris两份聚类报告对比审计.md",
+      "sha256": "7A74CC34B88D92F5BAF89A726B9BADB0CF1CF27F2A8228334B2B8902BFC4CDDA",
+      "bytes": 4644
+    },
+    {
+      "path": "references/项目经验/复盘记录/复盘_2026-07-28_Iris原始尺度聚类.md",
+      "sha256": "320B0C13B4B94D467C5F0E60320302817EBA7DAAB25DEC4C90D7300EBB8C7516",
+      "bytes": 4149
+    },
+    {
+      "path": "references/项目经验/复盘记录/复盘_2026-07-30_Boston主成分回归.md",
+      "sha256": "E9F623F36688F32921CC5173C5F5E089816FFEBFB8A99921871BDD4EE06A53AC",
+      "bytes": 4012
+    },
+    {
+      "path": "references/项目经验/复盘记录/复盘_2026-08-09_Boston树模型与XGBoost.md",
+      "sha256": "F25DE1E3A6800E6099E28C13D9F86BF205401C9448422085E174AB1766D06D35",
+      "bytes": 6181
+    },
+    {
+      "path": "references/项目经验/复盘记录/复盘_2026-08-09_Boston四类树模型公平比较.md",
+      "sha256": "FD7BAB7D26A4E816AD63CEF9BD644538DE949F7B0F5901B034FBB0F3BDE33393",
+      "bytes": 4821
+    },
+    {
+      "path": "references/项目经验/复盘记录/复盘_2026-08-10_Boston_PyTorch回归与树模型对比.md",
+      "sha256": "E4E0E2AAC619E61E69335E12EE2A640E528AFD77C71F8031DA2E6CDDF9937C78",
+      "bytes": 7582
+    },
+    {
+      "path": "references/项目经验/复盘记录/复盘_2026-08-10_C题问题2区间删失AFT与机会约束分组.md",
+      "sha256": "36B388296A19453AB3BC1C7D1A6CDE7D702FA384C438430D38BD64E2D60AFB10",
+      "bytes": 5364
+    },
+    {
+      "path": "references/项目经验/复盘记录/复盘_2026-08-10_C题问题3多因素区间删失与稳健分组方案.md",
+      "sha256": "FBD3DC4190DC72FD620C84AE86598B41D7E6E96F468617FE06454B0D15DEEEB9",
+      "bytes": 5255
+    },
+    {
+      "path": "references/项目经验/复盘记录/复盘_2026-08-21_C题NIPT全题终稿复盘.md",
+      "sha256": "3B717BDD53C89DAD25C6BF2D135458D41F5001467F80F4998A9BA1072E186AEB",
+      "bytes": 26524
+    },
+    {
+      "path": "references/项目经验/复盘记录/复盘_2026-09-02_MCM_C奥运奖牌五步闭环.md",
+      "sha256": "F7AFC25B9EE4C25EB96D6C6CD9632F3BF8FC1806C5C6A51382D46C67BC990D48",
+      "bytes": 14106
+    },
+    {
+      "path": "references/项目经验/项目索引.md",
+      "sha256": "F17492E8968DDCA3F175BB88B8B38CA61C07FB6544EC17A28D4E29A00F1F6B9B",
+      "bytes": 1777
+    },
+    {
+      "path": "references/阅读导航.md",
+      "sha256": "6931D46890FD2861142DBB0DC4A8E728F0B3C38088FF7B3FBD83D194E422591D",
+      "bytes": 8123
+    },
+    {
+      "path": "references/知识库/基础方法/01_问题识别与模型选择.md",
+      "sha256": "27397DB342AE52E249E02D7EB737EC4B06AD8941B5A6861752071179C55C24FE",
+      "bytes": 4600
+    },
+    {
+      "path": "references/知识库/基础方法/02_数据处理与探索.md",
+      "sha256": "6E354D1FD76D3B039E2D2994FB9CD143141D69062D04912EB5F3906A8258D77E",
+      "bytes": 5285
+    },
+    {
+      "path": "references/知识库/基础方法/03_评价与决策模型.md",
+      "sha256": "4C18F40FE400672398EA6E260D7907DFE5AF3CE0FA2AD3AB8829AEA7612EE8F5",
+      "bytes": 5501
+    },
+    {
+      "path": "references/知识库/基础方法/04_预测与时间序列.md",
+      "sha256": "661C3E4F662645257957598C8D4028308FDBB8F63027B4BDB8BF5E6DE7FB3B05",
+      "bytes": 6075
+    },
+    {
+      "path": "references/知识库/基础方法/05_优化模型.md",
+      "sha256": "89873EBBAC3BF54B77AD2544DF20F0E4C37AB939F6644766BD95BC32EFC10096",
+      "bytes": 6100
+    },
+    {
+      "path": "references/知识库/基础方法/06_分类聚类与机器学习.md",
+      "sha256": "6FCCD05849948B2DF0D6A88AC84E08333FA2FAA467C8DF7016B3E1223F1DDB0E",
+      "bytes": 7158
+    },
+    {
+      "path": "references/知识库/基础方法/07_概率统计与随机模型.md",
+      "sha256": "629858A86B5968DE5FCF6BCFBC128C616829A4CEC51AEAEDDF29D0828CAC4DCD",
+      "bytes": 7577
+    },
+    {
+      "path": "references/知识库/基础方法/08_微分方程与机理模型.md",
+      "sha256": "EA91791DE204730793BE6C069C445E38ECF7794B7403853953DBB4950613300D",
+      "bytes": 3933
+    },
+    {
+      "path": "references/知识库/基础方法/09_图论网络与空间模型.md",
+      "sha256": "208EF44EF5D84A7FB171A60AE889FEEBEA1D7C218034079C6EB72BD201F9EB00",
+      "bytes": 3583
+    },
+    {
+      "path": "references/知识库/基础方法/10_仿真模型.md",
+      "sha256": "41F9F4B5DB70B3A4599790EC7668F13DDE85E929C7B13D986CD41B6BCF8ACCEE",
+      "bytes": 3516
+    },
+    {
+      "path": "references/知识库/基础方法/11_验证敏感性与不确定性.md",
+      "sha256": "73EDAE1D6495393D7017D2EF7E376C1C6BD37E131EE22CF2D1854E20B6A1819B",
+      "bytes": 5957
+    },
+    {
+      "path": "references/知识库/基础方法/12_论文写作与可视化.md",
+      "sha256": "E365A7BCBAE337A88849BAE247F1572F553F8A33272D5A311AE39553B3309BD5",
+      "bytes": 10095
+    },
+    {
+      "path": "references/知识库/基础方法/13_竞赛工作流与检查清单.md",
+      "sha256": "04E866F6FB40D07F5B69E89B6767D00B18A56E40FBA648F877DBDDE8A07B18A9",
+      "bytes": 7949
+    },
+    {
+      "path": "references/知识库/基础方法/14_公式与指标速查.md",
+      "sha256": "A45A46BD0C431D335300895F61123632E83584E92494005DEE2FB5813B9D63AC",
+      "bytes": 4859
+    },
+    {
+      "path": "references/知识库/基础方法/15_代码与实验规范.md",
+      "sha256": "E92A10274698E5D53D1C967663941EA1A3110334CF34CFFFDCCDAC6549577233",
+      "bytes": 7061
+    },
+    {
+      "path": "references/知识库/基础方法/16_插值拟合与数值计算.md",
+      "sha256": "8FF3EA0DED131E342DA2302058C9DAEA75DF381E1624AD1CDA1484C3A10BA339",
+      "bytes": 6183
+    },
+    {
+      "path": "references/知识库/基础方法/17_因果推断与实验设计.md",
+      "sha256": "004E0C0DB7A8AA451F30B5EEACD22B25C2C6EE6644615B660386B5E6D770C161",
+      "bytes": 5675
+    },
+    {
+      "path": "references/知识库/基础方法/18_博弈论与行为决策.md",
+      "sha256": "DB739D8C09D02508607A1852C0408BB40C6891E89E39D0DD358616607CE77A7A",
+      "bytes": 3869
+    },
+    {
+      "path": "references/知识库/基础方法/19_数学基础与统计理论补充.md",
+      "sha256": "67F78DA2F76D3C93C5D3C92A9CCF4330D5F398DD394F77308A35B03DF6597C55",
+      "bytes": 10466
+    },
+    {
+      "path": "references/知识库/进阶方法/22_数据分析与数据挖掘进阶.md",
+      "sha256": "CF8067B7DD3B38BFAD5C00EC814BD64201F0BB5320C52C9CEB094BF548C6BD35",
+      "bytes": 7741
+    },
+    {
+      "path": "references/知识库/进阶方法/23_预测建模进阶.md",
+      "sha256": "A760AB1BFB641DB2C3F6195C97E97AAD4F49CC793F5B9BDFF132877E94D40221",
+      "bytes": 6548
+    },
+    {
+      "path": "references/知识库/进阶方法/24_机器学习评审标准.md",
+      "sha256": "78AB945E2638180B7C54CD382CF834EFF517CD59D71DB97C78B072CCB6E38DDB",
+      "bytes": 10221
+    },
+    {
+      "path": "references/知识库/进阶方法/25_优化建模进阶.md",
+      "sha256": "F21D0654BD0BA78FFA1C52C6E7132A6FD6D4BAD992F94548A18CCA04941A817D",
+      "bytes": 12271
+    },
+    {
+      "path": "references/知识库/进阶方法/26_聚类分析严谨方法卡.md",
+      "sha256": "7812996B127DFA2B736CA2B79D6BF852FB21E94D3EFFF42C52457AF84960BFE8",
+      "bytes": 17693
+    },
+    {
+      "path": "references/知识库/进阶方法/27_主成分分析严谨方法卡.md",
+      "sha256": "6846CA2045B6829D498F174268856828810573A5E37D35A7B3C1182E0D7884E5",
+      "bytes": 16973
+    },
+    {
+      "path": "references/知识库/进阶方法/28_多元统计扩展严谨方法卡.md",
+      "sha256": "7B686B1698397BA8BD581F4B13254E3E548478B046E050A906AF26E41857E25A",
+      "bytes": 11818
+    },
+    {
+      "path": "references/知识库/进阶方法/29_线性模型与广义线性模型严谨方法卡.md",
+      "sha256": "69E2804E3018A7D4009B2CDDA4DAD3C6B0DBAD71634013CB3F16CBBA787C65BD",
+      "bytes": 9540
+    },
+    {
+      "path": "references/知识库/进阶方法/30_Expectorpatro全站知识映射与使用边界.md",
+      "sha256": "7EAA9CC82020ECC127B451ACE88DA071FEE8A33B7EFD80133D561601D3095CC4",
+      "bytes": 25841
+    },
+    {
+      "path": "references/知识库/进阶方法/31_树模型与集成学习严谨方法卡.md",
+      "sha256": "E63016FFEEE57EDBDCB45420990F718987911833F2DA33D3DFFAEB0FE39A07F0",
+      "bytes": 14382
+    },
+    {
+      "path": "references/知识库/进阶方法/32_神经网络严谨方法卡.md",
+      "sha256": "F2D52CD19431B0682A9CA7A90506AC36C0341A4A4F8382D12158CC93AACEE450",
+      "bytes": 23678
+    },
+    {
+      "path": "references/知识库/进阶方法/33_EM算法与潜变量模型严谨方法卡.md",
+      "sha256": "FA040749F4F687CAABCC1FCA9B32D2F45826425719B35A93190297CB2C5202F2",
+      "bytes": 14149
+    },
+    {
+      "path": "references/知识库/进阶方法/34_国赛C题数据驱动建模方法卡.md",
+      "sha256": "FD37B03D17B864ECCD1A0561C77F37C37EE29470D0A5B80C99E634FF9EF08C89",
+      "bytes": 11082
+    },
+    {
+      "path": "references/知识库/进阶方法/35_回归模型选择与方法总览.md",
+      "sha256": "996C3BEAC3DBD38FFDB8BEE1EDD455354291113BC6258CB04C6A6DC935226E3F",
+      "bytes": 8447
+    },
+    {
+      "path": "references/知识库/进阶方法/35A_回归模型完整方法索引.md",
+      "sha256": "E4717E15398A322ABF9685C9AAFEF59139A087791F14B863882C7D51B7D89E1F",
+      "bytes": 51562
+    },
+    {
+      "path": "references/知识库/进阶方法/36_AB题机理建模与仿真方法卡.md",
+      "sha256": "50E55CE7A9F58BB07FD2B9CBC566730FC93D075FB40FEFF8DF9254F20FEBFC62",
+      "bytes": 2281
+    },
+    {
+      "path": "references/知识库/进阶方法/37_文本数据建模方法卡.md",
+      "sha256": "762C8BB729288F03F3D126BDE3CAC8A2A6DD76B8316DD65B49F52BC93D223C33",
+      "bytes": 1761
+    },
+    {
+      "path": "references/知识库/进阶方法/38_信号处理与频谱建模方法卡.md",
+      "sha256": "AB7D02AE15C2D6014D2A452BA4191B63B1D719E89D6F96DBF791582BBEFD6A0F",
+      "bytes": 1673
+    },
+    {
+      "path": "references/知识库/进阶方法/39_图像数据建模方法卡.md",
+      "sha256": "9520A16641F0853B77C71D02179577C9619ACB3652E31E8A3D1CE861AA6F6C97",
+      "bytes": 1798
+    },
+    {
+      "path": "references/知识库/进阶方法/40_敏感性分析与稳定性诊断方法卡.md",
+      "sha256": "13EDB4FFA4146469F0B27B3525C7E419961F24508D22493F882BF944E06CCB7E",
+      "bytes": 11631
+    },
+    {
+      "path": "references/知识库/竞赛论文/20_国赛优秀论文方法论.md",
+      "sha256": "C9A2BF13F6081009E2ACF80AA9EC79E1EAEC1FAC4675BD42621E8C8177A24A31",
+      "bytes": 18328
+    },
+    {
+      "path": "references/知识库/竞赛论文/21_美赛特等奖论文方法论.md",
+      "sha256": "A8FD4884F42A3B016BCDAA856F4C518775DFCA29E7D025DF3CE97100E56E80A9",
+      "bytes": 14939
+    },
+    {
+      "path": "routing-manifest.yaml",
+      "sha256": "C1E82BCB0FCA81264163A96E8C2127AC11C380B91DD5F40C5657F44536FFB37B",
+      "bytes": 80062
+    },
+    {
+      "path": "scripts/build_submission.ps1",
+      "sha256": "76ED1B280DB52CF1BB98B2B7F11A8370DDBA0580B2AC07D7275E909A12FCEA53",
+      "bytes": 3977
+    },
+    {
+      "path": "scripts/freeze_results.ps1",
+      "sha256": "B0DD7EE4A329B8B4F3DEF6EC03B70A337F6E32A9929DB3C2EE3B2E51AB040AAD",
+      "bytes": 2463
+    },
+    {
+      "path": "scripts/modeling_stage.ps1",
+      "sha256": "6EE0D7EBDC62AC9F2D6E0F9B20A7BDF53AF2569D9AC10E24DB4DE79BDBF4E1C4",
+      "bytes": 3639
+    },
+    {
+      "path": "scripts/new_modeling_project.ps1",
+      "sha256": "42D271DD125C69349E4C72A1D75DD585C96A2DBA9B13D4A9C4357151957BA58C",
+      "bytes": 2844
+    },
+    {
+      "path": "scripts/project_paths.ps1",
+      "sha256": "5B7E4EF4EF8C99ED95110A3737E5F2AA7178C697F7BF8B40DFB1D6313AF72703",
+      "bytes": 2345
+    },
+    {
+      "path": "scripts/route_knowledge.ps1",
+      "sha256": "8CE9F504003F36BF274AD591EA3701B79FB5C88DA564A521A962FCC50B1D98C1",
+      "bytes": 18796
+    },
+    {
+      "path": "scripts/validate_skill_package.ps1",
+      "sha256": "FD0C4048C1710116C621BCA6CA620E8C1249FB8683535B1CC842DE326D0E6CC7",
+      "bytes": 6537
+    },
+    {
+      "path": "scripts/validate_submission.ps1",
+      "sha256": "DB83038C57B2F21E29B31321D8C8009211D420F710BBFACA3870DF90644C2549",
+      "bytes": 5817
+    },
+    {
+      "path": "scripts/verify_results.ps1",
+      "sha256": "6E3B464D00E998DCFC2D721C8FB4D851B374D2577E6543BF16177AFC17BD0498",
+      "bytes": 2626
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "368C3D6C15B8015EC4CB17E33CB766334E3F9058919E5072421430ABF2C3F620",
+      "bytes": 4550
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20",
+    "skill_creator_validation": "pass",
+    "local_structure_links_and_sources": "pass",
+    "private_content_screen": "pass",
+    "engineering_assertions": 33,
+    "library_route_executions": 296,
+    "library_golden_route_specs": 30,
+    "environment": "Windows / PowerShell 7; synthetic fixtures only",
+    "limits": "No real-model reruns, no host-level trigger evaluation, no claim of competition compliance or award improvement."
+  },
+  "publication_revision": {
+    "date": "2026-09-20",
+    "corrections": [
+      {
+        "path": "references/知识库/进阶方法/29_线性模型与广义线性模型严谨方法卡.md",
+        "reason": "Repair one mathematical index that the earlier path-redaction step incorrectly replaced; derive the bound directly from the surrounding all-i condition, without loading private source material."
+      }
+    ]
+  }
+}
