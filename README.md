@@ -2,17 +2,42 @@
 
 面向国赛、美赛与一般数学建模的独立 Agent Skill。它与另一 Skill 共享网站导航，但不依赖另一仓库才能使用。
 
-[在线导航与阅读](https://strider002.github.io/math-modeling-library-skill/) · [下载与使用](https://strider002.github.io/math-modeling-library-skill/download.html) · [建模方法库](https://github.com/Strider002/math-modeling-library-skill) · [审查与论文图表](https://github.com/Strider002/math-modeling-review)
+[在线导航与阅读](https://strider002.github.io/math-modeling-library/) · [下载与使用](https://strider002.github.io/math-modeling-library/download.html) · [建模方法库](https://github.com/Strider002/math-modeling-library) · [审查与论文图表](https://github.com/Strider002/math-modeling-review)
+
+## 导航
+
+- [这个 Skill 做什么](#这个-skill-做什么)
+- [主要内容](#主要内容)
+- [下载与使用](#下载与使用)
+- [本地预览网站](#本地预览网站)
+- [发布与维护边界](#发布与维护边界)
 
 ## 这个 Skill 做什么
 
 用于问题拆解、数据审计、模型选择、求解实现、验证与论文交付；按题型和阶段选择所需方法。
 
+- **问题与数据**：拆解目标、约束和输出，检查来源、单位、样本结构、缺失与数据泄漏。
+- **模型选择与实现**：覆盖统计回归、预测、评价、优化、机器学习、机理仿真、网络空间及文本/信号/图像任务。
+- **验证与不确定性**：设置简单基线、结构匹配的训练外验证，检查约束、误差、敏感性与结论稳定性。
+- **论文与交付**：维护可追溯结果、实验记录和交付检查；按实际赛事复查规则。
+
+## 主要内容
+
+| 内容 | 数量或入口 |
+|---|---|
+| 方法专题 | 41 篇，[阅读导航](references/阅读导航.md) |
+| 题型与阶段路由 | 37 条，[路由清单](routing-manifest.yaml) |
+| 历史项目复盘 | 11 篇，[项目索引](references/项目经验/项目索引.md) |
+| 工程辅助工具 | [工具说明](references/工程工具说明.md) |
+| 竞赛规则核对 | [官方规则入口](references/竞赛规则核对.md) |
+
+历史复盘仅作条件案例，不是当前任务的实验结果；不默认加载全库。
+
 本仓库根目录的 [SKILL.md](SKILL.md) 是 Agent 入口；`references/`、`scripts/`、`assets/` 和 `agents/` 为 Skill 资源。`docs/` 与 `web-tools/` 仅用于网站和打包，不是运行 Skill 的前置依赖。
 
 ## 下载与使用
 
-从网站的“下载与使用”页面获取独立 ZIP，解压后保留 `math-modeling-library/SKILL.md` 与完整配套目录。ZIP 不含网站依赖或 Git 历史。使用前核对下载页的 SHA-256。
+从网站的“下载与使用”页面或 [GitHub Releases](https://github.com/Strider002/math-modeling-library/releases) 获取独立 ZIP，解压后保留 `math-modeling-library/SKILL.md` 与完整配套目录。ZIP 不含网站依赖或 Git 历史。使用前核对下载页的 SHA-256。
 
 Codex 可将解压后的完整目录放入项目的 `.agents/skills/`，再在对话中显式调用 `$math-modeling-library`；不要覆盖已有同名 Skill。其他支持 `SKILL.md` 的工具按其官方说明配置，未逐一验证兼容性。参见 [OpenAI 官方技能文档](https://learn.chatgpt.com/docs/build-skills)。
 

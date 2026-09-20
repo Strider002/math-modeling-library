@@ -1,6 +1,6 @@
 {
   "name": "math-modeling-library",
-  "repository": "math-modeling-library-skill",
+  "repository": "math-modeling-library",
   "title": "数学建模方法库",
   "description": "用于问题拆解、数据审计、模型选择、求解实现、验证与论文交付；按题型和阶段选择所需方法。",
   "version": "1.0.0",
@@ -62,7 +62,7 @@
     },
     {
       "path": "references/来源依据/构建信息.json",
-      "sha256": "b3c88f7f8dd53370b9dcccabfec90a9d3462c76a7fb12f1f16dd317f4b559007"
+      "sha256": "87fa1f1f6d62e7375e47cfd5930300f9f79fb30629cfc04f0abecf1a981ec984"
     },
     {
       "path": "references/来源依据/证据注册/claims_registry.json",
