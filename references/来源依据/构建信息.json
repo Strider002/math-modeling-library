@@ -6,7 +6,7 @@
   "source_commit": "cbdb69c014ba7761dc3a3f468001719c81be65f8",
   "source_policy": "Pinned repository baseline selected for redistribution; no private worktrees, raw attachments, repository history, or restricted project derivatives are bundled.",
   "copied_method_documents": 41,
-  "copied_case_documents": 11,
+  "copied_case_documents": 10,
   "evaluation": "Package and engineering validation only; no award or end-to-end performance claim.",
   "files": [
     {
@@ -115,11 +115,6 @@
       "bytes": 6487
     },
     {
-      "path": "references/项目经验/复盘记录/复盘_2026-07-25_高考志愿概率与数据映射.md",
-      "sha256": "72AFD2EB36B522D13BC08F33A3955F6EFA74BD6710915283CBE21270F4A9DD88",
-      "bytes": 3746
-    },
-    {
       "path": "references/项目经验/复盘记录/复盘_2026-07-28_Iris两份聚类报告对比审计.md",
       "sha256": "7A74CC34B88D92F5BAF89A726B9BADB0CF1CF27F2A8228334B2B8902BFC4CDDA",
       "bytes": 4644
@@ -171,8 +166,8 @@
     },
     {
       "path": "references/项目经验/项目索引.md",
-      "sha256": "F17492E8968DDCA3F175BB88B8B38CA61C07FB6544EC17A28D4E29A00F1F6B9B",
-      "bytes": 1777
+      "sha256": "02976015CBAF2C815F209DDDC3994594DEDE2D8AD21BA646E67456A1296173AD",
+      "bytes": 1652
     },
     {
       "path": "references/阅读导航.md",
@@ -453,7 +448,7 @@
   },
   "source_repository_access": "Private historical baseline; this public package is self-contained and does not grant access to the original repository.",
   "publication_revision": {
-    "date": "2026-09-20",
+    "date": "2026-09-21",
     "corrections": [
       {
         "path": "references/知识库/进阶方法/29_线性模型与广义线性模型严谨方法卡.md",

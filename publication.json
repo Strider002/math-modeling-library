@@ -62,7 +62,7 @@
     },
     {
       "path": "references/来源依据/构建信息.json",
-      "sha256": "87fa1f1f6d62e7375e47cfd5930300f9f79fb30629cfc04f0abecf1a981ec984"
+      "sha256": "c19fd97ca097ba3c3cec260af4c88c6707cbe5e4c710045461a1df2863dde126"
     },
     {
       "path": "references/来源依据/证据注册/claims_registry.json",
@@ -269,10 +269,6 @@
       "sha256": "6931d46890fd2861142dbb0dc4a8e728f0b3c38088ff7b3fbd83d194e422591d"
     },
     {
-      "path": "references/项目经验/复盘记录/复盘_2026-07-25_高考志愿概率与数据映射.md",
-      "sha256": "72afd2eb36b522d13bc08f33a3955f6efa74bd6710915283cbe21270f4a9dd88"
-    },
-    {
       "path": "references/项目经验/复盘记录/复盘_2026-07-28_Iris两份聚类报告对比审计.md",
       "sha256": "7a74cc34b88d92f5baf89a726b9badb0cf1cf27f2a8228334b2b8902bfc4cdda"
     },
@@ -314,7 +310,7 @@
     },
     {
       "path": "references/项目经验/项目索引.md",
-      "sha256": "f17492e8968ddca3f175bb88b8b38ca61c07fb6544ec17a28d4e29a00f1f6b9b"
+      "sha256": "02976015cbaf2c815f209dddc3994594dede2d8ad21ba646e67456a1296173ad"
     },
     {
       "path": "routing-manifest.yaml",
