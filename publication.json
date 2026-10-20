@@ -3,8 +3,8 @@
   "repository": "math-modeling-library",
   "title": "数学建模方法库",
   "description": "用于问题拆解、数据审计、模型选择、求解实现、验证与论文交付；按题型和阶段选择所需方法。",
-  "version": "1.0.0",
-  "prepared": "2026-09-20",
+  "version": "1.1.0",
+  "prepared": "2026-10-20",
   "corrections": [
     {
       "path": "references/知识库/进阶方法/29_线性模型与广义线性模型严谨方法卡.md",
@@ -54,7 +54,7 @@
     },
     {
       "path": "references/工程工具说明.md",
-      "sha256": "4b84bf23310800f049cd98f7fdb08d69c5822ca00d3bdd6b3d3e39cefe16faf6"
+      "sha256": "9fed62e52d2bb78d44b6845806ec2ac165cf1109ed12342aba16cf3fced6e69b"
     },
     {
       "path": "references/来源依据/来源索引.md",
@@ -62,7 +62,7 @@
     },
     {
       "path": "references/来源依据/构建信息.json",
-      "sha256": "c19fd97ca097ba3c3cec260af4c88c6707cbe5e4c710045461a1df2863dde126"
+      "sha256": "fb4303e97773fbbc1bf8feb0653320031521233652da8a6c85d249797a4c03fa"
     },
     {
       "path": "references/来源依据/证据注册/claims_registry.json",
@@ -114,15 +114,15 @@
     },
     {
       "path": "references/知识库/基础方法/11_验证敏感性与不确定性.md",
-      "sha256": "73edae1d6495393d7017d2ef7e376c1c6bd37e131ee22cf2d1854e20b6a1819b"
+      "sha256": "dd9ffb79699e2d1fe237b740a9329e7884494d645953949f311ff7595c1bf697"
     },
     {
       "path": "references/知识库/基础方法/12_论文写作与可视化.md",
-      "sha256": "e365a7bcbae337a88849bae247f1572f553f8a33272d5a311ae39553b3309bd5"
+      "sha256": "cb8d29c3842c811ec95e49a44ca32db5c0badf1fe6cbd77c1e7248ff63227ae3"
     },
     {
       "path": "references/知识库/基础方法/13_竞赛工作流与检查清单.md",
-      "sha256": "04e866f6fb40d07f5b69e89b6767d00b18a56e40fba648f877dbdde8a07b18a9"
+      "sha256": "f1203b810481375bf05b9c4c00cc0b006f4e5935014f0c970e4155fa86f9c200"
     },
     {
       "path": "references/知识库/基础方法/14_公式与指标速查.md",
@@ -130,7 +130,7 @@
     },
     {
       "path": "references/知识库/基础方法/15_代码与实验规范.md",
-      "sha256": "e92a10274698e5d53d1c967663941ea1a3110334cf34cfffdccdac6549577233"
+      "sha256": "4203c4d0c7805e3833bbf75216cee886b723223599ee21920168ba69ec49ebd4"
     },
     {
       "path": "references/知识库/基础方法/16_插值拟合与数值计算.md",
@@ -258,11 +258,15 @@
     },
     {
       "path": "references/规范/00E_选模与验证设计门禁.md",
-      "sha256": "9024264b1a22f890aede99841f0c73669f326b19a7cb2b21ed5ff2eacd5bb6e0"
+      "sha256": "496cf1a76abb8f9508e118dd85da4c7676cc5d1dd77039d88f1af63f6955c936"
     },
     {
       "path": "references/规范/00Q_永久质量核心.md",
-      "sha256": "e3c2493ec8939aafdfc4772cd204efbb28e1d92d9d0dcafc9313c38c7c40c5c3"
+      "sha256": "6034e79aa3e762d423ad8f74d9f241741c8240e55ad4ceae7ce597cc48bec706"
+    },
+    {
+      "path": "references/规范/交付审计.md",
+      "sha256": "aef50e4cffae5e0b2587f2783a74293168ceeecda321df36b34baa4d8a3f03c5"
     },
     {
       "path": "references/阅读导航.md",
@@ -317,6 +321,10 @@
       "sha256": "c1e82bcb0fca81264163a96e8c2127ac11c380b91dd5f40c5657f44536ffb37b"
     },
     {
+      "path": "scripts/audit_contract.py",
+      "sha256": "7b3759449b9997f6e384110b98746d8e53e4edf4fc55d3d4fe7fe01ec98a680b"
+    },
+    {
       "path": "scripts/build_submission.ps1",
       "sha256": "76ed1b280db52cf1bb98b2b7f11a8370ddba0580b2ac07d7275e909a12fcea53"
     },
@@ -331,6 +339,10 @@
     {
       "path": "scripts/new_modeling_project.ps1",
       "sha256": "42d271dd125c69349e4c72a1d75dd585c96a2dba9b13d4a9c4357151957ba58c"
+    },
+    {
+      "path": "scripts/pdf_text_audit.py",
+      "sha256": "8ad515c54f22732357ffb9f276662922b6072a18a53b10ecfb020f3b5c0d7781"
     },
     {
       "path": "scripts/project_paths.ps1",
@@ -350,11 +362,57 @@
     },
     {
       "path": "scripts/verify_results.ps1",
-      "sha256": "6e3b464d00e998dcfc2d721c8fb4d851b374d2577e6543bf16177afc17bd0498"
+      "sha256": "f0f7a0ab9e371bbd9821624ac3c24bd8feabaafbddb8a158daea2adaef542a14"
     },
     {
       "path": "SKILL.md",
-      "sha256": "368c3d6c15b8015ec4cb17e33cb766334e3f9058919e5072421430abf2c3f620"
+      "sha256": "0faf67fb1fafd685ec83323ec39e550a18611797023825090b6918f386174337"
     }
-  ]
+  ],
+  "sync": {
+    "date": "2026-10-20",
+    "source_state": "Reviewed working-tree files, not a new private repository commit.",
+    "records": [
+      {
+        "path": "references/规范/00E_选模与验证设计门禁.md",
+        "source_sha256": "89f82010379300385c9dd00899240544a0da023192e4d52f8f872c8031b1b8b7",
+        "adaptation": "Reviewed generic changes with package-relative references; restricted sections are not included."
+      },
+      {
+        "path": "references/规范/00Q_永久质量核心.md",
+        "source_sha256": "4323130ddf4b2d14f8084ea87e161e38ca7971714f70c9cd22992ad50819e118",
+        "adaptation": "Reviewed generic changes with package-relative references; restricted sections are not included."
+      },
+      {
+        "path": "references/知识库/基础方法/11_验证敏感性与不确定性.md",
+        "source_sha256": "02a9a1806b2cb5f478106156a6973d713978fb6d884a2355fc950f51d4a38ccd",
+        "adaptation": "Reviewed generic changes with package-relative references; restricted sections are not included."
+      },
+      {
+        "path": "references/知识库/基础方法/12_论文写作与可视化.md",
+        "source_sha256": "b7cb93e550818212e5421ff87d096f909e44bdb2f293965ef1988135b1b94ff9",
+        "adaptation": "Reviewed generic changes with package-relative references; restricted sections are not included."
+      },
+      {
+        "path": "references/知识库/基础方法/13_竞赛工作流与检查清单.md",
+        "source_sha256": "d6f640747fab489e35c8ca539810b76b637996ed845047e7fbb1064e070181f6",
+        "adaptation": "Reviewed generic changes with package-relative references; restricted sections are not included."
+      },
+      {
+        "path": "references/知识库/基础方法/15_代码与实验规范.md",
+        "source_sha256": "80390c4dc597018d216bee430ae4f8fca35832ceb6132d8ec5f6c1e2fb48d62e",
+        "adaptation": "Reviewed generic changes with package-relative references; restricted sections are not included."
+      },
+      {
+        "path": "scripts/audit_contract.py",
+        "source_sha256": "7b3759449b9997f6e384110b98746d8e53e4edf4fc55d3d4fe7fe01ec98a680b",
+        "adaptation": "Reviewed standalone read-only utility; unchanged source."
+      },
+      {
+        "path": "scripts/pdf_text_audit.py",
+        "source_sha256": "8ad515c54f22732357ffb9f276662922b6072a18a53b10ecfb020f3b5c0d7781",
+        "adaptation": "Reviewed standalone read-only utility; unchanged source."
+      }
+    ]
+  }
 }
