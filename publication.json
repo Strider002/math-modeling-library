@@ -3,8 +3,8 @@
   "repository": "math-modeling-library",
   "title": "数学建模方法库",
   "description": "用于问题拆解、数据审计、模型选择、求解实现、验证与论文交付；按题型和阶段选择所需方法。",
-  "version": "1.1.0",
-  "prepared": "2026-10-20",
+  "version": "2.0.1",
+  "prepared": "2026-10-30",
   "corrections": [
     {
       "path": "references/知识库/进阶方法/29_线性模型与广义线性模型严谨方法卡.md",
@@ -58,11 +58,11 @@
     },
     {
       "path": "references/来源依据/来源索引.md",
-      "sha256": "14e70d2c98201bac58273350d2506d76304fd9a13426850046859c3754c62bcb"
+      "sha256": "505691dbef348b8004d19cbd86e45ba1c890333eabb77ec1c2ac2dddc36e138e"
     },
     {
       "path": "references/来源依据/构建信息.json",
-      "sha256": "fb4303e97773fbbc1bf8feb0653320031521233652da8a6c85d249797a4c03fa"
+      "sha256": "e42deae5236243725cca953e540992c93afd66781718fe0d39a2b8b20c6dd838"
     },
     {
       "path": "references/来源依据/证据注册/claims_registry.json",
@@ -366,7 +366,39 @@
     },
     {
       "path": "SKILL.md",
-      "sha256": "0faf67fb1fafd685ec83323ec39e550a18611797023825090b6918f386174337"
+      "sha256": "bd900cd082f6e7e133d118a0aa3a0f794b2974be283e7f30f439a0b6f8c61121"
+    },
+    {
+      "path": "前沿算法/README.md",
+      "sha256": "5c27b01ebf35c448ab62ee89e0f152e691a5aafba00220297111e45afd302112"
+    },
+    {
+      "path": "前沿算法/MFTabPFN_多保真回归.md",
+      "sha256": "337b60101171b72ca124b0377336dd9be738a4e3729201e40636bea9bdec09e3"
+    },
+    {
+      "path": "前沿算法/RankReg_排序与回归.md",
+      "sha256": "372681afea6f5d9c2a48d069efda449f6874f1f318c7c576797ed64c697661e7"
+    },
+    {
+      "path": "前沿算法/近期论文追踪.md",
+      "sha256": "7cb03417ffcc9eb690f67a196fdb230ca384c434df09cca52878bbbc127a0d86"
+    },
+    {
+      "path": "前沿算法/catalog.json",
+      "sha256": "76a932a26bd1c43941bed6c93cdeca4b7f5aefdd09044cf816032b06b876f51e"
+    },
+    {
+      "path": "前沿算法/评价目标反例/README.md",
+      "sha256": "a1a8f8d8501d9cb2022a6ae97ef623edbac38251cf597d1b697391e54fc3396e"
+    },
+    {
+      "path": "前沿算法/评价目标反例/run_tradeoff.py",
+      "sha256": "24e34e10cf29da07528d80911b5da046f9437f96f88394dda09b2a67f8a1f3f4"
+    },
+    {
+      "path": "前沿算法/评价目标反例/results.json",
+      "sha256": "6d0e38a5434bad0ae0eca06de20289dfdf28e08fb79593110c24adc3086c8d96"
     }
   ],
   "sync": {

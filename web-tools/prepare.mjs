@@ -32,6 +32,7 @@ const sections = release.name === 'math-modeling-library' ? [
   ['advanced', '进阶模型与方法卡', item => item.path.includes('/进阶方法/')],
   ['delivery', '验证、交付与案例', item => /竞赛论文|项目经验|工程工具|竞赛规则/.test(item.path)],
   ['standards', '规范与任务入口', item => /规范\/|SKILL.md|AGENTS.md|阅读导航|公开版维护/.test(item.path)],
+  ['frontier', '前沿算法候选', item => item.path.startsWith('前沿算法/')],
   ['sources', '来源与许可', item => /来源依据|LICENSE/.test(item.path)],
   ['tools', '工具与模板', item => /^(scripts|assets|agents)\//.test(item.path) || item.path === 'routing-manifest.yaml']
 ] : [
